@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0236",
+  "candidate_id": "VC_0236",
+  "mmsi": 369970979,
+  "vessel_name": "S3005 NRT1",
+  "release_lat": 31.034819,
+  "release_lon": -81.43823,
+  "release_timestamp": "2019-09-07T17:25:31.797740+00:00",
+  "source_age_hours": 18.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 18.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.086186,
+  "predicted_centroid_lon": -81.450836,
+  "predicted_bbox": {
+    "west": -81.461502,
+    "south": 31.07733,
+    "east": -81.440923,
+    "north": 31.09555
+  },
+  "dispersion_std_km": 0.226,
+  "observed_slick_id": "CS_0092",
+  "observed_slick_centroid_lat": 31.08611,
+  "observed_slick_centroid_lon": -81.45096,
+  "predicted_to_observed_distance_m": 14.52,
+  "ais_vessel_lat": 31.103441,
+  "ais_vessel_lon": -81.450787
+}

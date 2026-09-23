@@ -1,0 +1,61 @@
+{
+  "case_id": "case_003_golden_ray",
+  "generated_timestamp_utc": "2026-09-11T13:22:51.561118+00:00",
+  "total_hypotheses_simulated": 256,
+  "successful_simulations": 256,
+  "failed_simulations": 0,
+  "particle_count_per_simulation": 500,
+  "timestep_seconds": 600.0,
+  "environmental_models": {
+    "ocean_currents": "HYCOM 3-hourly 0.08 deg analysis",
+    "winds": "ECMWF ERA5 hourly 10m reanalysis"
+  },
+  "wind_drift_factor": 0.031,
+  "simulation_duration_range_hours": {
+    "min": 2.0,
+    "max": 18.0
+  },
+  "predicted_to_observed_distance_stats": {
+    "count": 256,
+    "min_m": 3.66,
+    "max_m": 164.47,
+    "mean_m": 44.99457031250001,
+    "median_m": 24.225,
+    "p25_m": 15.46,
+    "p75_m": 100.1
+  },
+  "closest_simulations": [
+    {
+      "hypothesis_id": "4DH_0256",
+      "vessel_name": "UNKNOWN",
+      "observed_slick_id": "CS_0161",
+      "predicted_to_observed_distance_m": 3.66
+    },
+    {
+      "hypothesis_id": "4DH_0238",
+      "vessel_name": "RECOVERY",
+      "observed_slick_id": "CS_0114",
+      "predicted_to_observed_distance_m": 6.84
+    },
+    {
+      "hypothesis_id": "4DH_0243",
+      "vessel_name": "UNKNOWN",
+      "observed_slick_id": "CS_0114",
+      "predicted_to_observed_distance_m": 6.84
+    },
+    {
+      "hypothesis_id": "4DH_0240",
+      "vessel_name": "EMERALD PRINCESS II",
+      "observed_slick_id": "CS_0114",
+      "predicted_to_observed_distance_m": 6.84
+    },
+    {
+      "hypothesis_id": "4DH_0237",
+      "vessel_name": "RESPONDER",
+      "observed_slick_id": "CS_0114",
+      "predicted_to_observed_distance_m": 6.84
+    }
+  ],
+  "scientific_guardrail_notice": "Forward simulations evaluate physical advective/diffusive consistency only. A low predicted-to-observed distance does NOT prove the vessel is guilty or caused the spill. Final attribution scoring is deferred to Phase 8.",
+  "reference_pipeline_notice": "Pipeline rupture coordinates were strictly excluded from simulation inputs."
+}

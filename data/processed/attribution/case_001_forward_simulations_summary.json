@@ -1,0 +1,61 @@
+{
+  "case_id": "case_001",
+  "generated_timestamp_utc": "2026-09-10T23:47:05.929025+00:00",
+  "total_hypotheses_simulated": 19,
+  "successful_simulations": 19,
+  "failed_simulations": 0,
+  "particle_count_per_simulation": 500,
+  "timestep_seconds": 600.0,
+  "environmental_models": {
+    "ocean_currents": "HYCOM 3-hourly 0.08 deg analysis",
+    "winds": "ECMWF ERA5 hourly 10m reanalysis"
+  },
+  "wind_drift_factor": 0.031,
+  "simulation_duration_range_hours": {
+    "min": 2.0,
+    "max": 2.0
+  },
+  "predicted_to_observed_distance_stats": {
+    "count": 19,
+    "min_m": 136.22,
+    "max_m": 173.9,
+    "mean_m": 156.0515789473684,
+    "median_m": 173.9,
+    "p25_m": 136.22,
+    "p75_m": 173.9
+  },
+  "closest_simulations": [
+    {
+      "hypothesis_id": "4DH_0013",
+      "vessel_name": "LEGASEA",
+      "observed_slick_id": "CS_0015",
+      "predicted_to_observed_distance_m": 136.22
+    },
+    {
+      "hypothesis_id": "4DH_0014",
+      "vessel_name": "ROAM",
+      "observed_slick_id": "CS_0015",
+      "predicted_to_observed_distance_m": 136.22
+    },
+    {
+      "hypothesis_id": "4DH_0016",
+      "vessel_name": "CRYSTAL II",
+      "observed_slick_id": "CS_0015",
+      "predicted_to_observed_distance_m": 136.22
+    },
+    {
+      "hypothesis_id": "4DH_0015",
+      "vessel_name": "PATIENCE",
+      "observed_slick_id": "CS_0015",
+      "predicted_to_observed_distance_m": 136.22
+    },
+    {
+      "hypothesis_id": "4DH_0011",
+      "vessel_name": "CALYPSO",
+      "observed_slick_id": "CS_0015",
+      "predicted_to_observed_distance_m": 136.22
+    }
+  ],
+  "scientific_guardrail_notice": "Forward simulations evaluate physical advective/diffusive consistency only. A low predicted-to-observed distance does NOT prove the vessel is guilty or caused the spill. Final attribution scoring is deferred to Phase 8.",
+  "reference_pipeline_notice": "Pipeline rupture coordinates were strictly excluded from simulation inputs."
+}

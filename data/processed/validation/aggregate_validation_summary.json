@@ -1,0 +1,36 @@
+{
+  "timestamp_utc": "2026-09-11T04:54:27.725612+00:00",
+  "total_cases_evaluated": 7,
+  "real_cases_count": 1,
+  "synthetic_cases_count": 6,
+  "validation_dataset_status": "VALIDATION DATASET INSUFFICIENT FOR STATISTICAL CALIBRATION (N=1 real case)",
+  "score_calibration_status": "ATTRIBUTION SCORE NOT PROBABILITY-CALIBRATED",
+  "vessel_case_metrics": {
+    "count": 4,
+    "candidate_generation_recall_rate": 0.75,
+    "top_1_accuracy": 0.25,
+    "top_3_accuracy": 0.5,
+    "top_5_accuracy": 0.75,
+    "mean_known_vessel_rank": 2.33,
+    "mean_source_location_error_m": 878.8,
+    "mean_source_time_error_seconds": 2055.0
+  },
+  "negative_case_safety_metrics": {
+    "count": 2,
+    "false_high_support_rate": 0.0,
+    "false_attribution_rate": 0.0,
+    "refused_high_support_rate": 1.0,
+    "safety_benchmark_status": "PASSED (0% false HIGH_SUPPORT across negative cases)"
+  },
+  "ambiguous_case_metrics": {
+    "count": 1,
+    "insufficient_evidence_rate": 1.0
+  },
+  "failure_taxonomy_distribution": {
+    "SUCCESS": 4,
+    "RANKING_FAILURE": 2,
+    "CANDIDATE_GENERATION_FAILURE": 1
+  },
+  "overall_pass_rate": 0.5714,
+  "scientific_guardrail_notice": "Ground truth data was strictly isolated during pipeline execution. Attribution evidence scores evaluate physical and spatiotemporal compatibility under the calibrated Lagrangian model. Scores do NOT represent probabilities of guilt or legal culpability."
+}

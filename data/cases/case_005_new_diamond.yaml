@@ -1,0 +1,75 @@
+case_id: "case_005_new_diamond"
+name: "MT New Diamond Crude Tanker Fire & Spill"
+incident_type: "Very Large Crude Carrier boiler room explosion, severe fire, and bunker fuel release"
+incident_date: "2020-09-03"
+location_name: "approx. 38 nautical miles off Sangamankanda Point, Sri Lanka"
+
+spatial:
+  crs: "EPSG:4326"
+  aoi_bounding_box:
+    west: 81.80
+    south: 6.80
+    east: 82.80
+    north: 7.80
+  incident_point:
+    latitude: 7.3000
+    longitude: 82.3000
+    description: "Initial explosion and drift location"
+
+temporal:
+  spill_incident_estimated_start: "2020-09-03T02:30:00Z"
+  spill_incident_estimated_end: "2020-09-09T12:00:00Z"
+  source_search_time_range:
+    start_utc: "2020-09-03T00:00:00Z"
+    end_utc: "2020-09-10T00:00:00Z"
+    search_window_hours: 168
+
+satellite:
+  platform: "Sentinel-1A"
+  instrument: "C-SAR"
+  sensor_mode: "IW"
+  product_type: "GRDH"
+  polarizations:
+    - "VV"
+    - "VH"
+  scene_id: "S1A_IW_GRDH_1SDV_20200908T002534_20200908T002559_034261_03F9CD"
+  observation_timestamp_utc: "2020-09-08T00:25:46Z"
+  provider: "Copernicus Open Access Hub"
+  files:
+    measurement_raster_vv: "data/raw/satellite/case_005_new_diamond_s1_measurement_vv.tif"
+    calibration_lut: "data/raw/satellite/case_005_new_diamond_calibration_vv.xml"
+
+environmental:
+  ocean_currents:
+    source_name: "HYCOM Ocean Currents"
+    file_path: "data/raw/environmental/case_005_new_diamond_ocean_currents.nc"
+  wind:
+    source_name: "ECMWF ERA5 Reanalysis"
+    files:
+      csv_path: "data/raw/environmental/case_005_new_diamond_wind_era5.csv"
+
+ais:
+  source_name: "Sri Lanka Navy Coastal Surveillance / Satellite AIS"
+  files:
+    filtered_csv: "data/raw/ais/case_005_new_diamond_ais_filtered.csv"
+
+validation:
+  incident_name: "MT New Diamond Crude Tanker Fire & Spill"
+  incident_date: "2020-09-03"
+  source_type: "vessel"
+  quality_level: "B"
+  ground_truth_quality: "PROBABLE"
+  ground_truth_source: "Sri Lanka Marine Environment Protection Authority (MEPA) / Indian Coast Guard Reports"
+  ground_truth_confidence: 0.90
+  validation_role: "POSITIVE_VESSEL_CASE"
+  reference_source_location:
+    lon: 82.3000
+    lat: 7.3000
+  reference_source_time_utc: "2020-09-03T02:30:00Z"
+  reference_vessel_mmsi: 351249000
+  reference_vessel_name: "NEW DIAMOND"
+  case_status: "POTENTIALLY_AVAILABLE"
+  notes: >
+    Crude tanker NEW DIAMOND (IMO 9212852, MMSI 351249000).
+    Heavy fuel oil slick traced to vessel towing and salvage operations.
+    Quality Level B due to dynamic drift during firefighting operations.

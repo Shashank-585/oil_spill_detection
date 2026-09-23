@@ -1,0 +1,113 @@
+{
+  "case_id": "case_001",
+  "generated_timestamp_utc": "2026-09-10T22:51:05.323987+00:00",
+  "observation_timestamp_utc": "2021-10-02T01:58:36.165236+00:00",
+  "candidate_slicks_count": 2,
+  "candidate_slicks": [
+    "CS_0010",
+    "CS_0015"
+  ],
+  "total_hypotheses_generated": 14,
+  "source_ages_hours_evaluated": [
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    12.0,
+    18.0,
+    24.0
+  ],
+  "top_plausible_hypotheses": [
+    {
+      "hypothesis_id": "SH_0008",
+      "candidate_id": "CS_0015",
+      "source_age_hours": 2.0,
+      "estimated_release_time_utc": "2021-10-01T23:58:36.165236+00:00",
+      "centroid_lat": 33.414692,
+      "centroid_lon": -118.412924,
+      "bbox_west": -118.420032,
+      "bbox_south": 33.410974,
+      "bbox_east": -118.406105,
+      "bbox_north": 33.419023,
+      "dispersion_std_km": 0.132,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.599
+    },
+    {
+      "hypothesis_id": "SH_0001",
+      "candidate_id": "CS_0010",
+      "source_age_hours": 2.0,
+      "estimated_release_time_utc": "2021-10-01T23:58:36.165236+00:00",
+      "centroid_lat": 33.420547,
+      "centroid_lon": -118.430572,
+      "bbox_west": -118.434409,
+      "bbox_south": 33.4173,
+      "bbox_east": -118.425873,
+      "bbox_north": 33.423482,
+      "dispersion_std_km": 0.077,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.5641
+    },
+    {
+      "hypothesis_id": "SH_0009",
+      "candidate_id": "CS_0015",
+      "source_age_hours": 4.0,
+      "estimated_release_time_utc": "2021-10-01T21:58:36.165236+00:00",
+      "centroid_lat": 33.402027,
+      "centroid_lon": -118.434443,
+      "bbox_west": -118.442173,
+      "bbox_south": 33.3972,
+      "bbox_east": -118.425546,
+      "bbox_north": 33.407869,
+      "dispersion_std_km": 0.154,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.5641
+    },
+    {
+      "hypothesis_id": "SH_0002",
+      "candidate_id": "CS_0010",
+      "source_age_hours": 4.0,
+      "estimated_release_time_utc": "2021-10-01T21:58:36.165236+00:00",
+      "centroid_lat": 33.407699,
+      "centroid_lon": -118.452052,
+      "bbox_west": -118.458023,
+      "bbox_south": 33.402479,
+      "bbox_east": -118.446173,
+      "bbox_north": 33.412125,
+      "dispersion_std_km": 0.117,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.5313
+    },
+    {
+      "hypothesis_id": "SH_0010",
+      "candidate_id": "CS_0015",
+      "source_age_hours": 6.0,
+      "estimated_release_time_utc": "2021-10-01T19:58:36.165236+00:00",
+      "centroid_lat": 33.38784,
+      "centroid_lon": -118.443528,
+      "bbox_west": -118.452549,
+      "bbox_south": 33.382003,
+      "bbox_east": -118.435151,
+      "bbox_north": 33.393119,
+      "dispersion_std_km": 0.166,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.5312
+    }
+  ],
+  "spatial_envelope": {
+    "lat_min": 33.330007,
+    "lat_max": 33.428446,
+    "lon_min": -118.538951,
+    "lon_max": -118.391652
+  },
+  "files": {
+    "hypotheses_csv": "processed\\drift\\case_001_source_hypotheses.csv",
+    "trajectories_json": "processed\\drift\\case_001_source_trajectories.json",
+    "diagnostic_png": "processed\\drift\\case_001_source_reconstruction_diagnostic.png"
+  }
+}

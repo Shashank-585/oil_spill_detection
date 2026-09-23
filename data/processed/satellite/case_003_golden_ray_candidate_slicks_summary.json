@@ -1,0 +1,51 @@
+{
+  "case_id": "case_003_golden_ray",
+  "status": "READY FOR PHASE 4",
+  "elapsed_seconds": 35.41,
+  "algorithm": "Deterministic Multi-Mode SAR Backscatter & Local Contrast Detector",
+  "parameters": {
+    "detection_mode": "adaptive",
+    "input_product": "unfiltered",
+    "global_threshold_db": -23.0,
+    "contrast_threshold_db": 3.5,
+    "local_window_size_pixels": 101,
+    "morphological_cleanup": true,
+    "min_connected_pixels": 50,
+    "lookalike_filtering_rules": {
+      "min_area_km2": 0.05,
+      "max_area_km2": 50.0,
+      "min_contrast_db": 2.5,
+      "max_aspect_ratio": 30.0,
+      "swath_edge_buffer_pixels": 10
+    }
+  },
+  "detection_counts": {
+    "raw_dark_pixels": 362798,
+    "cleaned_dark_pixels": 61480,
+    "total_candidates_extracted": 207,
+    "accepted_candidates": 6,
+    "rejected_candidates": 201,
+    "rejection_reasons_breakdown": {
+      "AREA_TOO_SMALL": 201,
+      "AREA_TOO_LARGE": 0,
+      "INSUFFICIENT_CONTRAST": 0,
+      "EXTREME_ASPECT_RATIO": 0,
+      "SWATH_EDGE_PROXIMITY": 0
+    }
+  },
+  "accepted_candidate_ids": [
+    "CS_0035",
+    "CS_0065",
+    "CS_0092",
+    "CS_0114",
+    "CS_0161",
+    "CS_0201"
+  ],
+  "output_files": {
+    "candidate_slicks_mask": "C:\\Users\\rkchi\\OneDrive\\Desktop\\Oil_spill\\data\\processed\\satellite\\case_003_golden_ray_s1_candidate_slicks_mask.tif",
+    "candidate_slicks_geojson": "C:\\Users\\rkchi\\OneDrive\\Desktop\\Oil_spill\\data\\processed\\satellite\\case_003_golden_ray_candidate_slicks.geojson",
+    "candidate_slicks_csv": "C:\\Users\\rkchi\\OneDrive\\Desktop\\Oil_spill\\data\\processed\\satellite\\case_003_golden_ray_candidate_slicks.csv",
+    "summary_json": "C:\\Users\\rkchi\\OneDrive\\Desktop\\Oil_spill\\data\\processed\\satellite\\case_003_golden_ray_candidate_slicks_summary.json",
+    "diagnostic_plot": "C:\\Users\\rkchi\\OneDrive\\Desktop\\Oil_spill\\data\\processed\\satellite\\case_003_golden_ray_s1_detection_diagnostic.png"
+  }
+}

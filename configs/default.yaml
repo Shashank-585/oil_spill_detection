@@ -1,0 +1,158 @@
+# SIH26143 Pipeline Default Configuration
+project:
+  name: "SIH26143 Maritime Oil Spill Investigation System"
+  version: "0.1.0"
+  log_level: "INFO"
+
+geospatial:
+  default_crs: "EPSG:4326"
+  distance_metric: "haversine"
+
+# Default Case Reference
+active_case_id: "case_001"
+
+# Processing Parameters for Pipeline Modules
+satellite_processing:
+  nominal_pixel_spacing_m: 10.0
+  polarization_primary: "VV"
+  polarization_secondary: "VH"
+  nodata_value: -9999.0
+  speckle_filter:
+    enabled: false        # Configurable: initially disabled to preserve canonical unfiltered product
+    method: "lee"
+    window_size: 5
+    num_looks: 4.4        # Sentinel-1 IW GRDH equivalent number of looks
+  radiometric_calibration:
+    output_units: ["linear", "decibels"]
+    enabled: true
+
+dark_slick_detection:
+  mode: "adaptive"                # "global", "contrast", or "adaptive"
+  input_product: "unfiltered"     # "unfiltered" (canonical) or "filtered"
+  global_threshold_db: -23.0      # Absolute backscatter floor for candidate dark pixels (dB)
+  contrast_threshold_db: 3.5      # Damping contrast relative to ocean background (dB)
+  local_window_size: 101          # Local ocean background window size (~1 km at 10m pixel size)
+  morphological_cleanup: true     # Apply light morphological opening to remove 1-2 pixel isolated speckle
+  min_connected_pixels: 50        # Minimum pixel count for raw candidate component (~0.005 km^2)
+  lookalike_filtering:
+    min_area_km2: 0.05            # Reject tiny candidates smaller than 0.05 km^2
+    max_area_km2: 50.0            # Reject massive basin-scale low-wind zones (> 50 km^2)
+    min_contrast_db: 2.5          # Minimum mean contrast required
+    max_aspect_ratio: 30.0        # Reject extreme thin-line swath artifacts
+    swath_edge_buffer_pixels: 10  # Reject components touching or within 10 pixels of swath nodata border
+
+environmental_forcing:
+  ocean_current:
+    model: "HYCOM"
+    surface_depth_m: 0.0
+    interpolation: "bilinear"
+  wind:
+    model: "ERA5"
+    reference_height_m: 10.0
+    interpolation: "bilinear"
+
+lagrangian_drift:
+  physics:
+    wind_drift_factor: 0.031       # ~3.1% of 10m wind speed
+    wind_deflection_angle_deg: 0.0 # Typically 0 to 15 deg due to Coriolis
+    current_factor: 1.0           # 100% of surface current
+    diffusion_coefficient_m2s: 1.0
+  simulation:
+    time_step_seconds: 600        # 10 minutes
+    backward_search_hours: 24.0   # Maximum physical backward history without extrapolation
+    particle_count: 500
+
+backward_source_reconstruction:
+  particle_count: 500
+  time_step_seconds: 600
+  source_ages_hours: [2, 4, 6, 8, 12, 18, 24]
+  kde_bandwidth_km: 1.5
+  spatial_grid_resolution_km: 0.5
+  random_seed: 42
+
+ais_candidate_generation:
+  spatial_search_buffer_km: 15.0          # Buffer around drift/backward trajectory envelope
+  temporal_search_window_hours: 36.0      # Overall active case search window
+  temporal_search_window_minutes: 60.0    # Allowable bracket around individual hypothesis release times
+  max_interpolation_gap_seconds: 3600.0   # 1 hour max gap for continuous track interpolation
+  max_ship_speed_knots: 50.0              # Speed sanity threshold
+  min_positions_per_track: 3              # Minimum pings for valid track
+  plausibility_distance_threshold_km: 10.0 # Distance threshold to hypothesis release centroid
+
+source_hypothesis_generation:
+  spatial_compatibility_radius_m: 15000.0  # 15 km compatibility buffer
+  min_source_plausibility: 0.10            # Plausibility threshold for active consideration
+  deduplication_precision:
+    coord_decimals: 5                     # ~1.1 m precision for spatial deduplication
+    time_seconds: 60                      # 1 min resolution for temporal deduplication
+
+forward_counterfactual_simulation:
+  particle_count: 500
+  release_radius_m: 50.0
+  time_step_seconds: 600.0
+  random_seed: 42
+
+spill_comparison:
+  particle_buffer_radius_m: 50.0       # Metric buffer radius around each particle for polygon creation
+  coverage_distance_threshold_m: 500.0 # Distance threshold for particle coverage calculation
+  distance_scale_m: 500.0              # Characteristic decay scale for normalized distance scores
+  sparsity_min_density_particles_km2: 10.0 # Minimum density before flagging as sparse representation
+
+attribution_scoring:
+  weights:
+    drift_consistency: 0.30       # Forward Lagrangian simulation physical consistency
+    spatial_compatibility: 0.25   # Geodesic proximity of vessel to release location
+    source_plausibility: 0.20     # Backward drift source plausibility density
+    temporal_compatibility: 0.15  # Closeness in time of AIS observation to release time
+    ais_track_quality: 0.10       # Reliability and continuity of AIS track
+  spatial_scale_m: 5000.0         # Characteristic decay distance for spatial compatibility
+  temporal_scale_seconds: 600.0   # Characteristic decay time for temporal compatibility (10 min)
+  drift_subweights:
+    centroid: 0.30                # Weight of centroid error in drift score
+    particle: 0.30                # Weight of mean particle distance in drift score
+    coverage: 0.20                # Weight of coverage fraction in drift score
+    iou: 0.20                     # Weight of spatial IoU in drift score
+  thresholds:
+    high_support: 0.70
+    moderate_support: 0.50
+    low_support: 0.30
+    conflict_spread: 0.40         # max(S_i) - min(S_i) threshold to flag evidence conflict
+
+uncertainty_analysis:
+  ensemble_size: 50               # Number of Monte Carlo realizations
+  random_seed: 42                 # Deterministic seed for ensemble reproducibility
+  perturbations:
+    location_std_m: 250.0         # Spatial release location perturbation standard deviation
+    time_std_seconds: 900.0       # Temporal release offset perturbation standard deviation (15 min)
+    wind_factor_range: [0.025, 0.038] # Wind drift factor perturbation range (nominal 0.031)
+    current_factor_range: [0.85, 1.15] # Ocean current scaling perturbation range (nominal 1.0)
+    diffusion_range_m2s: [0.5, 2.0]    # Horizontal eddy diffusivity range (nominal 1.0)
+    spatial_scale_range_m: [3500.0, 6500.0] # Spatial matching scale range (nominal 5000 m)
+    temporal_scale_range_seconds: [450.0, 900.0] # Temporal scale range (nominal 600 s)
+    weight_jitter_fraction: 0.10  # Random Dirichlet/fractional jitter on evidence weights
+  thresholds:
+    robust_sensitivity_index: 0.15 # Sensitivity index threshold separating ROBUST from SENSITIVE
+    stable_rank_std: 1.5          # Rank standard deviation threshold separating VERY_STABLE from UNSTABLE
+
+validation_framework:
+  min_cases_for_calibration: 30   # Minimum independent cases required for statistical calibration
+  top_k_ranks: [1, 3, 5]          # Ranks evaluated for attribution accuracy
+  false_high_support_threshold: 0.70 # Score threshold defining HIGH_SUPPORT in false-attribution audit
+  source_location_tolerance_m: 1500.0 # Geodesic spatial tolerance for source recovery evaluation
+  source_time_tolerance_seconds: 3600.0 # Temporal tolerance for source recovery evaluation (1 hour)
+  default_output_dir: "data/processed/validation"
+
+causal_consistency:
+  enabled: false                          # Baseline preserved by default; set true to activate
+  at_release_tolerance_seconds: 300.0     # 5-minute window for AT_RELEASE
+  max_interpolation_gap_seconds: 3600.0   # 1-hour max gap for continuous track
+  min_positions_for_precedence: 2         # Minimum pings required
+  ineligible_post_event_score: 0.0        # Zero credit for post-event-only vessels
+  enable_source_age_plausibility: true    # Enable physical spreading age bounds
+  source_age_weights:
+    high: 1.00
+    medium: 0.75
+    low: 0.35
+    unknown: 0.70
+
+

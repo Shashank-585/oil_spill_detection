@@ -1,0 +1,165 @@
+{
+  "case_id": "case_001",
+  "generated_timestamp_utc": "2026-09-23T15:59:50.235925+00:00",
+  "total_candidates": 19,
+  "total_hypotheses": 19,
+  "unique_vessels": 10,
+  "hypotheses_per_vessel": {
+    "338183593": {
+      "vessel_name": "CALYPSO",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0001",
+        "4DH_0011"
+      ],
+      "min_distance_m": 6409.16,
+      "max_distance_m": 8171.75
+    },
+    "338335196": {
+      "vessel_name": "LAST DANCE",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0002",
+        "4DH_0012"
+      ],
+      "min_distance_m": 5339.81,
+      "max_distance_m": 7081.55
+    },
+    "338423701": {
+      "vessel_name": "LEGASEA",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0003",
+        "4DH_0013"
+      ],
+      "min_distance_m": 7002.82,
+      "max_distance_m": 8762.56
+    },
+    "338424255": {
+      "vessel_name": "ROAM",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0004",
+        "4DH_0014"
+      ],
+      "min_distance_m": 4917.74,
+      "max_distance_m": 6668.59
+    },
+    "357104000": {
+      "vessel_name": "MAERSK ESMERALDAS",
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "4DH_0005"
+      ],
+      "min_distance_m": 9802.99,
+      "max_distance_m": 9802.99
+    },
+    "367352670": {
+      "vessel_name": "PATIENCE",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0006",
+        "4DH_0015"
+      ],
+      "min_distance_m": 6864.12,
+      "max_distance_m": 8626.62
+    },
+    "367430660": {
+      "vessel_name": "CRYSTAL II",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0007",
+        "4DH_0016"
+      ],
+      "min_distance_m": 6423.24,
+      "max_distance_m": 8181.83
+    },
+    "368021110": {
+      "vessel_name": "SOME TUESDAY",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0008",
+        "4DH_0017"
+      ],
+      "min_distance_m": 6907.27,
+      "max_distance_m": 8667.38
+    },
+    "368106540": {
+      "vessel_name": "JIMNI",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0009",
+        "4DH_0018"
+      ],
+      "min_distance_m": 6678.66,
+      "max_distance_m": 8439.79
+    },
+    "538009073": {
+      "vessel_name": "TS MANILA",
+      "hypothesis_count": 2,
+      "hypothesis_ids": [
+        "4DH_0010",
+        "4DH_0019"
+      ],
+      "min_distance_m": 6854.74,
+      "max_distance_m": 7168.63
+    }
+  },
+  "source_time_distribution": {
+    "2021-10-01T23:58:36.165236+00:00": 19
+  },
+  "source_age_distribution": {
+    "2.0": 19
+  },
+  "ais_quality_distribution": {
+    "near_boundary_first_ping": 19
+  },
+  "distance_statistics": {
+    "count": 19,
+    "min_m": 4917.74,
+    "max_m": 9802.99,
+    "mean_m": 7314.171052631579,
+    "median_m": 7002.82,
+    "p25_m": 6673.625,
+    "p75_m": 8310.810000000001
+  },
+  "closest_hypotheses": [
+    {
+      "hypothesis_id": "4DH_0014",
+      "vessel_name": "ROAM",
+      "mmsi": 338424255,
+      "vessel_source_distance_m": 4917.74,
+      "source_plausibility": 0.599
+    },
+    {
+      "hypothesis_id": "4DH_0012",
+      "vessel_name": "LAST DANCE",
+      "mmsi": 338335196,
+      "vessel_source_distance_m": 5339.81,
+      "source_plausibility": 0.599
+    },
+    {
+      "hypothesis_id": "4DH_0001",
+      "vessel_name": "CALYPSO",
+      "mmsi": 338183593,
+      "vessel_source_distance_m": 6409.16,
+      "source_plausibility": 0.5641
+    },
+    {
+      "hypothesis_id": "4DH_0007",
+      "vessel_name": "CRYSTAL II",
+      "mmsi": 367430660,
+      "vessel_source_distance_m": 6423.24,
+      "source_plausibility": 0.5641
+    },
+    {
+      "hypothesis_id": "4DH_0004",
+      "vessel_name": "ROAM",
+      "mmsi": 338424255,
+      "vessel_source_distance_m": 6668.59,
+      "source_plausibility": 0.5641
+    }
+  ],
+  "scientific_guardrail_notice": "Hypotheses represent descriptive 4D physical pairings (vessel, release location, release time). They do NOT constitute attribution or guilt rankings. Forward counterfactual simulation will evaluate hypothesis viability in Phase 7.",
+  "reference_pipeline_notice": "Pipeline rupture coordinates were strictly excluded from hypothesis generation."
+}

@@ -1,0 +1,1284 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "4DH_0001_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0001",
+        "mmsi": 338183593,
+        "vessel_name": "CALYPSO",
+        "imo": "IMO0000000",
+        "vessel_type": "36.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.44174,
+        "ais_lon": -118.4948,
+        "vessel_source_distance_m": 6409.16,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "553.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel first appeared 553.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0001",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0001_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.4948,
+            33.44174
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0001",
+        "candidate_id": "VC_0001",
+        "mmsi": 338183593,
+        "vessel_name": "CALYPSO",
+        "vessel_source_distance_m": 6409.16,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0002_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0002",
+        "mmsi": 338335196,
+        "vessel_name": "LAST DANCE",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.38934,
+        "ais_lon": -118.36407,
+        "vessel_source_distance_m": 7081.55,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "366.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel first appeared 366.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0002",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0002_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.36407,
+            33.38934
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0002",
+        "candidate_id": "VC_0002",
+        "mmsi": 338335196,
+        "vessel_name": "LAST DANCE",
+        "vessel_source_distance_m": 7081.55,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0003_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0003",
+        "mmsi": 338423701,
+        "vessel_name": "LEGASEA",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.44746,
+        "ais_lon": -118.4988,
+        "vessel_source_distance_m": 7002.82,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "402.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel first appeared 402.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0003",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0003_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.4988,
+            33.44746
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0003",
+        "candidate_id": "VC_0003",
+        "mmsi": 338423701,
+        "vessel_name": "LEGASEA",
+        "vessel_source_distance_m": 7002.82,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0004_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0004",
+        "mmsi": 338424255,
+        "vessel_name": "ROAM",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.39298,
+        "ais_lon": -118.36677,
+        "vessel_source_distance_m": 6668.59,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "97.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel observed within 97.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0004",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0004_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.36677,
+            33.39298
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0004",
+        "candidate_id": "VC_0004",
+        "mmsi": 338424255,
+        "vessel_name": "ROAM",
+        "vessel_source_distance_m": 6668.59,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0005_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0005",
+        "mmsi": 357104000,
+        "vessel_name": "MAERSK ESMERALDAS",
+        "imo": "IMO9502972",
+        "vessel_type": "70.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.5087,
+        "ais_lon": -118.43194,
+        "vessel_source_distance_m": 9802.99,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "86.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel observed within 86.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0005",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0005_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.43194,
+            33.5087
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0005",
+        "candidate_id": "VC_0005",
+        "mmsi": 357104000,
+        "vessel_name": "MAERSK ESMERALDAS",
+        "vessel_source_distance_m": 9802.99,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0006_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0006",
+        "mmsi": 367352670,
+        "vessel_name": "PATIENCE",
+        "imo": "IMO0000000",
+        "vessel_type": "36.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.44397,
+        "ais_lon": -118.49901,
+        "vessel_source_distance_m": 6864.12,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "360.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel first appeared 360.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0006",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0006_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.49901,
+            33.44397
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0006",
+        "candidate_id": "VC_0006",
+        "mmsi": 367352670,
+        "vessel_name": "PATIENCE",
+        "vessel_source_distance_m": 6864.12,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0007_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0007",
+        "mmsi": 367430660,
+        "vessel_name": "CRYSTAL II",
+        "imo": "UNKNOWN",
+        "vessel_type": "37.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.44588,
+        "ais_lon": -118.49278,
+        "vessel_source_distance_m": 6423.24,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "85.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel observed within 85.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0007",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0007_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.49278,
+            33.44588
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0007",
+        "candidate_id": "VC_0007",
+        "mmsi": 367430660,
+        "vessel_name": "CRYSTAL II",
+        "vessel_source_distance_m": 6423.24,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0008_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0008",
+        "mmsi": 368021110,
+        "vessel_name": "SOME TUESDAY",
+        "imo": "IMO0000000",
+        "vessel_type": "36.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.44686,
+        "ais_lon": -118.498,
+        "vessel_source_distance_m": 6907.27,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "126.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel observed within 126.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0008",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0008_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.498,
+            33.44686
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0008",
+        "candidate_id": "VC_0008",
+        "mmsi": 368021110,
+        "vessel_name": "SOME TUESDAY",
+        "vessel_source_distance_m": 6907.27,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0009_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0009",
+        "mmsi": 368106540,
+        "vessel_name": "JIMNI",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.44524,
+        "ais_lon": -118.49618,
+        "vessel_source_distance_m": 6678.66,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "416.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel first appeared 416.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0009",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0009_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.49618,
+            33.44524
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0009",
+        "candidate_id": "VC_0009",
+        "mmsi": 368106540,
+        "vessel_name": "JIMNI",
+        "vessel_source_distance_m": 6678.66,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0010_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.430572,
+          33.420547
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0010",
+        "mmsi": 538009073,
+        "vessel_name": "TS MANILA",
+        "imo": "IMO9363429",
+        "vessel_type": "70.0",
+        "release_lat": 33.420547,
+        "release_lon": -118.430572,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.5641,
+        "ais_lat": 33.47067,
+        "ais_lon": -118.38198,
+        "vessel_source_distance_m": 7168.63,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "84.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0001",
+        "source_slick_id": "CS_0010",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.0870 km\u00b2 (estimated physical spreading time \u2265 4.4h).",
+        "causal_explanation": "Vessel observed within 84.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0010",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0010_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.38198,
+            33.47067
+          ],
+          [
+            -118.430572,
+            33.420547
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0010",
+        "candidate_id": "VC_0010",
+        "mmsi": 538009073,
+        "vessel_name": "TS MANILA",
+        "vessel_source_distance_m": 7168.63,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0011_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0011",
+        "mmsi": 338183593,
+        "vessel_name": "CALYPSO",
+        "imo": "IMO0000000",
+        "vessel_type": "36.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.44174,
+        "ais_lon": -118.4948,
+        "vessel_source_distance_m": 8171.75,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "553.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel first appeared 553.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0011",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0011_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.4948,
+            33.44174
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0011",
+        "candidate_id": "VC_0011",
+        "mmsi": 338183593,
+        "vessel_name": "CALYPSO",
+        "vessel_source_distance_m": 8171.75,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0012_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0012",
+        "mmsi": 338335196,
+        "vessel_name": "LAST DANCE",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.38934,
+        "ais_lon": -118.36407,
+        "vessel_source_distance_m": 5339.81,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "366.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel first appeared 366.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0012",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0012_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.36407,
+            33.38934
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0012",
+        "candidate_id": "VC_0012",
+        "mmsi": 338335196,
+        "vessel_name": "LAST DANCE",
+        "vessel_source_distance_m": 5339.81,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0013_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0013",
+        "mmsi": 338423701,
+        "vessel_name": "LEGASEA",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.44746,
+        "ais_lon": -118.4988,
+        "vessel_source_distance_m": 8762.56,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "402.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel first appeared 402.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0013",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0013_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.4988,
+            33.44746
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0013",
+        "candidate_id": "VC_0013",
+        "mmsi": 338423701,
+        "vessel_name": "LEGASEA",
+        "vessel_source_distance_m": 8762.56,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0014_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0014",
+        "mmsi": 338424255,
+        "vessel_name": "ROAM",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.39298,
+        "ais_lon": -118.36677,
+        "vessel_source_distance_m": 4917.74,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "97.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel observed within 97.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0014",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0014_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.36677,
+            33.39298
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0014",
+        "candidate_id": "VC_0014",
+        "mmsi": 338424255,
+        "vessel_name": "ROAM",
+        "vessel_source_distance_m": 4917.74,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0015_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0015",
+        "mmsi": 367352670,
+        "vessel_name": "PATIENCE",
+        "imo": "IMO0000000",
+        "vessel_type": "36.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.44397,
+        "ais_lon": -118.49901,
+        "vessel_source_distance_m": 8626.62,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "360.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel first appeared 360.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0015",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0015_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.49901,
+            33.44397
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0015",
+        "candidate_id": "VC_0015",
+        "mmsi": 367352670,
+        "vessel_name": "PATIENCE",
+        "vessel_source_distance_m": 8626.62,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0016_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0016",
+        "mmsi": 367430660,
+        "vessel_name": "CRYSTAL II",
+        "imo": "UNKNOWN",
+        "vessel_type": "37.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.44588,
+        "ais_lon": -118.49278,
+        "vessel_source_distance_m": 8181.83,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "85.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel observed within 85.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0016",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0016_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.49278,
+            33.44588
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0016",
+        "candidate_id": "VC_0016",
+        "mmsi": 367430660,
+        "vessel_name": "CRYSTAL II",
+        "vessel_source_distance_m": 8181.83,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0017_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0017",
+        "mmsi": 368021110,
+        "vessel_name": "SOME TUESDAY",
+        "imo": "IMO0000000",
+        "vessel_type": "36.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.44686,
+        "ais_lon": -118.498,
+        "vessel_source_distance_m": 8667.38,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "126.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel observed within 126.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0017",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0017_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.498,
+            33.44686
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0017",
+        "candidate_id": "VC_0017",
+        "mmsi": 368021110,
+        "vessel_name": "SOME TUESDAY",
+        "vessel_source_distance_m": 8667.38,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0018_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0018",
+        "mmsi": 368106540,
+        "vessel_name": "JIMNI",
+        "imo": "IMO0000000",
+        "vessel_type": "37.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.44524,
+        "ais_lon": -118.49618,
+        "vessel_source_distance_m": 8439.79,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "416.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "POST_EVENT_ONLY",
+        "causal_precedence_score": 0.0,
+        "causal_eligibility": false,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel first appeared 416.0s after hypothesized release; ineligible for source attribution.",
+        "hypothesis_id": "4DH_0018",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0018_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.49618,
+            33.44524
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0018",
+        "candidate_id": "VC_0018",
+        "mmsi": 368106540,
+        "vessel_name": "JIMNI",
+        "vessel_source_distance_m": 8439.79,
+        "feature_type": "vessel_to_source_vector"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0019_release_point",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.412924,
+          33.414692
+        ]
+      },
+      "properties": {
+        "candidate_id": "VC_0019",
+        "mmsi": 538009073,
+        "vessel_name": "TS MANILA",
+        "imo": "IMO9363429",
+        "vessel_type": "70.0",
+        "release_lat": 33.414692,
+        "release_lon": -118.412924,
+        "release_timestamp": "2021-10-01T23:58:36.165236+00:00",
+        "source_age_hours": 2.0,
+        "source_plausibility": 0.599,
+        "ais_lat": 33.47067,
+        "ais_lon": -118.38198,
+        "vessel_source_distance_m": 6854.74,
+        "ais_track_quality": "near_boundary_first_ping",
+        "gap_status": "84.0s",
+        "compatibility_status": "COMPATIBLE",
+        "source_hypothesis_id": "SH_0008",
+        "source_slick_id": "CS_0015",
+        "causal_precedence_status": "AT_RELEASE",
+        "causal_precedence_score": 1.0,
+        "causal_eligibility": true,
+        "pre_release_evidence": false,
+        "post_release_evidence": true,
+        "source_age_plausibility": "LOW",
+        "source_age_score": 0.35,
+        "source_age_explanation": "Hypothesized source age 2.0h is unphysically young for an observed slick area of 0.1636 km\u00b2 (estimated physical spreading time \u2265 6.1h).",
+        "causal_explanation": "Vessel observed within 84.0s of hypothesized release time.",
+        "hypothesis_id": "4DH_0019",
+        "feature_type": "hypothesized_release_location"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4DH_0019_displacement_vector",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.38198,
+            33.47067
+          ],
+          [
+            -118.412924,
+            33.414692
+          ]
+        ]
+      },
+      "properties": {
+        "hypothesis_id": "4DH_0019",
+        "candidate_id": "VC_0019",
+        "mmsi": 538009073,
+        "vessel_name": "TS MANILA",
+        "vessel_source_distance_m": 6854.74,
+        "feature_type": "vessel_to_source_vector"
+      }
+    }
+  ]
+}

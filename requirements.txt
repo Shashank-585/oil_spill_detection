@@ -1,0 +1,16 @@
+# Core Numeric & Data Science
+numpy>=2.0.0
+pandas>=2.2.0
+scipy>=1.14.0
+matplotlib>=3.9.0
+
+# Geospatial & Raster I/O
+rasterio>=1.4.0
+shapely>=2.0.0
+tifffile>=2024.0.0
+
+# Configuration & Data Serialization
+PyYAML>=6.0.0
+
+# Testing & Quality Assurance
+pytest>=8.0.0

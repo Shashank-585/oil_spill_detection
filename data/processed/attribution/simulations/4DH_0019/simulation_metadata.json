@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0019",
+  "candidate_id": "VC_0019",
+  "mmsi": 369201000,
+  "vessel_name": "SALTY VIXEN",
+  "release_lat": 31.115912,
+  "release_lon": -81.41812,
+  "release_timestamp": "2019-09-08T09:25:31.797740+00:00",
+  "source_age_hours": 2.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 2.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.121031,
+  "predicted_centroid_lon": -81.416019,
+  "predicted_bbox": {
+    "west": -81.419933,
+    "south": 31.118426,
+    "east": -81.411139,
+    "north": 31.123189
+  },
+  "dispersion_std_km": 0.074,
+  "observed_slick_id": "CS_0035",
+  "observed_slick_centroid_lat": 31.12086,
+  "observed_slick_centroid_lon": -81.41602,
+  "predicted_to_observed_distance_m": 19.01,
+  "ais_vessel_lat": 31.156721,
+  "ais_vessel_lon": -81.499221
+}

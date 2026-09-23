@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0255",
+  "candidate_id": "VC_0255",
+  "mmsi": 338182224,
+  "vessel_name": "SEA SALT",
+  "release_lat": 30.987785,
+  "release_lon": -81.39459,
+  "release_timestamp": "2019-09-07T17:25:31.797740+00:00",
+  "source_age_hours": 18.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 18.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.068605,
+  "predicted_centroid_lon": -81.401799,
+  "predicted_bbox": {
+    "west": -81.412712,
+    "south": 31.060684,
+    "east": -81.392399,
+    "north": 31.077757
+  },
+  "dispersion_std_km": 0.217,
+  "observed_slick_id": "CS_0114",
+  "observed_slick_centroid_lat": 31.06846,
+  "observed_slick_centroid_lon": -81.4018,
+  "predicted_to_observed_distance_m": 16.12,
+  "ais_vessel_lat": 31.057772,
+  "ais_vessel_lon": -81.42471
+}

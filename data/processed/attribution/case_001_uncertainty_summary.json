@@ -1,0 +1,126 @@
+{
+  "case_id": "case_001",
+  "timestamp_utc": "2026-09-11T04:36:03.645093+00:00",
+  "ensemble_size": 50,
+  "random_seed": 42,
+  "calibration_audit": {
+    "is_probability_calibrated": false,
+    "calibration_status": "UNCALIBRATED_COMPATIBILITY_INDEX",
+    "available_cases_count": 1,
+    "verified_culprit_cases_count": 0,
+    "min_cases_required_for_calibration": 30,
+    "mandatory_scientific_notice": "Attribution evidence scores represent physical and spatiotemporal compatibility under the calibrated Lagrangian drift model. Scores are NOT calibrated probabilities of culpability or guilt. Do NOT interpret score 0.64 as a 64% chance of vessel guilt.",
+    "calibration_roadmap": {
+      "phase": "Future Operational Integration",
+      "recommended_methods": [
+        "Platt Scaling (Logistic Sigmoid)",
+        "Isotonic Regression",
+        "Brier Score Calibration"
+      ],
+      "data_prerequisite": "Multi-incident database with >= 30 verified maritime spill cases with confirmed positive and negative culprit labels."
+    }
+  },
+  "rank_stability_top_hypotheses": [
+    {
+      "hypothesis_id": "4DH_0014",
+      "vessel_name": "ROAM",
+      "top_1_frequency": 0.54,
+      "top_3_frequency": 0.74,
+      "mean_rank": 2.56,
+      "std_rank": 2.1,
+      "mean_score": 0.5838,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0019",
+      "vessel_name": "TS MANILA",
+      "top_1_frequency": 0.14,
+      "top_3_frequency": 0.26,
+      "mean_rank": 6.3,
+      "std_rank": 3.68,
+      "mean_score": 0.5378,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0016",
+      "vessel_name": "CRYSTAL II",
+      "top_1_frequency": 0.08,
+      "top_3_frequency": 0.42,
+      "mean_rank": 5.78,
+      "std_rank": 4.22,
+      "mean_score": 0.5425,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0007",
+      "vessel_name": "CRYSTAL II",
+      "top_1_frequency": 0.08,
+      "top_3_frequency": 0.26,
+      "mean_rank": 8.44,
+      "std_rank": 5.7,
+      "mean_score": 0.5181,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0012",
+      "vessel_name": "LAST DANCE",
+      "top_1_frequency": 0.06,
+      "top_3_frequency": 0.46,
+      "mean_rank": 4.74,
+      "std_rank": 2.7,
+      "mean_score": 0.5465,
+      "rank_stability_category": "UNSTABLE"
+    }
+  ],
+  "rank_stability_top_vessels": [
+    {
+      "mmsi": 338424255,
+      "vessel_name": "ROAM",
+      "vessel_top_1_frequency": 0.56,
+      "vessel_top_3_frequency": 0.82,
+      "mean_best_rank": 2.22,
+      "mean_best_score": 0.5874,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 367430660,
+      "vessel_name": "CRYSTAL II",
+      "vessel_top_1_frequency": 0.16,
+      "vessel_top_3_frequency": 0.62,
+      "mean_best_rank": 3.72,
+      "mean_best_score": 0.5579,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 538009073,
+      "vessel_name": "TS MANILA",
+      "vessel_top_1_frequency": 0.14,
+      "vessel_top_3_frequency": 0.32,
+      "mean_best_rank": 5.14,
+      "mean_best_score": 0.5451,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 338335196,
+      "vessel_name": "LAST DANCE",
+      "vessel_top_1_frequency": 0.06,
+      "vessel_top_3_frequency": 0.46,
+      "mean_best_rank": 4.68,
+      "mean_best_score": 0.5468,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 368021110,
+      "vessel_name": "SOME TUESDAY",
+      "vessel_top_1_frequency": 0.06,
+      "vessel_top_3_frequency": 0.28,
+      "mean_best_rank": 5.92,
+      "mean_best_score": 0.5385,
+      "vessel_stability_category": "UNSTABLE"
+    }
+  ],
+  "environmental_robustness_counts": {
+    "ROBUST": 19
+  },
+  "scientific_guardrail_notice": "Attribution evidence scores represent physical and spatiotemporal compatibility under the calibrated Lagrangian drift model. Scores are NOT calibrated probabilities of culpability or guilt. Do NOT interpret score 0.64 as a 64% chance of vessel guilt."
+}

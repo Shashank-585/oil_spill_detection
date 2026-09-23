@@ -1,0 +1,3502 @@
+[
+  {
+    "particle_id": 0,
+    "lat": 31.121461,
+    "lon": -81.41418,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 1,
+    "lat": 31.123909,
+    "lon": -81.414063,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 2,
+    "lat": 31.119724,
+    "lon": -81.412235,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 3,
+    "lat": 31.121655,
+    "lon": -81.417465,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 4,
+    "lat": 31.125065,
+    "lon": -81.413168,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 5,
+    "lat": 31.122554,
+    "lon": -81.417114,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 6,
+    "lat": 31.116184,
+    "lon": -81.416136,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 7,
+    "lat": 31.121219,
+    "lon": -81.413517,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 8,
+    "lat": 31.118863,
+    "lon": -81.424664,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 9,
+    "lat": 31.121512,
+    "lon": -81.415187,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 10,
+    "lat": 31.117153,
+    "lon": -81.409215,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 11,
+    "lat": 31.122455,
+    "lon": -81.415746,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 12,
+    "lat": 31.121183,
+    "lon": -81.415579,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 13,
+    "lat": 31.120657,
+    "lon": -81.416329,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 14,
+    "lat": 31.117844,
+    "lon": -81.418996,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 15,
+    "lat": 31.124566,
+    "lon": -81.419656,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 16,
+    "lat": 31.117798,
+    "lon": -81.412354,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 17,
+    "lat": 31.122876,
+    "lon": -81.415931,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 18,
+    "lat": 31.120694,
+    "lon": -81.421087,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 19,
+    "lat": 31.121235,
+    "lon": -81.414028,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 20,
+    "lat": 31.119509,
+    "lon": -81.412606,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 21,
+    "lat": 31.118422,
+    "lon": -81.417444,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 22,
+    "lat": 31.120966,
+    "lon": -81.415989,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 23,
+    "lat": 31.118068,
+    "lon": -81.415439,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 24,
+    "lat": 31.121277,
+    "lon": -81.410038,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 25,
+    "lat": 31.122338,
+    "lon": -81.419567,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 26,
+    "lat": 31.118508,
+    "lon": -81.418205,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 27,
+    "lat": 31.122628,
+    "lon": -81.417457,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 28,
+    "lat": 31.114886,
+    "lon": -81.414556,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 29,
+    "lat": 31.121917,
+    "lon": -81.415138,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 30,
+    "lat": 31.122225,
+    "lon": -81.414599,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 31,
+    "lat": 31.120486,
+    "lon": -81.416663,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 32,
+    "lat": 31.122812,
+    "lon": -81.414874,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 33,
+    "lat": 31.121405,
+    "lon": -81.411391,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 34,
+    "lat": 31.122553,
+    "lon": -81.414265,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 35,
+    "lat": 31.121518,
+    "lon": -81.415853,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 36,
+    "lat": 31.117968,
+    "lon": -81.415108,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 37,
+    "lat": 31.122883,
+    "lon": -81.419616,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 38,
+    "lat": 31.125255,
+    "lon": -81.418842,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 39,
+    "lat": 31.122849,
+    "lon": -81.414893,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 40,
+    "lat": 31.12137,
+    "lon": -81.413017,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 41,
+    "lat": 31.122393,
+    "lon": -81.418312,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 42,
+    "lat": 31.121962,
+    "lon": -81.415678,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 43,
+    "lat": 31.120063,
+    "lon": -81.414719,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 44,
+    "lat": 31.123011,
+    "lon": -81.417109,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 45,
+    "lat": 31.121931,
+    "lon": -81.425384,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 46,
+    "lat": 31.120631,
+    "lon": -81.422852,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 47,
+    "lat": 31.121612,
+    "lon": -81.413755,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 48,
+    "lat": 31.122839,
+    "lon": -81.410667,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 49,
+    "lat": 31.120203,
+    "lon": -81.419991,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 50,
+    "lat": 31.120388,
+    "lon": -81.417075,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 51,
+    "lat": 31.122141,
+    "lon": -81.416282,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 52,
+    "lat": 31.119671,
+    "lon": -81.417242,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 53,
+    "lat": 31.121356,
+    "lon": -81.420654,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 54,
+    "lat": 31.118978,
+    "lon": -81.413256,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 55,
+    "lat": 31.122439,
+    "lon": -81.414144,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 56,
+    "lat": 31.121107,
+    "lon": -81.413795,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 57,
+    "lat": 31.118944,
+    "lon": -81.417509,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 58,
+    "lat": 31.117505,
+    "lon": -81.41387,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 59,
+    "lat": 31.123005,
+    "lon": -81.419165,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 60,
+    "lat": 31.121395,
+    "lon": -81.415978,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 61,
+    "lat": 31.119399,
+    "lon": -81.413237,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 62,
+    "lat": 31.120651,
+    "lon": -81.412651,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 63,
+    "lat": 31.119047,
+    "lon": -81.410979,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 64,
+    "lat": 31.120765,
+    "lon": -81.41697,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 65,
+    "lat": 31.122086,
+    "lon": -81.417503,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 66,
+    "lat": 31.121162,
+    "lon": -81.41322,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 67,
+    "lat": 31.121601,
+    "lon": -81.421121,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 68,
+    "lat": 31.117869,
+    "lon": -81.413566,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 69,
+    "lat": 31.122921,
+    "lon": -81.419497,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 70,
+    "lat": 31.124343,
+    "lon": -81.420837,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 71,
+    "lat": 31.120613,
+    "lon": -81.414853,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 72,
+    "lat": 31.121252,
+    "lon": -81.414099,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 73,
+    "lat": 31.122513,
+    "lon": -81.420123,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 74,
+    "lat": 31.118318,
+    "lon": -81.419107,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 75,
+    "lat": 31.120203,
+    "lon": -81.414846,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 76,
+    "lat": 31.122901,
+    "lon": -81.419557,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 77,
+    "lat": 31.12463,
+    "lon": -81.415176,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 78,
+    "lat": 31.122155,
+    "lon": -81.420269,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 79,
+    "lat": 31.122835,
+    "lon": -81.419284,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 80,
+    "lat": 31.122721,
+    "lon": -81.42062,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 81,
+    "lat": 31.122766,
+    "lon": -81.421234,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 82,
+    "lat": 31.121525,
+    "lon": -81.415815,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 83,
+    "lat": 31.12134,
+    "lon": -81.416052,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 84,
+    "lat": 31.119488,
+    "lon": -81.411039,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 85,
+    "lat": 31.123527,
+    "lon": -81.413431,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 86,
+    "lat": 31.120022,
+    "lon": -81.419352,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 87,
+    "lat": 31.123831,
+    "lon": -81.419998,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 88,
+    "lat": 31.120666,
+    "lon": -81.41753,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 89,
+    "lat": 31.120969,
+    "lon": -81.409755,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 90,
+    "lat": 31.11949,
+    "lon": -81.42338,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 91,
+    "lat": 31.123556,
+    "lon": -81.420072,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 92,
+    "lat": 31.121224,
+    "lon": -81.41811,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 93,
+    "lat": 31.125701,
+    "lon": -81.415519,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 94,
+    "lat": 31.120089,
+    "lon": -81.415715,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 95,
+    "lat": 31.12168,
+    "lon": -81.415264,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 96,
+    "lat": 31.122098,
+    "lon": -81.416503,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 97,
+    "lat": 31.119283,
+    "lon": -81.421251,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 98,
+    "lat": 31.121374,
+    "lon": -81.415331,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 99,
+    "lat": 31.120631,
+    "lon": -81.417081,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 100,
+    "lat": 31.121921,
+    "lon": -81.415661,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 101,
+    "lat": 31.121698,
+    "lon": -81.420587,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 102,
+    "lat": 31.120714,
+    "lon": -81.421615,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 103,
+    "lat": 31.121286,
+    "lon": -81.411688,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 104,
+    "lat": 31.122307,
+    "lon": -81.421552,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 105,
+    "lat": 31.121141,
+    "lon": -81.415688,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 106,
+    "lat": 31.122875,
+    "lon": -81.418238,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 107,
+    "lat": 31.124929,
+    "lon": -81.412511,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 108,
+    "lat": 31.119011,
+    "lon": -81.411236,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 109,
+    "lat": 31.120591,
+    "lon": -81.419805,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 110,
+    "lat": 31.123721,
+    "lon": -81.417045,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 111,
+    "lat": 31.124498,
+    "lon": -81.410988,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 112,
+    "lat": 31.124085,
+    "lon": -81.415827,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 113,
+    "lat": 31.12222,
+    "lon": -81.416761,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 114,
+    "lat": 31.120119,
+    "lon": -81.419306,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 115,
+    "lat": 31.117895,
+    "lon": -81.417818,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 116,
+    "lat": 31.121182,
+    "lon": -81.420274,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 117,
+    "lat": 31.119567,
+    "lon": -81.418522,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 118,
+    "lat": 31.122273,
+    "lon": -81.418289,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 119,
+    "lat": 31.122566,
+    "lon": -81.415006,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 120,
+    "lat": 31.124369,
+    "lon": -81.420208,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 121,
+    "lat": 31.12181,
+    "lon": -81.418603,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 122,
+    "lat": 31.120412,
+    "lon": -81.416606,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 123,
+    "lat": 31.119325,
+    "lon": -81.415716,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 124,
+    "lat": 31.122105,
+    "lon": -81.417697,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 125,
+    "lat": 31.119957,
+    "lon": -81.41655,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 126,
+    "lat": 31.122455,
+    "lon": -81.420549,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 127,
+    "lat": 31.124355,
+    "lon": -81.417532,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 128,
+    "lat": 31.121118,
+    "lon": -81.416102,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 129,
+    "lat": 31.121056,
+    "lon": -81.418149,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 130,
+    "lat": 31.123421,
+    "lon": -81.419525,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 131,
+    "lat": 31.115796,
+    "lon": -81.41579,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 132,
+    "lat": 31.126626,
+    "lon": -81.418895,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 133,
+    "lat": 31.116911,
+    "lon": -81.414315,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 134,
+    "lat": 31.122982,
+    "lon": -81.421836,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 135,
+    "lat": 31.121308,
+    "lon": -81.41582,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 136,
+    "lat": 31.116535,
+    "lon": -81.416119,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 137,
+    "lat": 31.118564,
+    "lon": -81.414919,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 138,
+    "lat": 31.12115,
+    "lon": -81.412572,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 139,
+    "lat": 31.12244,
+    "lon": -81.419875,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 140,
+    "lat": 31.121715,
+    "lon": -81.418568,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 141,
+    "lat": 31.122788,
+    "lon": -81.417867,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 142,
+    "lat": 31.122218,
+    "lon": -81.417615,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 143,
+    "lat": 31.120823,
+    "lon": -81.416221,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 144,
+    "lat": 31.124886,
+    "lon": -81.42092,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 145,
+    "lat": 31.123938,
+    "lon": -81.422246,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 146,
+    "lat": 31.124108,
+    "lon": -81.413841,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 147,
+    "lat": 31.119418,
+    "lon": -81.416997,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 148,
+    "lat": 31.120346,
+    "lon": -81.414063,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 149,
+    "lat": 31.121989,
+    "lon": -81.410593,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 150,
+    "lat": 31.117675,
+    "lon": -81.413341,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 151,
+    "lat": 31.119323,
+    "lon": -81.41155,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 152,
+    "lat": 31.120838,
+    "lon": -81.42147,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 153,
+    "lat": 31.123037,
+    "lon": -81.416725,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 154,
+    "lat": 31.121681,
+    "lon": -81.415064,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 155,
+    "lat": 31.120639,
+    "lon": -81.42072,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 156,
+    "lat": 31.118436,
+    "lon": -81.414073,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 157,
+    "lat": 31.120594,
+    "lon": -81.415169,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 158,
+    "lat": 31.126722,
+    "lon": -81.413831,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 159,
+    "lat": 31.119957,
+    "lon": -81.4114,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 160,
+    "lat": 31.123195,
+    "lon": -81.414583,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 161,
+    "lat": 31.121752,
+    "lon": -81.415584,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 162,
+    "lat": 31.121521,
+    "lon": -81.416127,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 163,
+    "lat": 31.121419,
+    "lon": -81.420449,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 164,
+    "lat": 31.120759,
+    "lon": -81.412377,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 165,
+    "lat": 31.115984,
+    "lon": -81.409309,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 166,
+    "lat": 31.122378,
+    "lon": -81.420635,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 167,
+    "lat": 31.118544,
+    "lon": -81.41949,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 168,
+    "lat": 31.121576,
+    "lon": -81.419745,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 169,
+    "lat": 31.122014,
+    "lon": -81.410882,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 170,
+    "lat": 31.119338,
+    "lon": -81.419233,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 171,
+    "lat": 31.122429,
+    "lon": -81.413197,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 172,
+    "lat": 31.123941,
+    "lon": -81.41972,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 173,
+    "lat": 31.121086,
+    "lon": -81.417872,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 174,
+    "lat": 31.118952,
+    "lon": -81.418028,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 175,
+    "lat": 31.118508,
+    "lon": -81.41667,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 176,
+    "lat": 31.121388,
+    "lon": -81.415805,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 177,
+    "lat": 31.121882,
+    "lon": -81.413226,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 178,
+    "lat": 31.117973,
+    "lon": -81.413365,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 179,
+    "lat": 31.121005,
+    "lon": -81.422213,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 180,
+    "lat": 31.117887,
+    "lon": -81.419176,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 181,
+    "lat": 31.119514,
+    "lon": -81.421209,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 182,
+    "lat": 31.121302,
+    "lon": -81.415512,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 183,
+    "lat": 31.121204,
+    "lon": -81.41556,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 184,
+    "lat": 31.12375,
+    "lon": -81.416061,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 185,
+    "lat": 31.122201,
+    "lon": -81.415995,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 186,
+    "lat": 31.121272,
+    "lon": -81.412379,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 187,
+    "lat": 31.121134,
+    "lon": -81.415744,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 188,
+    "lat": 31.121448,
+    "lon": -81.419686,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 189,
+    "lat": 31.121133,
+    "lon": -81.412733,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 190,
+    "lat": 31.119805,
+    "lon": -81.417588,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 191,
+    "lat": 31.120545,
+    "lon": -81.421417,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 192,
+    "lat": 31.120278,
+    "lon": -81.417105,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 193,
+    "lat": 31.122524,
+    "lon": -81.418012,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 194,
+    "lat": 31.122577,
+    "lon": -81.414376,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 195,
+    "lat": 31.121992,
+    "lon": -81.419872,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 196,
+    "lat": 31.12219,
+    "lon": -81.413067,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 197,
+    "lat": 31.117941,
+    "lon": -81.415412,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 198,
+    "lat": 31.12264,
+    "lon": -81.413238,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 199,
+    "lat": 31.12196,
+    "lon": -81.412608,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 200,
+    "lat": 31.122299,
+    "lon": -81.419613,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 201,
+    "lat": 31.121117,
+    "lon": -81.41464,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 202,
+    "lat": 31.121455,
+    "lon": -81.414887,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 203,
+    "lat": 31.120988,
+    "lon": -81.418989,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 204,
+    "lat": 31.121555,
+    "lon": -81.415275,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 205,
+    "lat": 31.120898,
+    "lon": -81.415133,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 206,
+    "lat": 31.119484,
+    "lon": -81.420104,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 207,
+    "lat": 31.121023,
+    "lon": -81.416215,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 208,
+    "lat": 31.116492,
+    "lon": -81.418482,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 209,
+    "lat": 31.115572,
+    "lon": -81.415731,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 210,
+    "lat": 31.120989,
+    "lon": -81.416902,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 211,
+    "lat": 31.122401,
+    "lon": -81.417644,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 212,
+    "lat": 31.12063,
+    "lon": -81.4231,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 213,
+    "lat": 31.121755,
+    "lon": -81.41498,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 214,
+    "lat": 31.119277,
+    "lon": -81.417885,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 215,
+    "lat": 31.120828,
+    "lon": -81.42115,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 216,
+    "lat": 31.117325,
+    "lon": -81.414384,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 217,
+    "lat": 31.121925,
+    "lon": -81.420599,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 218,
+    "lat": 31.120846,
+    "lon": -81.412447,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 219,
+    "lat": 31.122863,
+    "lon": -81.410008,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 220,
+    "lat": 31.118585,
+    "lon": -81.416314,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 221,
+    "lat": 31.123543,
+    "lon": -81.415046,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 222,
+    "lat": 31.122061,
+    "lon": -81.41612,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 223,
+    "lat": 31.118902,
+    "lon": -81.419456,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 224,
+    "lat": 31.121614,
+    "lon": -81.414137,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 225,
+    "lat": 31.126801,
+    "lon": -81.417239,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 226,
+    "lat": 31.123092,
+    "lon": -81.415579,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 227,
+    "lat": 31.12288,
+    "lon": -81.426051,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 228,
+    "lat": 31.120319,
+    "lon": -81.419528,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 229,
+    "lat": 31.121901,
+    "lon": -81.417223,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 230,
+    "lat": 31.124374,
+    "lon": -81.412112,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 231,
+    "lat": 31.121597,
+    "lon": -81.418705,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 232,
+    "lat": 31.117716,
+    "lon": -81.415332,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 233,
+    "lat": 31.118334,
+    "lon": -81.418088,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 234,
+    "lat": 31.120981,
+    "lon": -81.418956,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 235,
+    "lat": 31.120639,
+    "lon": -81.409386,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 236,
+    "lat": 31.12205,
+    "lon": -81.420901,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 237,
+    "lat": 31.12488,
+    "lon": -81.422863,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 238,
+    "lat": 31.122158,
+    "lon": -81.414091,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 239,
+    "lat": 31.122191,
+    "lon": -81.414604,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 240,
+    "lat": 31.121542,
+    "lon": -81.413929,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 241,
+    "lat": 31.123571,
+    "lon": -81.417522,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 242,
+    "lat": 31.119239,
+    "lon": -81.415931,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 243,
+    "lat": 31.124556,
+    "lon": -81.41671,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 244,
+    "lat": 31.123768,
+    "lon": -81.418963,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 245,
+    "lat": 31.121647,
+    "lon": -81.415923,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 246,
+    "lat": 31.119733,
+    "lon": -81.416973,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 247,
+    "lat": 31.120983,
+    "lon": -81.416134,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 248,
+    "lat": 31.123018,
+    "lon": -81.415137,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 249,
+    "lat": 31.121785,
+    "lon": -81.417963,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 250,
+    "lat": 31.122343,
+    "lon": -81.4129,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 251,
+    "lat": 31.123857,
+    "lon": -81.41764,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 252,
+    "lat": 31.121797,
+    "lon": -81.41821,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 253,
+    "lat": 31.121957,
+    "lon": -81.41426,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 254,
+    "lat": 31.12263,
+    "lon": -81.417729,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 255,
+    "lat": 31.122917,
+    "lon": -81.412262,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 256,
+    "lat": 31.121912,
+    "lon": -81.415205,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 257,
+    "lat": 31.122904,
+    "lon": -81.416353,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 258,
+    "lat": 31.119301,
+    "lon": -81.410362,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 259,
+    "lat": 31.120343,
+    "lon": -81.413463,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 260,
+    "lat": 31.118182,
+    "lon": -81.417754,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 261,
+    "lat": 31.121644,
+    "lon": -81.416548,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 262,
+    "lat": 31.121756,
+    "lon": -81.418586,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 263,
+    "lat": 31.122398,
+    "lon": -81.411111,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 264,
+    "lat": 31.118343,
+    "lon": -81.41044,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 265,
+    "lat": 31.118052,
+    "lon": -81.413026,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 266,
+    "lat": 31.117357,
+    "lon": -81.413517,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 267,
+    "lat": 31.120902,
+    "lon": -81.412807,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 268,
+    "lat": 31.120654,
+    "lon": -81.415958,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 269,
+    "lat": 31.122568,
+    "lon": -81.421156,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 270,
+    "lat": 31.123456,
+    "lon": -81.41641,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 271,
+    "lat": 31.118869,
+    "lon": -81.414502,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 272,
+    "lat": 31.121542,
+    "lon": -81.419088,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 273,
+    "lat": 31.123465,
+    "lon": -81.416435,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 274,
+    "lat": 31.121273,
+    "lon": -81.415653,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 275,
+    "lat": 31.121542,
+    "lon": -81.416994,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 276,
+    "lat": 31.121586,
+    "lon": -81.412258,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 277,
+    "lat": 31.120366,
+    "lon": -81.420946,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 278,
+    "lat": 31.121034,
+    "lon": -81.414188,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 279,
+    "lat": 31.121056,
+    "lon": -81.418986,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 280,
+    "lat": 31.116767,
+    "lon": -81.417394,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 281,
+    "lat": 31.121958,
+    "lon": -81.419303,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 282,
+    "lat": 31.120285,
+    "lon": -81.41566,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 283,
+    "lat": 31.11758,
+    "lon": -81.414032,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 284,
+    "lat": 31.121296,
+    "lon": -81.419557,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 285,
+    "lat": 31.120715,
+    "lon": -81.420895,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 286,
+    "lat": 31.118194,
+    "lon": -81.417866,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 287,
+    "lat": 31.122527,
+    "lon": -81.416737,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 288,
+    "lat": 31.123667,
+    "lon": -81.417837,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 289,
+    "lat": 31.118879,
+    "lon": -81.414044,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 290,
+    "lat": 31.12323,
+    "lon": -81.410752,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 291,
+    "lat": 31.122089,
+    "lon": -81.414034,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 292,
+    "lat": 31.123325,
+    "lon": -81.415598,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 293,
+    "lat": 31.121222,
+    "lon": -81.412702,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 294,
+    "lat": 31.121234,
+    "lon": -81.419437,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 295,
+    "lat": 31.115418,
+    "lon": -81.416034,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 296,
+    "lat": 31.123953,
+    "lon": -81.41311,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 297,
+    "lat": 31.119757,
+    "lon": -81.416316,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 298,
+    "lat": 31.119851,
+    "lon": -81.420221,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 299,
+    "lat": 31.121593,
+    "lon": -81.413864,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 300,
+    "lat": 31.121255,
+    "lon": -81.415011,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 301,
+    "lat": 31.12285,
+    "lon": -81.414394,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 302,
+    "lat": 31.120988,
+    "lon": -81.4192,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 303,
+    "lat": 31.12102,
+    "lon": -81.415388,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 304,
+    "lat": 31.12019,
+    "lon": -81.420811,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 305,
+    "lat": 31.117579,
+    "lon": -81.418788,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 306,
+    "lat": 31.122158,
+    "lon": -81.415083,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 307,
+    "lat": 31.118006,
+    "lon": -81.413128,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 308,
+    "lat": 31.12179,
+    "lon": -81.418347,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 309,
+    "lat": 31.12302,
+    "lon": -81.416259,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 310,
+    "lat": 31.126774,
+    "lon": -81.41413,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 311,
+    "lat": 31.124342,
+    "lon": -81.418857,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 312,
+    "lat": 31.123874,
+    "lon": -81.409312,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 313,
+    "lat": 31.118675,
+    "lon": -81.418149,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 314,
+    "lat": 31.123406,
+    "lon": -81.411403,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 315,
+    "lat": 31.118189,
+    "lon": -81.417903,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 316,
+    "lat": 31.122051,
+    "lon": -81.41118,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 317,
+    "lat": 31.120723,
+    "lon": -81.416275,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 318,
+    "lat": 31.121651,
+    "lon": -81.413537,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 319,
+    "lat": 31.122709,
+    "lon": -81.416557,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 320,
+    "lat": 31.116521,
+    "lon": -81.411216,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 321,
+    "lat": 31.1233,
+    "lon": -81.416068,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 322,
+    "lat": 31.123312,
+    "lon": -81.411814,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 323,
+    "lat": 31.12224,
+    "lon": -81.415914,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 324,
+    "lat": 31.124207,
+    "lon": -81.419595,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 325,
+    "lat": 31.122156,
+    "lon": -81.412347,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 326,
+    "lat": 31.122664,
+    "lon": -81.416045,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 327,
+    "lat": 31.123205,
+    "lon": -81.418704,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 328,
+    "lat": 31.125384,
+    "lon": -81.416351,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 329,
+    "lat": 31.120752,
+    "lon": -81.415573,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 330,
+    "lat": 31.118204,
+    "lon": -81.414649,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 331,
+    "lat": 31.11524,
+    "lon": -81.416356,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 332,
+    "lat": 31.120936,
+    "lon": -81.418126,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 333,
+    "lat": 31.120706,
+    "lon": -81.416144,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 334,
+    "lat": 31.120704,
+    "lon": -81.420692,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 335,
+    "lat": 31.121081,
+    "lon": -81.414895,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 336,
+    "lat": 31.118244,
+    "lon": -81.414567,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 337,
+    "lat": 31.121181,
+    "lon": -81.416468,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 338,
+    "lat": 31.121176,
+    "lon": -81.419804,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 339,
+    "lat": 31.123345,
+    "lon": -81.416858,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 340,
+    "lat": 31.117349,
+    "lon": -81.421763,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 341,
+    "lat": 31.125258,
+    "lon": -81.414954,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 342,
+    "lat": 31.121261,
+    "lon": -81.413767,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 343,
+    "lat": 31.119803,
+    "lon": -81.418497,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 344,
+    "lat": 31.122721,
+    "lon": -81.420553,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 345,
+    "lat": 31.120689,
+    "lon": -81.413906,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 346,
+    "lat": 31.117282,
+    "lon": -81.414053,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 347,
+    "lat": 31.122033,
+    "lon": -81.415347,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 348,
+    "lat": 31.120558,
+    "lon": -81.418355,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 349,
+    "lat": 31.119749,
+    "lon": -81.413666,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 350,
+    "lat": 31.121832,
+    "lon": -81.414461,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 351,
+    "lat": 31.119485,
+    "lon": -81.420309,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 352,
+    "lat": 31.122513,
+    "lon": -81.417536,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 353,
+    "lat": 31.119671,
+    "lon": -81.413133,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 354,
+    "lat": 31.120789,
+    "lon": -81.409456,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 355,
+    "lat": 31.1209,
+    "lon": -81.414454,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 356,
+    "lat": 31.119154,
+    "lon": -81.415835,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 357,
+    "lat": 31.12043,
+    "lon": -81.420495,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 358,
+    "lat": 31.118331,
+    "lon": -81.413916,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 359,
+    "lat": 31.120345,
+    "lon": -81.414764,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 360,
+    "lat": 31.120318,
+    "lon": -81.413302,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 361,
+    "lat": 31.11743,
+    "lon": -81.420852,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 362,
+    "lat": 31.120574,
+    "lon": -81.418763,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 363,
+    "lat": 31.121635,
+    "lon": -81.417064,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 364,
+    "lat": 31.121163,
+    "lon": -81.417726,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 365,
+    "lat": 31.120581,
+    "lon": -81.416193,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 366,
+    "lat": 31.120528,
+    "lon": -81.416942,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 367,
+    "lat": 31.118633,
+    "lon": -81.409862,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 368,
+    "lat": 31.123889,
+    "lon": -81.413934,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 369,
+    "lat": 31.116215,
+    "lon": -81.413098,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 370,
+    "lat": 31.117209,
+    "lon": -81.419763,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 371,
+    "lat": 31.120685,
+    "lon": -81.422613,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 372,
+    "lat": 31.11948,
+    "lon": -81.419388,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 373,
+    "lat": 31.117554,
+    "lon": -81.411826,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 374,
+    "lat": 31.119115,
+    "lon": -81.416496,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 375,
+    "lat": 31.123259,
+    "lon": -81.411275,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 376,
+    "lat": 31.123572,
+    "lon": -81.419436,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 377,
+    "lat": 31.119993,
+    "lon": -81.413709,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 378,
+    "lat": 31.12227,
+    "lon": -81.41961,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 379,
+    "lat": 31.1206,
+    "lon": -81.41175,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 380,
+    "lat": 31.120852,
+    "lon": -81.414403,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 381,
+    "lat": 31.122079,
+    "lon": -81.41508,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 382,
+    "lat": 31.124397,
+    "lon": -81.414048,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 383,
+    "lat": 31.124675,
+    "lon": -81.416115,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 384,
+    "lat": 31.120666,
+    "lon": -81.41688,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 385,
+    "lat": 31.12092,
+    "lon": -81.413059,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 386,
+    "lat": 31.118955,
+    "lon": -81.421648,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 387,
+    "lat": 31.122183,
+    "lon": -81.418889,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 388,
+    "lat": 31.121348,
+    "lon": -81.416095,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 389,
+    "lat": 31.120691,
+    "lon": -81.413298,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 390,
+    "lat": 31.116004,
+    "lon": -81.416619,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 391,
+    "lat": 31.123499,
+    "lon": -81.419178,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 392,
+    "lat": 31.121401,
+    "lon": -81.411628,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 393,
+    "lat": 31.120663,
+    "lon": -81.418295,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 394,
+    "lat": 31.121541,
+    "lon": -81.418526,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 395,
+    "lat": 31.122238,
+    "lon": -81.413184,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 396,
+    "lat": 31.119143,
+    "lon": -81.417228,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 397,
+    "lat": 31.119706,
+    "lon": -81.410441,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 398,
+    "lat": 31.119984,
+    "lon": -81.420575,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 399,
+    "lat": 31.120875,
+    "lon": -81.416696,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 400,
+    "lat": 31.11873,
+    "lon": -81.414493,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 401,
+    "lat": 31.121125,
+    "lon": -81.416437,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 402,
+    "lat": 31.116191,
+    "lon": -81.416744,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 403,
+    "lat": 31.122443,
+    "lon": -81.415332,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 404,
+    "lat": 31.118534,
+    "lon": -81.413285,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 405,
+    "lat": 31.12182,
+    "lon": -81.41958,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 406,
+    "lat": 31.120643,
+    "lon": -81.417817,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 407,
+    "lat": 31.119328,
+    "lon": -81.413134,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 408,
+    "lat": 31.121184,
+    "lon": -81.416384,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 409,
+    "lat": 31.117891,
+    "lon": -81.414013,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 410,
+    "lat": 31.123063,
+    "lon": -81.413669,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 411,
+    "lat": 31.121904,
+    "lon": -81.415757,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 412,
+    "lat": 31.120947,
+    "lon": -81.415894,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 413,
+    "lat": 31.118127,
+    "lon": -81.415339,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 414,
+    "lat": 31.121202,
+    "lon": -81.414991,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 415,
+    "lat": 31.120143,
+    "lon": -81.417424,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 416,
+    "lat": 31.121753,
+    "lon": -81.414118,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 417,
+    "lat": 31.119849,
+    "lon": -81.413114,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 418,
+    "lat": 31.121565,
+    "lon": -81.415192,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 419,
+    "lat": 31.121411,
+    "lon": -81.409387,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 420,
+    "lat": 31.122356,
+    "lon": -81.419186,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 421,
+    "lat": 31.122469,
+    "lon": -81.417103,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 422,
+    "lat": 31.121167,
+    "lon": -81.411067,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 423,
+    "lat": 31.121297,
+    "lon": -81.415607,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 424,
+    "lat": 31.120171,
+    "lon": -81.419497,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 425,
+    "lat": 31.123924,
+    "lon": -81.414958,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 426,
+    "lat": 31.12352,
+    "lon": -81.416201,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 427,
+    "lat": 31.121856,
+    "lon": -81.4172,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 428,
+    "lat": 31.123847,
+    "lon": -81.420404,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 429,
+    "lat": 31.118003,
+    "lon": -81.418456,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 430,
+    "lat": 31.121244,
+    "lon": -81.409387,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 431,
+    "lat": 31.117555,
+    "lon": -81.416705,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 432,
+    "lat": 31.124017,
+    "lon": -81.414526,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 433,
+    "lat": 31.120458,
+    "lon": -81.411681,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 434,
+    "lat": 31.120538,
+    "lon": -81.419069,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 435,
+    "lat": 31.120621,
+    "lon": -81.411625,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 436,
+    "lat": 31.120686,
+    "lon": -81.418444,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 437,
+    "lat": 31.122014,
+    "lon": -81.41427,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 438,
+    "lat": 31.122817,
+    "lon": -81.420447,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 439,
+    "lat": 31.122161,
+    "lon": -81.418288,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 440,
+    "lat": 31.120765,
+    "lon": -81.416296,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 441,
+    "lat": 31.119257,
+    "lon": -81.415041,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 442,
+    "lat": 31.120754,
+    "lon": -81.414885,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 443,
+    "lat": 31.120489,
+    "lon": -81.410012,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 444,
+    "lat": 31.122969,
+    "lon": -81.414998,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 445,
+    "lat": 31.122394,
+    "lon": -81.412809,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 446,
+    "lat": 31.122623,
+    "lon": -81.420293,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 447,
+    "lat": 31.121453,
+    "lon": -81.417126,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 448,
+    "lat": 31.11873,
+    "lon": -81.411488,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 449,
+    "lat": 31.122404,
+    "lon": -81.415944,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 450,
+    "lat": 31.118005,
+    "lon": -81.417051,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 451,
+    "lat": 31.1195,
+    "lon": -81.418604,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 452,
+    "lat": 31.118007,
+    "lon": -81.420701,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 453,
+    "lat": 31.117453,
+    "lon": -81.418444,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 454,
+    "lat": 31.119269,
+    "lon": -81.411493,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 455,
+    "lat": 31.12035,
+    "lon": -81.421413,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 456,
+    "lat": 31.122901,
+    "lon": -81.412261,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 457,
+    "lat": 31.121362,
+    "lon": -81.412761,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 458,
+    "lat": 31.121054,
+    "lon": -81.41357,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 459,
+    "lat": 31.122362,
+    "lon": -81.418587,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 460,
+    "lat": 31.121368,
+    "lon": -81.412531,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 461,
+    "lat": 31.118773,
+    "lon": -81.423287,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 462,
+    "lat": 31.118744,
+    "lon": -81.412737,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 463,
+    "lat": 31.118464,
+    "lon": -81.416846,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 464,
+    "lat": 31.121203,
+    "lon": -81.417493,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 465,
+    "lat": 31.120345,
+    "lon": -81.415975,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 466,
+    "lat": 31.123724,
+    "lon": -81.418381,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 467,
+    "lat": 31.118859,
+    "lon": -81.410879,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 468,
+    "lat": 31.122624,
+    "lon": -81.41563,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 469,
+    "lat": 31.122302,
+    "lon": -81.415035,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 470,
+    "lat": 31.120742,
+    "lon": -81.418539,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 471,
+    "lat": 31.119313,
+    "lon": -81.417209,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 472,
+    "lat": 31.121059,
+    "lon": -81.407069,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 473,
+    "lat": 31.121437,
+    "lon": -81.414813,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 474,
+    "lat": 31.122671,
+    "lon": -81.415983,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 475,
+    "lat": 31.123358,
+    "lon": -81.415698,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 476,
+    "lat": 31.118171,
+    "lon": -81.415493,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 477,
+    "lat": 31.123348,
+    "lon": -81.417663,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 478,
+    "lat": 31.124741,
+    "lon": -81.41269,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 479,
+    "lat": 31.12112,
+    "lon": -81.411378,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 480,
+    "lat": 31.122482,
+    "lon": -81.42132,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 481,
+    "lat": 31.119663,
+    "lon": -81.420763,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 482,
+    "lat": 31.12217,
+    "lon": -81.414979,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 483,
+    "lat": 31.120713,
+    "lon": -81.416108,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 484,
+    "lat": 31.121441,
+    "lon": -81.416139,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 485,
+    "lat": 31.117507,
+    "lon": -81.419088,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 486,
+    "lat": 31.122042,
+    "lon": -81.414943,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 487,
+    "lat": 31.116238,
+    "lon": -81.413078,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 488,
+    "lat": 31.120132,
+    "lon": -81.409791,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 489,
+    "lat": 31.120033,
+    "lon": -81.413602,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 490,
+    "lat": 31.121639,
+    "lon": -81.421432,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 491,
+    "lat": 31.12085,
+    "lon": -81.417038,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 492,
+    "lat": 31.123455,
+    "lon": -81.416447,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 493,
+    "lat": 31.123389,
+    "lon": -81.414896,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 494,
+    "lat": 31.120473,
+    "lon": -81.416859,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 495,
+    "lat": 31.122752,
+    "lon": -81.416601,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 496,
+    "lat": 31.120995,
+    "lon": -81.41555,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 497,
+    "lat": 31.121343,
+    "lon": -81.420581,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 498,
+    "lat": 31.122415,
+    "lon": -81.417163,
+    "weight": 0.002,
+    "status": "active"
+  },
+  {
+    "particle_id": 499,
+    "lat": 31.119699,
+    "lon": -81.41426,
+    "weight": 0.002,
+    "status": "active"
+  }
+]

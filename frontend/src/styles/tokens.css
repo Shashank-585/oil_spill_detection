@@ -1,0 +1,84 @@
+/* ==========================================================================
+   SIH26143 Maritime Intelligence - Core Design Tokens
+   Restrained, high-density, scientific dark-theme tokens.
+   ========================================================================== */
+
+:root {
+  /* Surface & Base Backgrounds */
+  --color-bg-base: #0a0d13;
+  --color-bg-surface: #111620;
+  --color-bg-surface-raised: #18202d;
+  --color-bg-surface-hover: #1f2a3c;
+  --color-bg-surface-active: #28374d;
+
+  /* Borders & Dividers */
+  --color-border-subtle: #243042;
+  --color-border-strong: #384961;
+  --color-border-focus: #4b668d;
+
+  /* Typography Colors */
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b9bb4;
+  --color-text-muted: #53647c;
+  --color-text-inverse: #0a0d13;
+  --color-text-monospace: #79c0ff;
+
+  /* Domain Status Accents */
+  --color-accent-blue: #388bfd;
+  --color-accent-cyan: #39c5cf;
+  --color-accent-amber: #d29922;
+  --color-accent-crimson: #f85149;
+  --color-accent-emerald: #2ea043;
+  --color-accent-purple: #bc8cff;
+
+  /* Causal Consistency Badges */
+  --tag-pre-event-bg: rgba(46, 160, 67, 0.15);
+  --tag-pre-event-border: rgba(46, 160, 67, 0.4);
+  --tag-pre-event-text: #3fb950;
+
+  --tag-post-event-bg: rgba(248, 81, 73, 0.15);
+  --tag-post-event-border: rgba(248, 81, 73, 0.4);
+  --tag-post-event-text: #f85149;
+
+  --tag-neutral-bg: rgba(139, 155, 180, 0.12);
+  --tag-neutral-border: rgba(139, 155, 180, 0.3);
+  --tag-neutral-text: #8b9bb4;
+
+  /* Fonts */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+  /* Type Scale */
+  --text-2xs: 10px;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+
+  /* Geometry & Spacing (Compact 4px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Structural Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* Dimensions */
+  --header-height: 48px;
+  --nav-rail-width: 56px;
+  --inspector-width: 380px;
+  --timeline-height: 84px;
+
+  /* Shadows (Subtle, non-neon) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.45);
+  --shadow-panel: -2px 0 12px rgba(0, 0, 0, 0.5);
+}

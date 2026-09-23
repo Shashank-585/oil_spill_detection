@@ -1,0 +1,259 @@
+case_id: "case_003_golden_ray"
+name: "M/V Golden Ray Capsizing & Bunker Oil Spill"
+incident_type: "Car carrier capsizing during outbound transit resulting in hull breach, fire, and bunker fuel discharge"
+incident_date: "2019-09-08"
+location_name: "St. Simons Sound / Brunswick, Georgia, USA"
+
+spatial:
+  crs: "EPSG:4326"
+  aoi_bounding_box:
+    west: -81.60
+    south: 31.00
+    east: -81.10
+    north: 31.30
+  incident_point:
+    latitude: 31.1290
+    longitude: -81.4060
+    description: "Capsizing and grounding location in St. Simons Sound channel near Sound Buoy 19"
+
+temporal:
+  spill_incident_estimated_start: "2019-09-08T05:46:00Z"
+  spill_incident_estimated_end: "2019-09-09T12:00:00Z"
+  source_search_time_range:
+    start_utc: "2019-09-07T12:00:00Z"
+    end_utc: "2019-09-09T12:00:00Z"
+    search_window_hours: 48
+
+satellite:
+  platform: "Sentinel-1A"
+  instrument: "C-SAR"
+  sensor_mode: "IW"
+  product_type: "GRDH"
+  polarizations:
+    - "VV"
+    - "VH"
+  orbit_direction: "DESCENDING"
+  scene_id: "S1A_IW_GRDH_1SDV_20190908T112519_20190908T112544_028929_0347A9"
+  observation_timestamp_utc: "2019-09-08T11:25:31.797740Z"
+  provider: "Copernicus Data Space Ecosystem / Microsoft Planetary Computer"
+  bounding_box:
+    west: -81.60
+    south: 31.00
+    east: -81.10
+    north: 31.30
+  files:
+    measurement_raster_vv: "data/raw/satellite/case_003_golden_ray_s1_measurement_vv.tif"
+    calibration_lut: "data/raw/satellite/case_003_golden_ray_calibration_vv.xml"
+    annotation_xml: "data/raw/satellite/case_003_golden_ray_annotation_vv.xml"
+    case_measurement_raster_vv: "data/raw/case_003_golden_ray/s1_measurement_vv.tif"
+    case_calibration_lut: "data/raw/case_003_golden_ray/calibration_vv.xml"
+    case_annotation_xml: "data/raw/case_003_golden_ray/annotation_vv.xml"
+    sigma0_linear: "data/processed/satellite/case_003_golden_ray_s1_sigma0_linear.tif"
+    sigma0_db: "data/processed/satellite/case_003_golden_ray_s1_sigma0_db.tif"
+    valid_mask: "data/processed/satellite/case_003_golden_ray_s1_valid_mask.tif"
+    calibration_diagnostic: "data/processed/satellite/case_003_golden_ray_s1_calibration_diagnostic.png"
+    candidate_slicks_mask: "data/processed/satellite/case_003_golden_ray_s1_candidate_slicks_mask.tif"
+    candidate_slicks_geojson: "data/processed/satellite/case_003_golden_ray_candidate_slicks.geojson"
+    candidate_slicks_csv: "data/processed/satellite/case_003_golden_ray_candidate_slicks.csv"
+    detection_diagnostic: "data/processed/satellite/case_003_golden_ray_s1_detection_diagnostic.png"
+
+  satellite_observations:
+    - observation_id: "OBS_S1A_IW_20190908_PRIMARY"
+      sensor: "Sentinel-1A C-SAR"
+      product_id: "S1A_IW_GRDH_1SDV_20190908T112519_20190908T112544_028929_0347A9"
+      role: "primary_sar"
+      instrument_mode: "IW"
+      processing_level: "GRDH"
+      polarizations: ["VV", "VH"]
+      acquisition_start: "2019-09-08T11:25:19.387Z"
+      acquisition_end: "2019-09-08T11:25:44.385Z"
+      sensing_time: "2019-09-08T11:25:31.797740Z"
+      source: "Copernicus / Microsoft Planetary Computer STAC"
+      local_path: "data/raw/satellite/case_003_golden_ray_s1_measurement_vv.tif"
+      availability: "ACQUIRED_AND_VERIFIED"
+      validation_status: "VALID_PRIMARY_SAR"
+
+    - observation_id: "OBS_S1A_IW_20190907_BASELINE"
+      sensor: "Sentinel-1A C-SAR"
+      product_id: "S1A_IW_GRDH_1SDV_20190907T232121_20190907T232146_028922_034766"
+      role: "pre_spill_baseline"
+      instrument_mode: "IW"
+      processing_level: "GRDH"
+      polarizations: ["VV", "VH"]
+      acquisition_start: "2019-09-07T23:21:21Z"
+      acquisition_end: "2019-09-07T23:21:46Z"
+      sensing_time: "2019-09-07T23:21:33Z"
+      source: "Copernicus / Microsoft Planetary Computer STAC"
+      availability: "CATALOGED_BASELINE"
+      validation_status: "VERIFIED_PRE_EVENT_SCENE"
+
+environmental:
+  ocean_currents:
+    source_name: "HYCOM Global Ocean Physics Analysis (GLBv0.08 / expt_93.0)"
+    provider: "HYCOM Consortium / NOAA / NRL THREDDS Server"
+    url: "https://ncss.hycom.org/thredds/ncss/GLBv0.08/expt_93.0"
+    format: "NetCDF3 (CF-1.0)"
+    variables:
+      - name: "water_u"
+        standard_name: "eastward_sea_water_velocity"
+        units: "m/s"
+      - name: "water_v"
+        standard_name: "northward_sea_water_velocity"
+        units: "m/s"
+    spatial_coverage:
+      west: -81.84
+      south: 30.80
+      east: -81.04
+      north: 31.52
+    temporal_coverage:
+      start_utc: "2019-09-07T00:00:00Z"
+      end_utc: "2019-09-09T21:00:00Z"
+      time_step_hours: 3
+    file_path: "data/raw/environmental/case_003_golden_ray_ocean_currents.nc"
+    case_file_path: "data/raw/case_003_golden_ray/ocean_currents.nc"
+
+  wind:
+    source_name: "ECMWF ERA5 Reanalysis"
+    provider: "ECMWF / Open-Meteo Historical Archive"
+    format: "CSV"
+    variables:
+      - name: "wind_u_10m_mps"
+        standard_name: "eastward_wind_at_10m"
+        units: "m/s"
+      - name: "wind_v_10m_mps"
+        standard_name: "northward_wind_at_10m"
+        units: "m/s"
+      - name: "wind_speed_10m_mps"
+        standard_name: "wind_speed"
+        units: "m/s"
+      - name: "wind_direction_10m_deg"
+        standard_name: "wind_to_direction"
+        units: "degrees"
+    spatial_coverage:
+      west: -81.60
+      south: 31.00
+      east: -81.10
+      north: 31.30
+    temporal_coverage:
+      start_utc: "2019-09-07T00:00:00Z"
+      end_utc: "2019-09-09T23:00:00Z"
+      time_step_hours: 1
+    files:
+      csv_path: "data/raw/environmental/case_003_golden_ray_wind_era5.csv"
+      case_csv_path: "data/raw/case_003_golden_ray/wind_era5.csv"
+
+ais:
+  source_name: "NOAA MarineCadastre Vessel Traffic Data"
+  provider: "NOAA Office for Coastal Management"
+  dataset_urls:
+    - "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2019/AIS_2019_09_07.zip"
+    - "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2019/AIS_2019_09_08.zip"
+    - "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2019/AIS_2019_09_09.zip"
+  format: "CSV"
+  fields:
+    - "MMSI"
+    - "BaseDateTime"
+    - "LAT"
+    - "LON"
+    - "SOG"
+    - "COG"
+    - "Heading"
+    - "VesselName"
+    - "IMO"
+    - "CallSign"
+    - "VesselType"
+    - "Length"
+    - "Width"
+    - "Draft"
+  temporal_coverage:
+    start_utc: "2019-09-07T12:00:00Z"
+    end_utc: "2019-09-09T12:00:00Z"
+  spatial_coverage:
+    west: -81.65
+    south: 30.95
+    east: -81.05
+    north: 31.35
+  files:
+    filtered_csv: "data/raw/ais/case_003_golden_ray_ais_filtered.csv"
+    case_filtered_csv: "data/raw/case_003_golden_ray/ais_filtered.csv"
+    normalized_csv: "data/processed/ais/case_003_golden_ray_ais_normalized.csv"
+    candidate_vessels_csv: "data/processed/ais/case_003_golden_ray_candidate_vessels.csv"
+    candidate_generation_summary: "data/processed/ais/case_003_golden_ray_candidate_generation_summary.json"
+    candidate_generation_diagnostic: "data/processed/ais/case_003_golden_ray_candidate_generation_diagnostic.png"
+
+drift:
+  particle_count: 500
+  time_step_seconds: 600
+  source_ages_hours: [2, 4, 6, 8, 12, 18, 24]
+  physics:
+    wind_drift_factor: 0.031
+    wind_deflection_angle_deg: 0.0
+    current_factor: 1.0
+    diffusion_coefficient_m2s: 1.0
+  files:
+    source_hypotheses_csv: "data/processed/drift/case_003_golden_ray_source_hypotheses.csv"
+    source_trajectories_json: "data/processed/drift/case_003_golden_ray_source_trajectories.json"
+    source_reconstruction_summary: "data/processed/drift/case_003_golden_ray_source_reconstruction_summary.json"
+    source_reconstruction_diagnostic: "data/processed/drift/case_003_golden_ray_source_reconstruction_diagnostic.png"
+
+hypotheses:
+  files:
+    hypotheses_csv: "data/processed/hypotheses/case_003_golden_ray_source_hypotheses_4d.csv"
+    hypotheses_json: "data/processed/hypotheses/case_003_golden_ray_source_hypotheses_4d.json"
+    hypotheses_geojson: "data/processed/hypotheses/case_003_golden_ray_source_hypotheses_4d.geojson"
+    hypotheses_summary: "data/processed/hypotheses/case_003_golden_ray_source_hypotheses_summary.json"
+    hypotheses_diagnostic: "data/processed/hypotheses/case_003_golden_ray_source_hypotheses_diagnostic.png"
+
+attribution:
+  files:
+    simulations_dir: "data/processed/attribution/simulations"
+    forward_simulations_csv: "data/processed/attribution/case_003_golden_ray_forward_simulations.csv"
+    forward_simulations_summary: "data/processed/attribution/case_003_golden_ray_forward_simulations_summary.json"
+    forward_simulation_diagnostic: "data/processed/attribution/case_003_golden_ray_forward_simulation_diagnostic.png"
+    comparison_csv: "data/processed/attribution/case_003_golden_ray_spill_comparisons.csv"
+    comparison_json: "data/processed/attribution/case_003_golden_ray_spill_comparisons.json"
+    comparison_summary: "data/processed/attribution/case_003_golden_ray_spill_comparison_summary.json"
+    comparison_diagnostic: "data/processed/attribution/case_003_golden_ray_spill_comparison_diagnostic.png"
+    hypothesis_evidence_csv: "data/processed/attribution/case_003_golden_ray_hypothesis_evidence.csv"
+    hypothesis_evidence_json: "data/processed/attribution/case_003_golden_ray_hypothesis_evidence.json"
+    vessel_summary_csv: "data/processed/attribution/case_003_golden_ray_vessel_summary.csv"
+    vessel_summary_json: "data/processed/attribution/case_003_golden_ray_vessel_summary.json"
+    explanation_report: "data/processed/attribution/case_003_golden_ray_evidence_explanation_report.md"
+    attribution_diagnostic: "data/processed/attribution/case_003_golden_ray_attribution_diagnostic.png"
+
+uncertainty:
+  files:
+    uncertainty_summary_csv: "data/processed/attribution/case_003_golden_ray_uncertainty_summary.csv"
+    uncertainty_summary_json: "data/processed/attribution/case_003_golden_ray_uncertainty_summary.json"
+    hypothesis_rank_stability_csv: "data/processed/attribution/case_003_golden_ray_hypothesis_rank_stability.csv"
+    source_location_uncertainty_geojson: "data/processed/attribution/case_003_golden_ray_source_location_uncertainty.geojson"
+    source_time_sensitivity_csv: "data/processed/attribution/case_003_golden_ray_source_time_sensitivity.csv"
+    environmental_sensitivity_csv: "data/processed/attribution/case_003_golden_ray_environmental_sensitivity.csv"
+    ais_sensitivity_csv: "data/processed/attribution/case_003_golden_ray_ais_sensitivity.csv"
+    uncertainty_diagnostic: "data/processed/attribution/case_003_golden_ray_uncertainty_diagnostic.png"
+
+validation:
+  incident_name: "M/V GOLDEN RAY Capsizing & Bunker Oil Spill"
+  incident_date: "2019-09-08"
+  source_type: "vessel"
+  quality_level: "A"
+  ground_truth_quality: "VERIFIED"
+  ground_truth_source: "NTSB Marine Accident Report MAR-21/03 / USCG Marine Board of Investigation"
+  ground_truth_confidence: 1.0
+  validation_role: "POSITIVE_VESSEL_CASE"
+  reference_source_location:
+    lon: -81.4060
+    lat: 31.1290
+    depth_m: 0.0
+  reference_source_time_utc: "2019-09-08T05:46:00Z"
+  reference_vessel_mmsi: 538007762
+  reference_vessel_name: "GOLDEN RAY"
+  reference_vessel_imo: 9775816
+  case_status: "VERIFIED_AVAILABLE"
+  notes: >
+    Capsizing of vehicle carrier GOLDEN RAY in St. Simons Sound upon departing Port of Brunswick.
+    The vessel carried ~300,000+ gallons of bunker fuel; discharges occurred following capsizing
+    and during salvage. Primary SAR observation acquired 2019-09-08T11:25:31Z (~5.6h post capsizing).
+    Isolated ground truth: MMSI 538007762, IMO 9775816.
+    STRICT ISOLATION REQUIREMENT: These identifiers MUST remain strictly isolated inside this
+    validation section and MUST NOT be passed to operational AIS candidate generation or attribution scoring.

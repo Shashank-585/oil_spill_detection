@@ -1,0 +1,126 @@
+{
+  "case_id": "case_003_golden_ray",
+  "timestamp_utc": "2026-09-11T13:26:12.197348+00:00",
+  "ensemble_size": 50,
+  "random_seed": 42,
+  "calibration_audit": {
+    "is_probability_calibrated": false,
+    "calibration_status": "UNCALIBRATED_COMPATIBILITY_INDEX",
+    "available_cases_count": 1,
+    "verified_culprit_cases_count": 0,
+    "min_cases_required_for_calibration": 30,
+    "mandatory_scientific_notice": "Attribution evidence scores represent physical and spatiotemporal compatibility under the calibrated Lagrangian drift model. Scores are NOT calibrated probabilities of culpability or guilt. Do NOT interpret score 0.64 as a 64% chance of vessel guilt.",
+    "calibration_roadmap": {
+      "phase": "Future Operational Integration",
+      "recommended_methods": [
+        "Platt Scaling (Logistic Sigmoid)",
+        "Isotonic Regression",
+        "Brier Score Calibration"
+      ],
+      "data_prerequisite": "Multi-incident database with >= 30 verified maritime spill cases with confirmed positive and negative culprit labels."
+    }
+  },
+  "rank_stability_top_hypotheses": [
+    {
+      "hypothesis_id": "4DH_0013",
+      "vessel_name": "ANN MORAN",
+      "top_1_frequency": 0.2,
+      "top_3_frequency": 0.32,
+      "mean_rank": 7.34,
+      "std_rank": 6.12,
+      "mean_score": 0.6302,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0003",
+      "vessel_name": "RECOVERY",
+      "top_1_frequency": 0.16,
+      "top_3_frequency": 0.3,
+      "mean_rank": 7.98,
+      "std_rank": 6.31,
+      "mean_score": 0.6287,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0022",
+      "vessel_name": "UNKNOWN",
+      "top_1_frequency": 0.14,
+      "top_3_frequency": 0.36,
+      "mean_rank": 6.9,
+      "std_rank": 5.43,
+      "mean_score": 0.6315,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0002",
+      "vessel_name": "RESPONDER",
+      "top_1_frequency": 0.1,
+      "top_3_frequency": 0.42,
+      "mean_rank": 6.18,
+      "std_rank": 4.76,
+      "mean_score": 0.6326,
+      "rank_stability_category": "UNSTABLE"
+    },
+    {
+      "hypothesis_id": "4DH_0006",
+      "vessel_name": "BRUNSWICK",
+      "top_1_frequency": 0.1,
+      "top_3_frequency": 0.26,
+      "mean_rank": 9.26,
+      "std_rank": 7.65,
+      "mean_score": 0.6192,
+      "rank_stability_category": "UNSTABLE"
+    }
+  ],
+  "rank_stability_top_vessels": [
+    {
+      "mmsi": 538007762,
+      "vessel_name": "UNKNOWN",
+      "vessel_top_1_frequency": 0.22,
+      "vessel_top_3_frequency": 0.7,
+      "mean_best_rank": 3.0,
+      "mean_best_score": 0.66,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 338102861,
+      "vessel_name": "RECOVERY",
+      "vessel_top_1_frequency": 0.22,
+      "vessel_top_3_frequency": 0.44,
+      "mean_best_rank": 4.84,
+      "mean_best_score": 0.6447,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 367369550,
+      "vessel_name": "ANN MORAN",
+      "vessel_top_1_frequency": 0.22,
+      "vessel_top_3_frequency": 0.34,
+      "mean_best_rank": 5.24,
+      "mean_best_score": 0.6425,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 338235704,
+      "vessel_name": "BRUNSWICK",
+      "vessel_top_1_frequency": 0.16,
+      "vessel_top_3_frequency": 0.4,
+      "mean_best_rank": 4.98,
+      "mean_best_score": 0.6384,
+      "vessel_stability_category": "UNSTABLE"
+    },
+    {
+      "mmsi": 338102856,
+      "vessel_name": "RESPONDER",
+      "vessel_top_1_frequency": 0.1,
+      "vessel_top_3_frequency": 0.46,
+      "mean_best_rank": 4.92,
+      "mean_best_score": 0.639,
+      "vessel_stability_category": "UNSTABLE"
+    }
+  ],
+  "environmental_robustness_counts": {
+    "ROBUST": 256
+  },
+  "scientific_guardrail_notice": "Attribution evidence scores represent physical and spatiotemporal compatibility under the calibrated Lagrangian drift model. Scores are NOT calibrated probabilities of culpability or guilt. Do NOT interpret score 0.64 as a 64% chance of vessel guilt."
+}

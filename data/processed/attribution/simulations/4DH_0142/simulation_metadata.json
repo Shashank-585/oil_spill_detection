@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0142",
+  "candidate_id": "VC_0142",
+  "mmsi": 338184094,
+  "vessel_name": "DULCINEA",
+  "release_lat": 31.083282,
+  "release_lon": -81.440175,
+  "release_timestamp": "2019-09-08T05:25:31.797740+00:00",
+  "source_age_hours": 6.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 6.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.100843,
+  "predicted_centroid_lon": -81.431098,
+  "predicted_bbox": {
+    "west": -81.438628,
+    "south": 31.093411,
+    "east": -81.424994,
+    "north": 31.105519
+  },
+  "dispersion_std_km": 0.139,
+  "observed_slick_id": "CS_0065",
+  "observed_slick_centroid_lat": 31.09978,
+  "observed_slick_centroid_lon": -81.43059,
+  "predicted_to_observed_distance_m": 127.71,
+  "ais_vessel_lat": 31.154998,
+  "ais_vessel_lon": -81.49958
+}

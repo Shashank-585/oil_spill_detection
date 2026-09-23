@@ -1,0 +1,198 @@
+{
+  "case_id": "case_004_os35",
+  "incident_name": "MV OS 35 Bulk Carrier Collision & Bunker Oil Spill (Gibraltar 2022)",
+  "audit_date": "2026-09-11",
+  "audit_type": "Positive Real-World Case Feasibility Audit",
+  "incident_details": {
+    "culprit_vessel": {
+      "name": "MV OS 35",
+      "imo": 9172399,
+      "mmsi": 572852210,
+      "call_sign": "V3TL",
+      "flag": "Tuvalu",
+      "vessel_type": "Bulk Carrier",
+      "gross_tonnage": 20947,
+      "deadweight_tonnage": 35362,
+      "built": 1999
+    },
+    "secondary_vessel_involved": {
+      "name": "ADAM LNG",
+      "imo": 9501198,
+      "mmsi": 538003666,
+      "flag": "Marshall Islands",
+      "vessel_type": "LNG Carrier",
+      "role": "Moored vessel struck during OS 35 departure"
+    },
+    "collision_timestamp_utc": "2022-08-29T21:10:00Z",
+    "collision_location": {
+      "name": "Bay of Gibraltar / Western Anchorage",
+      "latitude": 36.1300,
+      "longitude": -5.3700
+    },
+    "beaching_timestamp_utc": "2022-08-30T00:30:00Z",
+    "beaching_location": {
+      "name": "Catalan Bay / East Side of Gibraltar",
+      "latitude": 36.1387,
+      "longitude": -5.3413,
+      "distance_to_shore_meters": 700,
+      "depth_meters": 17
+    },
+    "hull_fracture_spill_timestamp_utc": "2022-09-01T12:00:00Z",
+    "spill_nature": "Low Sulphur Heavy Fuel Oil (VLSFO), Marine Diesel Oil, and lube oil escaping from ruptured bunker tanks (#1 and #2) after vessel fractured in two",
+    "ground_truth_quality": "VERIFIED",
+    "ground_truth_confidence": 1.0,
+    "ground_truth_authorities": [
+      "Gibraltar Port Authority (GPA)",
+      "Government of Gibraltar Department of the Environment",
+      "Spanish Maritime Safety Agency (SASEMAR / Salvamento Marítimo)",
+      "UK Marine Accident Investigation Branch (MAIB)",
+      "Royal Gibraltar Police (RGP) Court Proceedings"
+    ]
+  },
+  "satellite_evidence": {
+    "sar_coverage": {
+      "platform": "Sentinel-1A",
+      "instrument_mode": "IW",
+      "product_type": "GRDH",
+      "polarizations": ["VV", "VH"],
+      "provider": "Copernicus / Microsoft Planetary Computer",
+      "scenes_identified": [
+        {
+          "scene_id": "S1A_IW_GRDH_1SDV_20220829T181828_20220829T181853_044771_0558A5",
+          "acquisition_timestamp_utc": "2022-08-29T18:18:41Z",
+          "orbit_direction": "ascending",
+          "role": "pre_incident_baseline",
+          "temporal_offset_from_collision": "-2.8 hours",
+          "status": "VALID_BASELINE_SAR"
+        },
+        {
+          "scene_id": "S1A_IW_GRDH_1SDV_20220830T061941_20220830T062006_044778_0558DC",
+          "acquisition_timestamp_utc": "2022-08-30T06:19:53Z",
+          "orbit_direction": "descending",
+          "role": "immediate_post_beaching",
+          "temporal_offset_from_collision": "+9.1 hours",
+          "status": "VALID_INCIDENT_SAR"
+        },
+        {
+          "scene_id": "S1A_IW_GRDH_1SDV_20220903T182654_20220903T182719_044844_055B0E",
+          "acquisition_timestamp_utc": "2022-09-03T18:27:07Z",
+          "orbit_direction": "ascending",
+          "role": "active_spill_observation",
+          "temporal_offset_from_fracture": "+54.4 hours",
+          "status": "VALID_SPILL_SAR"
+        },
+        {
+          "scene_id": "S1A_IW_GRDH_1SDV_20220904T062801_20220904T062826_044851_055B4B",
+          "acquisition_timestamp_utc": "2022-09-04T06:28:14Z",
+          "orbit_direction": "descending",
+          "role": "secondary_spill_dispersion",
+          "temporal_offset_from_fracture": "+66.4 hours",
+          "status": "VALID_SPILL_SAR"
+        }
+      ]
+    },
+    "optical_supporting_coverage": {
+      "platform": "Sentinel-2A / Sentinel-2B",
+      "processing_level": "Level-2A (MSI)",
+      "scenes_identified": [
+        {
+          "scene_id": "S2A_MSIL2A_20220831T105631_R094_T30STF",
+          "acquisition_timestamp_utc": "2022-08-31T10:56:31Z",
+          "cloud_cover_percentage": 0.02,
+          "role": "post_beaching_visual_confirmation",
+          "status": "PRISTINE_CLEAR_OPTICAL"
+        },
+        {
+          "scene_id": "S2A_MSIL2A_20220903T110631_R137_T30STF",
+          "acquisition_timestamp_utc": "2022-09-03T11:06:31Z",
+          "cloud_cover_percentage": 15.3,
+          "role": "active_spill_boom_containment_confirmation",
+          "status": "VALID_SUPPORTING_OPTICAL"
+        },
+        {
+          "scene_id": "S2B_MSIL2A_20220908T110619_R137_T30STF",
+          "acquisition_timestamp_utc": "2022-09-08T11:06:19Z",
+          "cloud_cover_percentage": 0.01,
+          "role": "post_drainage_salvage_monitoring",
+          "status": "PRISTINE_CLEAR_OPTICAL"
+        }
+      ]
+    }
+  },
+  "ais_evidence_audit": {
+    "open_multi_vessel_ais_available": false,
+    "investigated_sources": [
+      {
+        "source_name": "EMODnet Human Activities",
+        "jurisdiction": "European Union / Pan-European",
+        "data_offered": "Monthly/annual raster vessel density maps (hours/km2) derived from commercial feeds (CLS, ORBCOMM, vesseltracker)",
+        "raw_ais_available": false,
+        "assessment": "Explicitly does not distribute raw dynamic AIS time-series"
+      },
+      {
+        "source_name": "SafeSeaNet / EMSA",
+        "jurisdiction": "European Maritime Safety Agency",
+        "data_offered": "Real-time and historical vessel traffic tracking for EU maritime safety",
+        "raw_ais_available": false,
+        "access_restriction": "Strictly restricted under Directive 2002/59/EC to designated national competent authorities; no public download"
+      },
+      {
+        "source_name": "Gibraltar Port Authority (GPA) VTS",
+        "jurisdiction": "British Gibraltar Territorial Waters (BGTW)",
+        "data_offered": "Internal radar and AIS VTS operational logs",
+        "raw_ais_available": false,
+        "access_restriction": "Confidential port authority operational data governed by Gibraltar GDPR / Data Protection Act 2004"
+      },
+      {
+        "source_name": "Puertos del Estado / SASEMAR (Spain)",
+        "jurisdiction": "Spanish Maritime Administration / CEDEX",
+        "data_offered": "National coastal AIS network data",
+        "raw_ais_available": false,
+        "access_restriction": "CEDEX historical database maintained for ministerial and scientific collaboration; no open bulk public download"
+      },
+      {
+        "source_name": "Global Fishing Watch",
+        "jurisdiction": "Global Open Data Initiative",
+        "data_offered": "Aggregated vessel presence and commercial fishing effort",
+        "raw_ais_available": false,
+        "assessment": "Commercial raw merchant vessel trajectories (bulk carriers, tankers, container ships) are expressly withheld due to commercial data licensing"
+      },
+      {
+        "source_name": "Academic Repositories (Zenodo, PANGAEA, Dryad)",
+        "jurisdiction": "Open Science Repositories",
+        "data_offered": "Various maritime studies",
+        "raw_ais_available": false,
+        "assessment": "No open continuous multi-vessel dynamic trajectory dataset exists for the Strait of Gibraltar during August-September 2022"
+      }
+    ],
+    "single_vessel_sparse_ais_available": true,
+    "single_vessel_sparse_notes": "Discrete collision, beaching, and anchoring positions for OS 35 and ADAM LNG are documented in marine press and casualty reports, but cannot be used for blind multi-vessel candidate generation without causing artificial 1-candidate cheat bias",
+    "commercial_availability": "Full continuous multi-vessel terrestrial and satellite AIS for the Strait of Gibraltar is held by Spire Global, MarineTraffic, VesselFinder, and Kpler, accessible only via commercial subscription or institutional license"
+  },
+  "environmental_evidence": {
+    "ocean_currents": {
+      "source_options": [
+        "HYCOM Global Ocean Physics Analysis GLBy0.08 (expt_93.0)",
+        "Copernicus Marine Service (CMEMS) IBI (Iberia-Biscay-Ireland) regional model (1/36 deg)"
+      ],
+      "availability": "AVAILABLE",
+      "pipeline_compatibility": "Fully compatible with EnvironmentalForcingInterpolator NetCDF reader"
+    },
+    "wind": {
+      "source_options": [
+        "ECMWF ERA5 Reanalysis (0.25 deg hourly 10m u/v winds)"
+      ],
+      "availability": "AVAILABLE",
+      "pipeline_compatibility": "Fully compatible with EnvironmentalForcingInterpolator CSV/NetCDF reader"
+    }
+  },
+  "comparison_case_004_vs_case_002": {
+    "sar_temporal_density": "Case 004 is superior (4 Sentinel-1 scenes spanning pre-collision baseline, post-beaching, and active spill within 6 days, plus 3 sub-1% cloud Sentinel-2 scenes)",
+    "spill_mechanism": "Case 002: Long open-ocean approach grounding on coral reef. Case 004: Port departure collision with moored LNG tanker followed by intentional emergency beaching and subsequent structural breakup",
+    "hydrodynamic_complexity": "Case 004 is substantially more challenging (Strait of Gibraltar two-layer exchange flow, strong tidal oscillations, and lee eddy formation around the Rock)",
+    "traffic_density_challenge": "Case 004 is an extreme high-density candidate generation test (~300 vessel transits per day through the Strait) compared to moderate open-ocean density off Mauritius",
+    "ais_availability_verdict": "Identical bottleneck: Both Case 002 and Case 004 have open SAR and environmental forcing, but both are blocked from blind operational candidate generation by the absence of an open, public multi-vessel AIS dataset"
+  },
+  "feasibility_decision": "PARTIALLY_FEASIBLE",
+  "feasibility_classification_justification": "Case 004 possesses outstanding Sentinel-1 SAR imagery (pre-baseline, post-beaching, and active spill), pristine Sentinel-2 optical imagery, full environmental forcing (HYCOM/CMEMS and ERA5), and unimpeachable official ground truth. However, legitimate public historical multi-vessel AIS for the Strait of Gibraltar is restricted or commercially paywalled. Under the audit decision rules, Case 004 is classified as PARTIALLY_FEASIBLE because SAR and environment are ready, but operational blind multi-vessel candidate generation requires commercial or institutional AIS licensing."
+}

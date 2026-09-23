@@ -1,0 +1,71 @@
+{
+  "raster_metadata": {
+    "crs": "EPSG:4326",
+    "dimensions": {
+      "height": 3000,
+      "width": 5000,
+      "total_pixels": 15000000
+    },
+    "bounds_epsg4326": {
+      "west": -81.6,
+      "south": 31.0,
+      "east": -81.1,
+      "north": 31.3
+    },
+    "pixel_resolution_degrees": {
+      "lon_deg": 0.0001,
+      "lat_deg": 0.00010000000000000024
+    },
+    "valid_pixel_count": 11991155,
+    "nodata_pixel_count": 3008845,
+    "valid_percentage": 79.941
+  },
+  "calibration_factor_A_sigma": {
+    "min": 587.7507,
+    "max": 607.998,
+    "mean": 597.1491,
+    "std": 5.3127
+  },
+  "raw_digital_number_DN": {
+    "min": 16,
+    "max": 9686,
+    "mean": 106.58,
+    "median": 70.0
+  },
+  "calibrated_sigma0_linear": {
+    "min": 0.0007208179,
+    "max": 270.706,
+    "mean": 0.04939995,
+    "median": 0.01343916,
+    "percentiles": {
+      "p1": 0.003277939,
+      "p5": 0.004768782,
+      "p10": 0.005827536,
+      "p25": 0.008237206,
+      "p50": 0.01343916,
+      "p75": 0.0678939,
+      "p90": 0.1245259,
+      "p95": 0.1662165,
+      "p99": 0.2812566
+    }
+  },
+  "calibrated_sigma0_dB": {
+    "units": "dB",
+    "min": -31.42,
+    "max": 24.32,
+    "mean": -16.66,
+    "median": -18.72,
+    "std": 5.27,
+    "percentiles": {
+      "p1": -24.84,
+      "p5": -23.22,
+      "p10": -22.35,
+      "p25": -20.84,
+      "p50": -18.72,
+      "p75": -11.68,
+      "p90": -9.05,
+      "p95": -7.79,
+      "p99": -5.51
+    }
+  }
+}

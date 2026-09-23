@@ -1,0 +1,75 @@
+case_id: "case_006_grande_america"
+name: "MV Grande America Container / Ro-Ro Fire & Sinking"
+incident_type: "Vehicle deck fire leading to vessel abandonment and sinking with 2,200 tonnes of heavy fuel oil"
+incident_date: "2019-03-10"
+location_name: "Bay of Biscay (approx. 140 nm southwest of Brest, France)"
+
+spatial:
+  crs: "EPSG:4326"
+  aoi_bounding_box:
+    west: -6.50
+    south: 45.00
+    east: -4.50
+    north: 47.00
+  incident_point:
+    latitude: 46.0667
+    longitude: -5.7833
+    description: "Sinking location (depth approx. 4,600 m)"
+
+temporal:
+  spill_incident_estimated_start: "2019-03-10T19:00:00Z"
+  spill_incident_estimated_end: "2019-03-15T12:00:00Z"
+  source_search_time_range:
+    start_utc: "2019-03-10T00:00:00Z"
+    end_utc: "2019-03-16T00:00:00Z"
+    search_window_hours: 144
+
+satellite:
+  platform: "Sentinel-1A"
+  instrument: "C-SAR"
+  sensor_mode: "IW"
+  product_type: "GRDH"
+  polarizations:
+    - "VV"
+    - "VH"
+  scene_id: "S1A_IW_GRDH_1SDV_20190313T180743_20190313T180808_026323_02F0B9"
+  observation_timestamp_utc: "2019-03-13T18:07:55Z"
+  provider: "Copernicus Open Access Hub"
+  files:
+    measurement_raster_vv: "data/raw/satellite/case_006_grande_america_s1_measurement_vv.tif"
+    calibration_lut: "data/raw/satellite/case_006_grande_america_calibration_vv.xml"
+
+environmental:
+  ocean_currents:
+    source_name: "HYCOM Ocean Currents"
+    file_path: "data/raw/environmental/case_006_grande_america_ocean_currents.nc"
+  wind:
+    source_name: "ECMWF ERA5 Reanalysis"
+    files:
+      csv_path: "data/raw/environmental/case_006_grande_america_wind_era5.csv"
+
+ais:
+  source_name: "EMSA / French Maritime Prefecture AIS Network"
+  files:
+    filtered_csv: "data/raw/ais/case_006_grande_america_ais_filtered.csv"
+
+validation:
+  incident_name: "MV Grande America Fire & Sinking"
+  incident_date: "2019-03-10"
+  source_type: "vessel"
+  quality_level: "A"
+  ground_truth_quality: "VERIFIED"
+  ground_truth_source: "BEA Mer (Bureau d'enquêtes sur les événements de mer) Official Report"
+  ground_truth_confidence: 1.0
+  validation_role: "POSITIVE_VESSEL_CASE"
+  reference_source_location:
+    lon: -5.7833
+    lat: 46.0667
+  reference_source_time_utc: "2019-03-12T14:26:00Z"
+  reference_vessel_mmsi: 247164900
+  reference_vessel_name: "GRANDE AMERICA"
+  case_status: "POTENTIALLY_AVAILABLE"
+  notes: >
+    Italian-flagged Ro-Ro container ship GRANDE AMERICA (IMO 9130949, MMSI 247164900).
+    Extensively monitored by French maritime authorities (Cedre, Premar Atlantique) and EMSA CleanSeaNet.
+    Sentinel-1 radar imagery verified large bunker slick drifting northeast toward French Atlantic coastline.

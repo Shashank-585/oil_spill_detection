@@ -1,0 +1,117 @@
+{
+  "case_id": "case_003_golden_ray",
+  "generated_timestamp_utc": "2026-09-11T13:05:31.934703+00:00",
+  "observation_timestamp_utc": "2019-09-08T11:25:31.797740+00:00",
+  "candidate_slicks_count": 6,
+  "candidate_slicks": [
+    "CS_0035",
+    "CS_0065",
+    "CS_0092",
+    "CS_0114",
+    "CS_0161",
+    "CS_0201"
+  ],
+  "total_hypotheses_generated": 42,
+  "source_ages_hours_evaluated": [
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    12.0,
+    18.0,
+    24.0
+  ],
+  "top_plausible_hypotheses": [
+    {
+      "hypothesis_id": "SH_0029",
+      "candidate_id": "CS_0161",
+      "source_age_hours": 2.0,
+      "estimated_release_time_utc": "2019-09-08T09:25:31.797740+00:00",
+      "centroid_lat": 31.028268,
+      "centroid_lon": -81.414849,
+      "bbox_west": -81.419786,
+      "bbox_south": 31.01971,
+      "bbox_east": -81.409392,
+      "bbox_north": 31.037193,
+      "dispersion_std_km": 0.218,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.6592
+    },
+    {
+      "hypothesis_id": "SH_0036",
+      "candidate_id": "CS_0201",
+      "source_age_hours": 2.0,
+      "estimated_release_time_utc": "2019-09-08T09:25:31.797740+00:00",
+      "centroid_lat": 31.006747,
+      "centroid_lon": -81.471992,
+      "bbox_west": -81.477114,
+      "bbox_south": 31.00295,
+      "bbox_east": -81.466321,
+      "bbox_north": 31.010105,
+      "dispersion_std_km": 0.106,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.6263
+    },
+    {
+      "hypothesis_id": "SH_0030",
+      "candidate_id": "CS_0161",
+      "source_age_hours": 4.0,
+      "estimated_release_time_utc": "2019-09-08T07:25:31.797740+00:00",
+      "centroid_lat": 31.021982,
+      "centroid_lon": -81.41811,
+      "bbox_west": -81.425275,
+      "bbox_south": 31.01136,
+      "bbox_east": -81.411675,
+      "bbox_north": 31.032685,
+      "dispersion_std_km": 0.242,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.6208
+    },
+    {
+      "hypothesis_id": "SH_0037",
+      "candidate_id": "CS_0201",
+      "source_age_hours": 4.0,
+      "estimated_release_time_utc": "2019-09-08T07:25:31.797740+00:00",
+      "centroid_lat": 31.003289,
+      "centroid_lon": -81.474827,
+      "bbox_west": -81.481035,
+      "bbox_south": 30.998408,
+      "bbox_east": -81.468176,
+      "bbox_north": 31.007805,
+      "dispersion_std_km": 0.131,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.5898
+    },
+    {
+      "hypothesis_id": "SH_0031",
+      "candidate_id": "CS_0161",
+      "source_age_hours": 6.0,
+      "estimated_release_time_utc": "2019-09-08T05:25:31.797740+00:00",
+      "centroid_lat": 31.014711,
+      "centroid_lon": -81.4215,
+      "bbox_west": -81.427996,
+      "bbox_south": 31.001202,
+      "bbox_east": -81.41389,
+      "bbox_north": 31.026309,
+      "dispersion_std_km": 0.26,
+      "active_particle_fraction": 1.0,
+      "particle_count": 500,
+      "source_plausibility": 0.5847
+    }
+  ],
+  "spatial_envelope": {
+    "lat_min": 30.908319,
+    "lat_max": 31.121349,
+    "lon_min": -81.488951,
+    "lon_max": -81.384789
+  },
+  "files": {
+    "hypotheses_csv": "processed\\drift\\case_003_golden_ray_source_hypotheses.csv",
+    "trajectories_json": "processed\\drift\\case_003_golden_ray_source_trajectories.json",
+    "diagnostic_png": "processed\\drift\\case_003_golden_ray_source_reconstruction_diagnostic.png"
+  }
+}

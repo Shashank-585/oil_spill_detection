@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0084",
+  "candidate_id": "VC_0084",
+  "mmsi": 311828000,
+  "vessel_name": "KUJAWY",
+  "release_lat": 31.075746,
+  "release_lon": -81.427038,
+  "release_timestamp": "2019-09-07T23:25:31.797740+00:00",
+  "source_age_hours": 12.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 12.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.121087,
+  "predicted_centroid_lon": -81.416229,
+  "predicted_bbox": {
+    "west": -81.426051,
+    "south": 31.114886,
+    "east": -81.407069,
+    "north": 31.126801
+  },
+  "dispersion_std_km": 0.179,
+  "observed_slick_id": "CS_0035",
+  "observed_slick_centroid_lat": 31.12086,
+  "observed_slick_centroid_lon": -81.41602,
+  "predicted_to_observed_distance_m": 32.14,
+  "ais_vessel_lat": 31.13155,
+  "ais_vessel_lon": -81.49312
+}

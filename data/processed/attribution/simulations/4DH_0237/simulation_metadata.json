@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0237",
+  "candidate_id": "VC_0237",
+  "mmsi": 338102856,
+  "vessel_name": "RESPONDER",
+  "release_lat": 31.062942,
+  "release_lon": -81.404052,
+  "release_timestamp": "2019-09-08T09:25:31.797740+00:00",
+  "source_age_hours": 2.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 2.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.068488,
+  "predicted_centroid_lon": -81.401864,
+  "predicted_bbox": {
+    "west": -81.405764,
+    "south": 31.065456,
+    "east": -81.397008,
+    "north": 31.07119
+  },
+  "dispersion_std_km": 0.078,
+  "observed_slick_id": "CS_0114",
+  "observed_slick_centroid_lat": 31.06846,
+  "observed_slick_centroid_lon": -81.4018,
+  "predicted_to_observed_distance_m": 6.84,
+  "ais_vessel_lat": 31.127014,
+  "ais_vessel_lon": -81.40362
+}

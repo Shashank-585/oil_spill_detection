@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0233",
+  "candidate_id": "VC_0233",
+  "mmsi": 367063030,
+  "vessel_name": "EMERALD PRINCESS II",
+  "release_lat": 31.054937,
+  "release_lon": -81.458279,
+  "release_timestamp": "2019-09-07T23:25:31.797740+00:00",
+  "source_age_hours": 12.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 12.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.086286,
+  "predicted_centroid_lon": -81.451174,
+  "predicted_bbox": {
+    "west": -81.460719,
+    "south": 31.079374,
+    "east": -81.442061,
+    "north": 31.094512
+  },
+  "dispersion_std_km": 0.194,
+  "observed_slick_id": "CS_0092",
+  "observed_slick_centroid_lat": 31.08611,
+  "observed_slick_centroid_lon": -81.45096,
+  "predicted_to_observed_distance_m": 28.25,
+  "ais_vessel_lat": 31.113826,
+  "ais_vessel_lon": -81.486967
+}

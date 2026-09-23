@@ -1,0 +1,136 @@
+case_id: "case_002_wakashio"
+name: "MV Wakashio Bulk Carrier Grounding & Bunker Oil Spill"
+incident_type: "Bulk carrier grounding on coral reef resulting in hull rupture and heavy fuel oil discharge"
+incident_date: "2020-07-25"
+location_name: "Pointe d'Esny, Mauritius (Indian Ocean)"
+
+spatial:
+  crs: "EPSG:4326"
+  aoi_bounding_box:
+    west: 57.50
+    south: -20.60
+    east: 57.90
+    north: -20.30
+  incident_point:
+    latitude: -20.4400
+    longitude: 57.7400
+    description: "Coral reef grounding location off Pointe d'Esny"
+
+temporal:
+  spill_incident_estimated_start: "2020-07-25T15:25:00Z"
+  hull_breach_estimated_start: "2020-08-06T01:30:00Z"
+  spill_incident_estimated_end: "2020-08-15T12:00:00Z"
+  source_search_time_range:
+    start_utc: "2020-07-25T00:00:00Z"
+    end_utc: "2020-08-11T00:00:00Z"
+    search_window_hours: 408
+
+satellite:
+  platform: "Sentinel-1B"
+  instrument: "C-SAR"
+  sensor_mode: "IW"
+  product_type: "GRDH"
+  polarizations:
+    - "VV"
+    - "VH"
+  scene_id: "S1B_IW_GRDH_1SDV_20200810T013755_20200810T013820_022854_02B625_672D"
+  observation_timestamp_utc: "2020-08-10T01:38:07Z"
+  provider: "Copernicus Data Space Ecosystem / Microsoft Planetary Computer"
+  files:
+    measurement_raster_vv: "data/raw/satellite/case_002_wakashio_s1_measurement_vv.tif"
+    calibration_lut: "data/raw/satellite/case_002_wakashio_calibration_vv.xml"
+
+  satellite_observations:
+    - observation_id: "OBS_S1B_IW_20200810_PRIMARY"
+      sensor: "Sentinel-1B C-SAR"
+      product_id: "S1B_IW_GRDH_1SDV_20200810T013755_20200810T013820_022854_02B625_672D.SAFE"
+      role: "primary_sar"
+      instrument_mode: "IW"
+      processing_level: "GRDH"
+      polarizations: ["VV", "VH"]
+      acquisition_start: "2020-08-10T01:37:55.041Z"
+      acquisition_end: "2020-08-10T01:38:20.041Z"
+      source: "Copernicus Data Space Ecosystem / Microsoft Planetary Computer"
+      local_path: "data/raw/satellite/case_002_wakashio_s1_measurement_vv.tif"
+      availability: "OPEN_ACCESS_IDENTIFIED"
+      validation_status: "VALID_PRIMARY_SAR_CANDIDATE"
+
+    - observation_id: "OBS_S1B_IW_20200729_BASELINE"
+      sensor: "Sentinel-1B C-SAR"
+      product_id: "S1B_IW_GRDH_1SDV_20200729T013754_20200729T013819_022679_02B0C2_19D3.SAFE"
+      role: "pre_spill_baseline"
+      instrument_mode: "IW"
+      processing_level: "GRDH"
+      polarizations: ["VV", "VH"]
+      acquisition_start: "2020-07-29T01:37:54.342Z"
+      acquisition_end: "2020-07-29T01:38:19.341Z"
+      source: "Copernicus Data Space Ecosystem / Microsoft Planetary Computer"
+      local_path: "data/raw/satellite/case_002_wakashio_baseline_vv.tif"
+      availability: "OPEN_ACCESS_IDENTIFIED"
+      validation_status: "VALID_BASELINE_CANDIDATE"
+
+    - observation_id: "OBS_S2B_L2A_20200806_SUPPORTING_OPTICAL"
+      sensor: "Sentinel-2B MSI"
+      product_id: "S2B_MSIL2A_20200806T062449_N0500_R091_T40KEC_20230407T081024.SAFE"
+      role: "supporting_optical"
+      instrument_mode: "MSI Multi-Spectral"
+      processing_level: "Level-2A"
+      polarizations: ["B02", "B03", "B04", "B08", "TCI"]
+      acquisition_start: "2020-08-06T06:24:49.024Z"
+      acquisition_end: "2020-08-06T06:24:49.024Z"
+      source: "Copernicus Data Space Ecosystem"
+      local_path: "data/raw/satellite/case_002_wakashio_s2_optical_tci.tif"
+      availability: "OPEN_ACCESS_IDENTIFIED"
+      validation_status: "VALID_OPTICAL_CONFIRMATION"
+
+    - observation_id: "OBS_S1A_IW_20200816_POST_EVENT"
+      sensor: "Sentinel-1A C-SAR"
+      product_id: "S1A_IW_GRDH_1SDV_20200816T013830_20200816T013859_033925_03EF79_FB97.SAFE"
+      role: "post_event"
+      instrument_mode: "IW"
+      processing_level: "GRDH"
+      polarizations: ["VV", "VH"]
+      acquisition_start: "2020-08-16T01:38:30.055Z"
+      acquisition_end: "2020-08-16T01:38:59.071Z"
+      source: "Copernicus Data Space Ecosystem / Microsoft Planetary Computer"
+      local_path: "data/raw/satellite/case_002_wakashio_post_event_vv.tif"
+      availability: "OPEN_ACCESS_IDENTIFIED"
+      validation_status: "VALID_POST_EVENT_CANDIDATE"
+
+environmental:
+  ocean_currents:
+    source_name: "HYCOM Global Ocean Physics Analysis (expt_93.0)"
+    file_path: "data/raw/environmental/case_002_wakashio_ocean_currents.nc"
+  wind:
+    source_name: "ECMWF ERA5 Reanalysis"
+    files:
+      csv_path: "data/raw/environmental/case_002_wakashio_wind_era5.csv"
+
+ais:
+  source_name: "Indian Ocean Regional AIS Network / Spire Global"
+  files:
+    filtered_csv: "data/raw/ais/case_002_wakashio_ais_filtered.csv"
+
+validation:
+  incident_name: "MV Wakashio Grounding & Bunker Oil Spill"
+  incident_date: "2020-07-25"
+  source_type: "vessel"
+  quality_level: "A"
+  ground_truth_quality: "VERIFIED"
+  ground_truth_source: "Panama Maritime Authority / Japan Transport Safety Board (JTSB) / Mauritius Court of Investigation"
+  ground_truth_confidence: 1.0
+  validation_role: "POSITIVE_VESSEL_CASE"
+  reference_source_location:
+    lon: 57.7400
+    lat: -20.4400
+  reference_source_time_utc: "2020-08-06T01:30:00Z"
+  reference_vessel_mmsi: 372711000
+  reference_vessel_name: "WAKASHIO"
+  reference_vessel_imo: 9337119
+  case_status: "POTENTIALLY_AVAILABLE"
+  notes: >
+    Major international vessel grounding incident. Known culprit bulk carrier WAKASHIO (IMO 9337119, MMSI 372711000, Call Sign 3FYQ8, Flag Panama).
+    Grounded on reef 2020-07-25; major bunker spill 2020-08-06; hull fractured 2020-08-15.
+    Primary SAR observation identified as S1B_IW_GRDH_1SDV_20200810T013755 (Sentinel-1B IW GRD).
+    Supporting optical observation identified as S2B_MSIL2A_20200806T062449 (Sentinel-2B L2A).
+    HYCOM currents and ERA5 winds downloaded and verified. High-frequency multi-vessel regional AIS pending commercial/institutional acquisition.

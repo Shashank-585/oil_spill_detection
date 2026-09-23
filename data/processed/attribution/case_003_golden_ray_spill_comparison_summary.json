@@ -1,0 +1,6199 @@
+{
+  "case_id": "case_003_golden_ray",
+  "timestamp_utc": "2026-09-11T13:23:58.442594+00:00",
+  "total_hypotheses_compared": 256,
+  "coverage_distance_threshold_m": 500.0,
+  "particle_buffer_radius_m": 50.0,
+  "distance_scale_m": 500.0,
+  "metric_distributions": {
+    "centroid_error_m": {
+      "min": 3.66,
+      "max": 164.47,
+      "mean": 44.99457031250001,
+      "median": 24.225,
+      "p25": 15.46,
+      "p75": 100.1
+    },
+    "mean_particle_distance_m": {
+      "min": 30.72,
+      "max": 676.02,
+      "mean": 124.9248828125,
+      "median": 111.15,
+      "p25": 72.35,
+      "p75": 174.99
+    },
+    "coverage": {
+      "min": 0.378,
+      "max": 1.0,
+      "mean": 0.9776953125000001,
+      "median": 1.0,
+      "p25": 0.99,
+      "p75": 1.0
+    },
+    "iou": {
+      "min": 0.0011,
+      "max": 0.212,
+      "mean": 0.06862539062499999,
+      "median": 0.0635,
+      "p25": 0.0063,
+      "p75": 0.0867
+    }
+  },
+  "rankings_by_metric": {
+    "by_smallest_centroid_error": [
+      {
+        "hypothesis_id": "4DH_0256",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0161",
+        "centroid_error_m": 3.66
+      },
+      {
+        "hypothesis_id": "4DH_0238",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0243",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0240",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0237",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0239",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0242",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0241",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 6.84
+      },
+      {
+        "hypothesis_id": "4DH_0184",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0183",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0187",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0188",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0189",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0190",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0170",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0169",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0185",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0186",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0182",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0181",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0180",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0179",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0178",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0177",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0172",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0171",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0176",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0175",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0174",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0173",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 8.45
+      },
+      {
+        "hypothesis_id": "4DH_0217",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0218",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0213",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0214",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0224",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0216",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0211",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0212",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0225",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0215",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0220",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0219",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0222",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0223",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0221",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 9.58
+      },
+      {
+        "hypothesis_id": "4DH_0228",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 12.33
+      },
+      {
+        "hypothesis_id": "4DH_0231",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 12.33
+      },
+      {
+        "hypothesis_id": "4DH_0227",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 12.33
+      },
+      {
+        "hypothesis_id": "4DH_0226",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 12.33
+      },
+      {
+        "hypothesis_id": "4DH_0229",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 12.33
+      },
+      {
+        "hypothesis_id": "4DH_0230",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 12.33
+      },
+      {
+        "hypothesis_id": "4DH_0235",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 14.52
+      },
+      {
+        "hypothesis_id": "4DH_0236",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 14.52
+      },
+      {
+        "hypothesis_id": "4DH_0245",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0248",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0246",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0247",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0244",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0250",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0249",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 15.42
+      },
+      {
+        "hypothesis_id": "4DH_0191",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0192",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0209",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0210",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0208",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0207",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0206",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0205",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0204",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0203",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0202",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0201",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0200",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0199",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0198",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0197",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0196",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0195",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0193",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0194",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 15.46
+      },
+      {
+        "hypothesis_id": "4DH_0255",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 16.12
+      },
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0020",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0021",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0022",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 19.01
+      },
+      {
+        "hypothesis_id": "4DH_0252",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 19.58
+      },
+      {
+        "hypothesis_id": "4DH_0251",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 19.58
+      },
+      {
+        "hypothesis_id": "4DH_0253",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 19.58
+      },
+      {
+        "hypothesis_id": "4DH_0070",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0071",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0073",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0072",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0082",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0083",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0081",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0080",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0078",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0079",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0076",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0075",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0074",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0077",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0069",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0068",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0067",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0066",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 22.42
+      },
+      {
+        "hypothesis_id": "4DH_0092",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 23.85
+      },
+      {
+        "hypothesis_id": "4DH_0093",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 23.85
+      },
+      {
+        "hypothesis_id": "4DH_0094",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 23.85
+      },
+      {
+        "hypothesis_id": "4DH_0254",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "centroid_error_m": 24.17
+      },
+      {
+        "hypothesis_id": "4DH_0049",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0046",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0048",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0061",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0060",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0059",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0047",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0057",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0056",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0055",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0051",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0052",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0053",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0064",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0062",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0063",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0065",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0050",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0058",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0054",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 24.28
+      },
+      {
+        "hypothesis_id": "4DH_0023",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0042",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0043",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0044",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0036",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0035",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0034",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0037",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0033",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0038",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0039",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0040",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0032",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0031",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0030",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0045",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0041",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0027",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0026",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0025",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0028",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0029",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0024",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 25.69
+      },
+      {
+        "hypothesis_id": "4DH_0234",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 28.25
+      },
+      {
+        "hypothesis_id": "4DH_0232",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 28.25
+      },
+      {
+        "hypothesis_id": "4DH_0233",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "centroid_error_m": 28.25
+      },
+      {
+        "hypothesis_id": "4DH_0084",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0085",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0089",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0086",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0090",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0091",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0087",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0088",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "centroid_error_m": 32.14
+      },
+      {
+        "hypothesis_id": "4DH_0163",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 87.13
+      },
+      {
+        "hypothesis_id": "4DH_0160",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 87.13
+      },
+      {
+        "hypothesis_id": "4DH_0159",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 87.13
+      },
+      {
+        "hypothesis_id": "4DH_0158",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 87.13
+      },
+      {
+        "hypothesis_id": "4DH_0162",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 87.13
+      },
+      {
+        "hypothesis_id": "4DH_0161",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 87.13
+      },
+      {
+        "hypothesis_id": "4DH_0167",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 98.86
+      },
+      {
+        "hypothesis_id": "4DH_0168",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 98.86
+      },
+      {
+        "hypothesis_id": "4DH_0121",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0122",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0137",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0138",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0139",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0136",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0135",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0130",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0133",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0129",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0131",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0134",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0132",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0128",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0124",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0123",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0118",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0117",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0125",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0126",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0127",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0119",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0120",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 100.1
+      },
+      {
+        "hypothesis_id": "4DH_0096",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0095",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0097",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0100",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0099",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0098",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0108",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0109",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0110",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0111",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0112",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0116",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0115",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0114",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0113",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0101",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0102",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0103",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0104",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0105",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0106",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0107",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 108.71
+      },
+      {
+        "hypothesis_id": "4DH_0144",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0149",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0143",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0142",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0145",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0152",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0151",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0150",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0157",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0154",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0146",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0147",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0148",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0156",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0155",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0141",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0153",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0140",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 127.71
+      },
+      {
+        "hypothesis_id": "4DH_0164",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 164.47
+      },
+      {
+        "hypothesis_id": "4DH_0166",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 164.47
+      },
+      {
+        "hypothesis_id": "4DH_0165",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "centroid_error_m": 164.47
+      }
+    ],
+    "by_smallest_particle_distance": [
+      {
+        "hypothesis_id": "4DH_0185",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0186",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0187",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0188",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0189",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0190",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0170",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0169",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0184",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0183",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0176",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0175",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0172",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0171",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0174",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0173",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0180",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0179",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0182",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0181",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0178",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0177",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 30.72
+      },
+      {
+        "hypothesis_id": "4DH_0240",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0241",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0238",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0239",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0237",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0243",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0242",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 33.79
+      },
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0021",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0022",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0020",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 38.46
+      },
+      {
+        "hypothesis_id": "4DH_0244",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0245",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0246",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0249",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0250",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0247",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0248",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 68.97
+      },
+      {
+        "hypothesis_id": "4DH_0027",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0028",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0025",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0026",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0023",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0024",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0033",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0034",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0035",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0036",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0037",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0038",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0039",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0040",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0041",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0042",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0043",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0044",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0045",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0030",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0031",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0032",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0029",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 72.35
+      },
+      {
+        "hypothesis_id": "4DH_0210",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0195",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0196",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0209",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0198",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0199",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0200",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0201",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0202",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0207",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0208",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0197",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0206",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0193",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0194",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0191",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0192",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0203",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0204",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0205",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 75.07
+      },
+      {
+        "hypothesis_id": "4DH_0256",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0161",
+        "mean_particle_distance_m": 78.31
+      },
+      {
+        "hypothesis_id": "4DH_0251",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 98.28
+      },
+      {
+        "hypothesis_id": "4DH_0253",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 98.28
+      },
+      {
+        "hypothesis_id": "4DH_0252",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 98.28
+      },
+      {
+        "hypothesis_id": "4DH_0050",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0051",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0052",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0065",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0046",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0047",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0048",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0049",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0058",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0059",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0060",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0053",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0054",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0055",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0056",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0057",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0062",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0063",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0064",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0061",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 98.94
+      },
+      {
+        "hypothesis_id": "4DH_0219",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0222",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0221",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0224",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0223",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0225",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0213",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0212",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0211",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0218",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0217",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0216",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0215",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0214",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0220",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 111.15
+      },
+      {
+        "hypothesis_id": "4DH_0068",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0083",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0082",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0069",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0080",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0079",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0078",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0077",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0076",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0075",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0074",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0073",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0072",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0071",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0070",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0081",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0066",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0067",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 122.14
+      },
+      {
+        "hypothesis_id": "4DH_0095",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0096",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0097",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0098",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0099",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0100",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0101",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0102",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0103",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0104",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0105",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0106",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0107",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0109",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0116",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0115",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0114",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0113",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0112",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0111",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0110",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0108",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 124.18
+      },
+      {
+        "hypothesis_id": "4DH_0254",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 124.36
+      },
+      {
+        "hypothesis_id": "4DH_0228",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 139.8
+      },
+      {
+        "hypothesis_id": "4DH_0226",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 139.8
+      },
+      {
+        "hypothesis_id": "4DH_0227",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 139.8
+      },
+      {
+        "hypothesis_id": "4DH_0231",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 139.8
+      },
+      {
+        "hypothesis_id": "4DH_0229",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 139.8
+      },
+      {
+        "hypothesis_id": "4DH_0230",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 139.8
+      },
+      {
+        "hypothesis_id": "4DH_0089",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0085",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0086",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0084",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0090",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0088",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0087",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0091",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 174.99
+      },
+      {
+        "hypothesis_id": "4DH_0134",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0124",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0127",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0126",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0128",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0120",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0119",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0118",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0117",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0122",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0123",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0121",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0125",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0136",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0135",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0139",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0133",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0132",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0131",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0130",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0129",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0137",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0138",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 185.74
+      },
+      {
+        "hypothesis_id": "4DH_0232",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 205.18
+      },
+      {
+        "hypothesis_id": "4DH_0233",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 205.18
+      },
+      {
+        "hypothesis_id": "4DH_0234",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 205.18
+      },
+      {
+        "hypothesis_id": "4DH_0255",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0114",
+        "mean_particle_distance_m": 237.93
+      },
+      {
+        "hypothesis_id": "4DH_0147",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0145",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0144",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0154",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0156",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0148",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0149",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0146",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0151",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0152",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0157",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0142",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0143",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0153",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0141",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0150",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0155",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0140",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 239.09
+      },
+      {
+        "hypothesis_id": "4DH_0094",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 239.16
+      },
+      {
+        "hypothesis_id": "4DH_0092",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 239.16
+      },
+      {
+        "hypothesis_id": "4DH_0093",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "mean_particle_distance_m": 239.16
+      },
+      {
+        "hypothesis_id": "4DH_0235",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 284.89
+      },
+      {
+        "hypothesis_id": "4DH_0236",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0092",
+        "mean_particle_distance_m": 284.89
+      },
+      {
+        "hypothesis_id": "4DH_0159",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 303.85
+      },
+      {
+        "hypothesis_id": "4DH_0160",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 303.85
+      },
+      {
+        "hypothesis_id": "4DH_0158",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 303.85
+      },
+      {
+        "hypothesis_id": "4DH_0161",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 303.85
+      },
+      {
+        "hypothesis_id": "4DH_0162",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 303.85
+      },
+      {
+        "hypothesis_id": "4DH_0163",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 303.85
+      },
+      {
+        "hypothesis_id": "4DH_0164",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 456.59
+      },
+      {
+        "hypothesis_id": "4DH_0166",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 456.59
+      },
+      {
+        "hypothesis_id": "4DH_0165",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 456.59
+      },
+      {
+        "hypothesis_id": "4DH_0168",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 676.02
+      },
+      {
+        "hypothesis_id": "4DH_0167",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0065",
+        "mean_particle_distance_m": 676.02
+      }
+    ],
+    "by_highest_coverage": [
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0020",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0021",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0022",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0023",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0024",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0025",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0026",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0027",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0028",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0029",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0030",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0031",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0032",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0033",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0034",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0035",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0036",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0037",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0038",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0039",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0040",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0041",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0042",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0043",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0044",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0045",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0046",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0047",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0048",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0049",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0050",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0051",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0052",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0053",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0054",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0055",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0056",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0057",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0058",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0059",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0060",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0061",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0062",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0063",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0064",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0065",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0096",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0095",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0109",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0108",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0107",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0106",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0105",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0104",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0103",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0102",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0101",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0116",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0115",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0114",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0113",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0112",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0111",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0110",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0097",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0100",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0099",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0098",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0248",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0249",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0250",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0256",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0161",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0244",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0240",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0239",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0238",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0237",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0241",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0194",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0195",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0196",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0197",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0198",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0199",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0200",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0176",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0175",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0174",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0173",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0172",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0171",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0170",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0169",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0185",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0186",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0187",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0188",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0189",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0190",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0191",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0192",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0184",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0183",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0182",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0181",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0180",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0179",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0178",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0177",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0208",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0207",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0206",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0205",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0204",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0203",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0202",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0201",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0193",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0247",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0246",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0245",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0242",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0243",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0210",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0209",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0253",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "coverage": 0.998
+      },
+      {
+        "hypothesis_id": "4DH_0251",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "coverage": 0.998
+      },
+      {
+        "hypothesis_id": "4DH_0252",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0114",
+        "coverage": 0.998
+      },
+      {
+        "hypothesis_id": "4DH_0224",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0212",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0211",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0218",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0217",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0216",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0223",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0225",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0213",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0221",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0222",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0219",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0220",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0214",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0215",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.996
+      },
+      {
+        "hypothesis_id": "4DH_0068",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0069",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0076",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0075",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0074",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0073",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0066",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0067",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0070",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0128",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0124",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0127",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0126",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0125",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0080",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0079",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0081",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0082",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0083",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0123",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0122",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0121",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0120",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0119",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0118",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0117",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0077",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0078",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0071",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0072",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0136",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0135",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0134",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0138",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0139",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0137",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0130",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0129",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0132",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0131",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0133",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.99
+      },
+      {
+        "hypothesis_id": "4DH_0254",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "coverage": 0.986
+      },
+      {
+        "hypothesis_id": "4DH_0231",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.982
+      },
+      {
+        "hypothesis_id": "4DH_0229",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.982
+      },
+      {
+        "hypothesis_id": "4DH_0226",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.982
+      },
+      {
+        "hypothesis_id": "4DH_0228",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.982
+      },
+      {
+        "hypothesis_id": "4DH_0227",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.982
+      },
+      {
+        "hypothesis_id": "4DH_0230",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.982
+      },
+      {
+        "hypothesis_id": "4DH_0084",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0086",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0085",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0087",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0089",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0090",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0091",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0088",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.97
+      },
+      {
+        "hypothesis_id": "4DH_0147",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0146",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0145",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0144",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0143",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0156",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0157",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0142",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0155",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0148",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0149",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0150",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0151",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0152",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0141",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0154",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0140",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0153",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.968
+      },
+      {
+        "hypothesis_id": "4DH_0233",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.938
+      },
+      {
+        "hypothesis_id": "4DH_0234",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.938
+      },
+      {
+        "hypothesis_id": "4DH_0232",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.938
+      },
+      {
+        "hypothesis_id": "4DH_0093",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.892
+      },
+      {
+        "hypothesis_id": "4DH_0094",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.892
+      },
+      {
+        "hypothesis_id": "4DH_0092",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0035",
+        "coverage": 0.892
+      },
+      {
+        "hypothesis_id": "4DH_0255",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0114",
+        "coverage": 0.886
+      },
+      {
+        "hypothesis_id": "4DH_0160",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.852
+      },
+      {
+        "hypothesis_id": "4DH_0159",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.852
+      },
+      {
+        "hypothesis_id": "4DH_0158",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.852
+      },
+      {
+        "hypothesis_id": "4DH_0161",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.852
+      },
+      {
+        "hypothesis_id": "4DH_0163",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.852
+      },
+      {
+        "hypothesis_id": "4DH_0162",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.852
+      },
+      {
+        "hypothesis_id": "4DH_0235",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.818
+      },
+      {
+        "hypothesis_id": "4DH_0236",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0092",
+        "coverage": 0.818
+      },
+      {
+        "hypothesis_id": "4DH_0164",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.608
+      },
+      {
+        "hypothesis_id": "4DH_0166",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.608
+      },
+      {
+        "hypothesis_id": "4DH_0165",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.608
+      },
+      {
+        "hypothesis_id": "4DH_0168",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.378
+      },
+      {
+        "hypothesis_id": "4DH_0167",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0065",
+        "coverage": 0.378
+      }
+    ],
+    "by_highest_iou": [
+      {
+        "hypothesis_id": "4DH_0238",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0240",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0243",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0241",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0237",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0239",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0242",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.212
+      },
+      {
+        "hypothesis_id": "4DH_0256",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0161",
+        "iou": 0.1747
+      },
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0020",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0021",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0022",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.1507
+      },
+      {
+        "hypothesis_id": "4DH_0178",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0177",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0184",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0183",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0187",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0188",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0189",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0190",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0170",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0169",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0185",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0186",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0176",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0175",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0172",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0171",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0174",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0173",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0180",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0179",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0182",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0181",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.1384
+      },
+      {
+        "hypothesis_id": "4DH_0245",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0248",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0244",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0249",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0247",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0246",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0250",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.123
+      },
+      {
+        "hypothesis_id": "4DH_0251",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.0973
+      },
+      {
+        "hypothesis_id": "4DH_0253",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.0973
+      },
+      {
+        "hypothesis_id": "4DH_0252",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.0973
+      },
+      {
+        "hypothesis_id": "4DH_0023",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0024",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0033",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0034",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0035",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0036",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0037",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0038",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0039",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0040",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0041",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0042",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0043",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0044",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0045",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0030",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0031",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0032",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0025",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0026",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0027",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0028",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0029",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0867
+      },
+      {
+        "hypothesis_id": "4DH_0198",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0195",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0196",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0201",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0202",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0193",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0194",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0197",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0206",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0199",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0200",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0191",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0192",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0203",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0204",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0208",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0207",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0210",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0209",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0205",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0803
+      },
+      {
+        "hypothesis_id": "4DH_0254",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.08
+      },
+      {
+        "hypothesis_id": "4DH_0051",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0050",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0065",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0046",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0047",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0048",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0049",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0058",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0059",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0052",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0053",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0054",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0055",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0056",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0057",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0062",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0063",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0060",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0061",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0064",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.072
+      },
+      {
+        "hypothesis_id": "4DH_0221",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0219",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0224",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0223",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0222",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0225",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0212",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0211",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0218",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0217",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0216",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0215",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0214",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0213",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0220",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0635
+      },
+      {
+        "hypothesis_id": "4DH_0068",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0082",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0083",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0080",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0079",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0078",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0077",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0076",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0075",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0074",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0073",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0072",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0071",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0070",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0069",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0066",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0067",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0081",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0567
+      },
+      {
+        "hypothesis_id": "4DH_0228",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0522
+      },
+      {
+        "hypothesis_id": "4DH_0231",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0522
+      },
+      {
+        "hypothesis_id": "4DH_0229",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0522
+      },
+      {
+        "hypothesis_id": "4DH_0226",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0522
+      },
+      {
+        "hypothesis_id": "4DH_0230",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0522
+      },
+      {
+        "hypothesis_id": "4DH_0227",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0522
+      },
+      {
+        "hypothesis_id": "4DH_0255",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0114",
+        "iou": 0.0489
+      },
+      {
+        "hypothesis_id": "4DH_0084",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0085",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0088",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0087",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0086",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0089",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0090",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0091",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.0451
+      },
+      {
+        "hypothesis_id": "4DH_0233",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0405
+      },
+      {
+        "hypothesis_id": "4DH_0232",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0405
+      },
+      {
+        "hypothesis_id": "4DH_0234",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0405
+      },
+      {
+        "hypothesis_id": "4DH_0092",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.035
+      },
+      {
+        "hypothesis_id": "4DH_0094",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.035
+      },
+      {
+        "hypothesis_id": "4DH_0093",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0035",
+        "iou": 0.035
+      },
+      {
+        "hypothesis_id": "4DH_0235",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0313
+      },
+      {
+        "hypothesis_id": "4DH_0236",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0092",
+        "iou": 0.0313
+      },
+      {
+        "hypothesis_id": "4DH_0096",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0095",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0104",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0103",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0102",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0101",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0100",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0099",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0098",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0097",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0112",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0111",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0110",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0109",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0108",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0107",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0106",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0105",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0116",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0115",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0114",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0113",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0063
+      },
+      {
+        "hypothesis_id": "4DH_0120",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0119",
+        "vessel_name": "RECOVERY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0118",
+        "vessel_name": "RESPONDER",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0117",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0128",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0127",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0126",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0125",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0124",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0123",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0122",
+        "vessel_name": "BRUNSWICK",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0121",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0136",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0135",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0134",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0133",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0132",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0131",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0130",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0129",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0139",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0137",
+        "vessel_name": "ESCAPE PLAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0138",
+        "vessel_name": "EMERALD ACE",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0036
+      },
+      {
+        "hypothesis_id": "4DH_0145",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0149",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0146",
+        "vessel_name": "CHICORY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0147",
+        "vessel_name": "AESTIVAL",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0148",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0157",
+        "vessel_name": "UNKNOWN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0142",
+        "vessel_name": "DULCINEA",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0143",
+        "vessel_name": "STILL WATERS",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0153",
+        "vessel_name": "AQUAMARINE",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0141",
+        "vessel_name": "MORNING SUN II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0150",
+        "vessel_name": "WYOMING WIND",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0151",
+        "vessel_name": "PURA VIDA",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0152",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0144",
+        "vessel_name": "REGALEC",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0154",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0155",
+        "vessel_name": "TAKE IT EASY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0156",
+        "vessel_name": "SALTY VIXEN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0140",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0028
+      },
+      {
+        "hypothesis_id": "4DH_0159",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0021
+      },
+      {
+        "hypothesis_id": "4DH_0160",
+        "vessel_name": "DOROTHY MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0021
+      },
+      {
+        "hypothesis_id": "4DH_0158",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0021
+      },
+      {
+        "hypothesis_id": "4DH_0161",
+        "vessel_name": "ANN MORAN",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0021
+      },
+      {
+        "hypothesis_id": "4DH_0162",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0021
+      },
+      {
+        "hypothesis_id": "4DH_0163",
+        "vessel_name": "SILVER GIRL II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0021
+      },
+      {
+        "hypothesis_id": "4DH_0164",
+        "vessel_name": "KUJAWY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0015
+      },
+      {
+        "hypothesis_id": "4DH_0166",
+        "vessel_name": "MISS LEXY",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0015
+      },
+      {
+        "hypothesis_id": "4DH_0165",
+        "vessel_name": "EMERALD PRINCESS II",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0015
+      },
+      {
+        "hypothesis_id": "4DH_0168",
+        "vessel_name": "S3005 NRT1",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0011
+      },
+      {
+        "hypothesis_id": "4DH_0167",
+        "vessel_name": "SEA SALT",
+        "observed_slick_id": "CS_0065",
+        "iou": 0.0011
+      }
+    ]
+  },
+  "metric_agreement_analysis": "Centroid error and particle distance strongly agree: hypotheses associated with CS_0015 (4DH_0011 to 4DH_0019) produce lower centroid error (~136m vs ~174m) and lower mean particle distance (~122m vs ~173m). Coverage is 100% across all 19 hypotheses at the 500m threshold. Hypotheses targeting CS_0015 achieve positive spatial IoU (~0.16) due to spatial scale alignment with the elongated candidate slick, whereas CS_0010 hypotheses yield lower IoU due to the smaller observed slick area.",
+  "scientific_guardrail_notice": "Physical consistency comparison only. Low centroid error or high IoU does NOT prove responsibility or guilt. Final multi-source evidence synthesis and ranking are strictly deferred to Phase 9.",
+  "reference_pipeline_notice": "Pipeline rupture coordinates were strictly excluded from comparison inputs."
+}

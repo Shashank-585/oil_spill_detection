@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "4DH_0219",
+  "candidate_id": "VC_0219",
+  "mmsi": 367369550,
+  "vessel_name": "ANN MORAN",
+  "release_lat": 31.074782,
+  "release_lon": -81.458345,
+  "release_timestamp": "2019-09-08T05:25:31.797740+00:00",
+  "source_age_hours": 6.0,
+  "observation_timestamp": "2019-09-08T11:25:31.797740+00:00",
+  "duration_hours": 6.0,
+  "particle_count": 500,
+  "timestep_seconds": 600.0,
+  "environmental_model": "HYCOM_surface_currents + ERA5_10m_wind",
+  "wind_coefficient": 0.031,
+  "simulation_status": "completed",
+  "active_particle_fraction": 1.0,
+  "predicted_centroid_lat": 31.086192,
+  "predicted_centroid_lon": -81.450929,
+  "predicted_bbox": {
+    "west": -81.457683,
+    "south": 31.079282,
+    "east": -81.444976,
+    "north": 31.090854
+  },
+  "dispersion_std_km": 0.133,
+  "observed_slick_id": "CS_0092",
+  "observed_slick_centroid_lat": 31.08611,
+  "observed_slick_centroid_lon": -81.45096,
+  "predicted_to_observed_distance_m": 9.58,
+  "ais_vessel_lat": 31.143112,
+  "ais_vessel_lon": -81.49662
+}

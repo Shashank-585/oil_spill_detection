@@ -1,0 +1,75 @@
+case_id: "case_004_os35"
+name: "MV OS 35 Bulk Carrier Collision & Bunker Spill"
+incident_type: "Bulk carrier collision with LNG carrier ADAM LNG, intentionally beached off Catalan Bay, Gibraltar"
+incident_date: "2022-08-29"
+location_name: "Strait of Gibraltar / Catalan Bay, Gibraltar"
+
+spatial:
+  crs: "EPSG:4326"
+  aoi_bounding_box:
+    west: -5.45
+    south: 36.05
+    east: -5.25
+    north: 36.20
+  incident_point:
+    latitude: 36.1417
+    longitude: -5.3361
+    description: "Beaching location off Catalan Bay (700 m off shoreline)"
+
+temporal:
+  spill_incident_estimated_start: "2022-08-29T21:15:00Z"
+  spill_incident_estimated_end: "2022-09-02T18:00:00Z"
+  source_search_time_range:
+    start_utc: "2022-08-29T18:00:00Z"
+    end_utc: "2022-09-03T00:00:00Z"
+    search_window_hours: 102
+
+satellite:
+  platform: "Sentinel-1A"
+  instrument: "C-SAR"
+  sensor_mode: "IW"
+  product_type: "GRDH"
+  polarizations:
+    - "VV"
+    - "VH"
+  scene_id: "S1A_IW_GRDH_1SDV_20220901T061448_20220901T061513_044807_0559F0"
+  observation_timestamp_utc: "2022-09-01T06:15:00Z"
+  provider: "Copernicus Open Access Hub"
+  files:
+    measurement_raster_vv: "data/raw/satellite/case_004_os35_s1_measurement_vv.tif"
+    calibration_lut: "data/raw/satellite/case_004_os35_calibration_vv.xml"
+
+environmental:
+  ocean_currents:
+    source_name: "HYCOM Ocean Currents"
+    file_path: "data/raw/environmental/case_004_os35_ocean_currents.nc"
+  wind:
+    source_name: "ECMWF ERA5 Reanalysis"
+    files:
+      csv_path: "data/raw/environmental/case_004_os35_wind_era5.csv"
+
+ais:
+  source_name: "Gibraltar Vessel Traffic Services (VTS) / EMSA SafeSeaNet"
+  files:
+    filtered_csv: "data/raw/ais/case_004_os35_ais_filtered.csv"
+
+validation:
+  incident_name: "MV OS 35 Bulk Carrier Collision & Bunker Spill"
+  incident_date: "2022-08-29"
+  source_type: "vessel"
+  quality_level: "A"
+  ground_truth_quality: "VERIFIED"
+  ground_truth_source: "Gibraltar Port Authority Official Incident Investigation & Tuvalu Ship Registry Report"
+  ground_truth_confidence: 1.0
+  validation_role: "POSITIVE_VESSEL_CASE"
+  reference_source_location:
+    lon: -5.3361
+    lat: 36.1417
+  reference_source_time_utc: "2022-08-31T20:00:00Z"
+  reference_vessel_mmsi: 572396000
+  reference_vessel_name: "OS 35"
+  case_status: "POTENTIALLY_AVAILABLE"
+  notes: >
+    Culprit vessel is bulk carrier OS 35 (IMO 9179040, MMSI 572396000).
+    Dense Mediterranean maritime traffic with hundreds of concurrent vessels in Strait of Gibraltar.
+    Ideal positive benchmark for evaluating candidate filtering recall and attribution discrimination under traffic density.

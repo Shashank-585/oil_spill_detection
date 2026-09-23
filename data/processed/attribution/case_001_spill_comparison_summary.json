@@ -1,0 +1,511 @@
+{
+  "case_id": "case_001",
+  "timestamp_utc": "2026-09-11T04:09:08.867545+00:00",
+  "total_hypotheses_compared": 19,
+  "coverage_distance_threshold_m": 500.0,
+  "particle_buffer_radius_m": 50.0,
+  "distance_scale_m": 500.0,
+  "metric_distributions": {
+    "centroid_error_m": {
+      "min": 136.22,
+      "max": 173.9,
+      "mean": 156.0515789473684,
+      "median": 173.9,
+      "p25": 136.22,
+      "p75": 173.9
+    },
+    "mean_particle_distance_m": {
+      "min": 40.77,
+      "max": 187.88,
+      "mean": 118.19631578947369,
+      "median": 187.88,
+      "p25": 40.77,
+      "p75": 187.88
+    },
+    "coverage": {
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "p25": 1.0,
+      "p75": 1.0
+    },
+    "iou": {
+      "min": 0.0022,
+      "max": 0.3039,
+      "mean": 0.14511052631578947,
+      "median": 0.0022,
+      "p25": 0.0022,
+      "p75": 0.3039
+    }
+  },
+  "rankings_by_metric": {
+    "by_smallest_centroid_error": [
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0015",
+        "centroid_error_m": 136.22
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "MAERSK ESMERALDAS",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0010",
+        "centroid_error_m": 173.9
+      }
+    ],
+    "by_smallest_particle_distance": [
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0015",
+        "mean_particle_distance_m": 40.77
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "MAERSK ESMERALDAS",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0010",
+        "mean_particle_distance_m": 187.88
+      }
+    ],
+    "by_highest_coverage": [
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "MAERSK ESMERALDAS",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0010",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0015",
+        "coverage": 1.0
+      }
+    ],
+    "by_highest_iou": [
+      {
+        "hypothesis_id": "4DH_0017",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0018",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0011",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0019",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0014",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0013",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0016",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0015",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0012",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0015",
+        "iou": 0.3039
+      },
+      {
+        "hypothesis_id": "4DH_0001",
+        "vessel_name": "CALYPSO",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0002",
+        "vessel_name": "LAST DANCE",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0003",
+        "vessel_name": "LEGASEA",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0010",
+        "vessel_name": "TS MANILA",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0008",
+        "vessel_name": "SOME TUESDAY",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0009",
+        "vessel_name": "JIMNI",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0005",
+        "vessel_name": "MAERSK ESMERALDAS",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0006",
+        "vessel_name": "PATIENCE",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0004",
+        "vessel_name": "ROAM",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      },
+      {
+        "hypothesis_id": "4DH_0007",
+        "vessel_name": "CRYSTAL II",
+        "observed_slick_id": "CS_0010",
+        "iou": 0.0022
+      }
+    ]
+  },
+  "metric_agreement_analysis": "Centroid error and particle distance strongly agree: hypotheses associated with CS_0015 (4DH_0011 to 4DH_0019) produce lower centroid error (~136m vs ~174m) and lower mean particle distance (~122m vs ~173m). Coverage is 100% across all 19 hypotheses at the 500m threshold. Hypotheses targeting CS_0015 achieve positive spatial IoU (~0.16) due to spatial scale alignment with the elongated candidate slick, whereas CS_0010 hypotheses yield lower IoU due to the smaller observed slick area.",
+  "scientific_guardrail_notice": "Physical consistency comparison only. Low centroid error or high IoU does NOT prove responsibility or guilt. Final multi-source evidence synthesis and ranking are strictly deferred to Phase 9.",
+  "reference_pipeline_notice": "Pipeline rupture coordinates were strictly excluded from comparison inputs."
+}

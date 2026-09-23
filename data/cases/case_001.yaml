@@ -1,0 +1,225 @@
+case_id: "case_001"
+name: "Huntington Beach Pipeline / San Pedro Bay Oil Spill"
+incident_type: "Pipeline rupture following suspected vessel anchor drag"
+location_name: "San Pedro Bay / Huntington Beach, California, USA"
+
+spatial:
+  crs: "EPSG:4326"
+  aoi_bounding_box:
+    west: -118.40
+    south: 33.40
+    east: -117.85
+    north: 33.80
+  incident_point:
+    latitude: 33.60
+    longitude: -118.05
+    description: "Beta Offshore / Amplify Energy Pipeline P00547 corridor"
+
+temporal:
+  spill_incident_estimated_start: "2021-10-01T18:00:00Z"
+  spill_incident_estimated_end: "2021-10-02T12:00:00Z"
+  source_search_time_range:
+    start_utc: "2021-10-01T00:00:00Z"
+    end_utc: "2021-10-02T12:00:00Z"
+    search_window_hours: 36
+
+satellite:
+  platform: "Sentinel-1A"
+  instrument: "C-SAR"
+  sensor_mode: "IW"
+  product_type: "GRDH"
+  polarizations:
+    - "VV"
+    - "VH"
+  orbit_direction: "DESCENDING"
+  relative_orbit_number: 137
+  scene_id: "S1A_IW_GRDH_1SDV_20211002T015821_20211002T015850_039934_04B9C9"
+  observation_timestamp_utc: "2021-10-02T01:58:36.165236Z"
+  provider: "Copernicus / Microsoft Planetary Computer STAC"
+  bounding_box:
+    west: -120.82216845
+    south: 32.02078602
+    east: -117.82694897
+    north: 34.04319407
+  files:
+    stac_metadata: "data/raw/satellite/case_001_s1_stac_item.json"
+    manifest: "data/raw/satellite/case_001_manifest.safe"
+    thumbnail: "data/raw/satellite/case_001_s1_thumbnail.png"
+    measurement_raster_vv: "data/raw/satellite/case_001_s1_measurement_vv.tif"
+    calibration_lut: "data/raw/satellite/case_001_calibration_vv.xml"
+    annotation_xml: "data/raw/satellite/case_001_annotation_vv.xml"
+    remote_raster_cog_vv: "https://sentinel1euwest.blob.core.windows.net/s1-grd/GRD/2021/10/2/IW/DV/S1A_IW_GRDH_1SDV_20211002T015821_20211002T015850_039934_04B9C9/measurement/iw-vv.tiff"
+    sigma0_linear: "data/processed/satellite/case_001_s1_sigma0_linear.tif"
+    sigma0_db: "data/processed/satellite/case_001_s1_sigma0_db.tif"
+    valid_mask: "data/processed/satellite/case_001_s1_valid_mask.tif"
+    calibration_diagnostic: "data/processed/satellite/case_001_s1_calibration_diagnostic.png"
+    candidate_slicks_mask: "data/processed/satellite/case_001_s1_candidate_slicks_mask.tif"
+    candidate_slicks_geojson: "data/processed/satellite/case_001_candidate_slicks.geojson"
+    candidate_slicks_csv: "data/processed/satellite/case_001_candidate_slicks.csv"
+    detection_diagnostic: "data/processed/satellite/case_001_s1_detection_diagnostic.png"
+
+environmental:
+  ocean_currents:
+    source_name: "HYCOM Global Ocean Physics Analysis (GLBy0.08 / expt_93.0)"
+    provider: "HYCOM Consortium / NOAA / NRL THREDDS Server"
+    url: "https://tds.hycom.org/thredds/ncss/GLBy0.08/expt_93.0"
+    format: "NetCDF3 (CF-1.0)"
+    variables:
+      - name: "water_u"
+        standard_name: "eastward_sea_water_velocity"
+        units: "m/s"
+      - name: "water_v"
+        standard_name: "northward_sea_water_velocity"
+        units: "m/s"
+    spatial_coverage:
+      west: -118.40
+      south: 33.40
+      east: -117.85
+      north: 33.80
+    temporal_coverage:
+      start_utc: "2021-10-01T00:00:00Z"
+      end_utc: "2021-10-02T12:00:00Z"
+      time_step_hours: 3
+    file_path: "data/raw/environmental/case_001_ocean_currents_hycom.nc"
+
+  wind:
+    source_name: "ECMWF ERA5 Reanalysis"
+    provider: "ECMWF / Open-Meteo Historical Archive"
+    format: "JSON / CSV"
+    variables:
+      - name: "wind_u_10m_mps"
+        standard_name: "eastward_wind_at_10m"
+        units: "m/s"
+      - name: "wind_v_10m_mps"
+        standard_name: "northward_wind_at_10m"
+        units: "m/s"
+      - name: "wind_speed_10m_mps"
+        standard_name: "wind_speed"
+        units: "m/s"
+      - name: "wind_direction_10m_deg"
+        standard_name: "wind_to_direction"
+        units: "degrees"
+    spatial_coverage:
+      west: -118.40
+      south: 33.40
+      east: -117.85
+      north: 33.80
+    temporal_coverage:
+      start_utc: "2021-10-01T00:00:00Z"
+      end_utc: "2021-10-02T12:00:00Z"
+      time_step_hours: 1
+    files:
+      json_path: "data/raw/environmental/case_001_wind_era5.json"
+      csv_path: "data/raw/environmental/case_001_wind_era5.csv"
+
+ais:
+  source_name: "NOAA MarineCadastre Vessel Traffic Data"
+  provider: "NOAA Office for Coastal Management"
+  dataset_url: "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2021/AIS_2021_10_02.zip"
+  format: "CSV"
+  fields:
+    - "MMSI"
+    - "BaseDateTime"
+    - "LAT"
+    - "LON"
+    - "SOG"
+    - "COG"
+    - "Heading"
+    - "VesselName"
+    - "IMO"
+    - "CallSign"
+    - "VesselType"
+    - "Length"
+    - "Width"
+    - "Draft"
+  temporal_coverage:
+    start_utc: "2021-10-02T00:00:00Z"
+    end_utc: "2021-10-02T23:59:59Z"
+  spatial_coverage:
+    west: -118.50
+    south: 33.30
+    east: -117.80
+    north: 33.90
+  files:
+    raw_zip: "data/raw/ais/AIS_2021_10_02.zip"
+    filtered_csv: "data/raw/ais/case_001_ais_filtered.csv"
+    normalized_csv: "data/processed/ais/case_001_ais_normalized.csv"
+    candidate_vessels_csv: "data/processed/ais/case_001_candidate_vessels.csv"
+    candidate_generation_summary: "data/processed/ais/case_001_candidate_generation_summary.json"
+    candidate_generation_diagnostic: "data/processed/ais/case_001_candidate_generation_diagnostic.png"
+
+drift:
+  particle_count: 500
+  time_step_seconds: 600
+  source_ages_hours: [2, 4, 6, 8, 12, 18, 24]
+  physics:
+    wind_drift_factor: 0.031
+    wind_deflection_angle_deg: 0.0
+    current_factor: 1.0
+    diffusion_coefficient_m2s: 1.0
+  files:
+    source_hypotheses_csv: "data/processed/drift/case_001_source_hypotheses.csv"
+    source_trajectories_json: "data/processed/drift/case_001_source_trajectories.json"
+    source_reconstruction_summary: "data/processed/drift/case_001_source_reconstruction_summary.json"
+    source_reconstruction_diagnostic: "data/processed/drift/case_001_source_reconstruction_diagnostic.png"
+
+hypotheses:
+  files:
+    hypotheses_csv: "data/processed/hypotheses/case_001_source_hypotheses_4d.csv"
+    hypotheses_json: "data/processed/hypotheses/case_001_source_hypotheses_4d.json"
+    hypotheses_geojson: "data/processed/hypotheses/case_001_source_hypotheses_4d.geojson"
+    hypotheses_summary: "data/processed/hypotheses/case_001_source_hypotheses_summary.json"
+    hypotheses_diagnostic: "data/processed/hypotheses/case_001_source_hypotheses_diagnostic.png"
+
+attribution:
+  files:
+    simulations_dir: "data/processed/attribution/simulations"
+    forward_simulations_csv: "data/processed/attribution/case_001_forward_simulations.csv"
+    forward_simulations_summary: "data/processed/attribution/case_001_forward_simulations_summary.json"
+    forward_simulation_diagnostic: "data/processed/attribution/case_001_forward_simulation_diagnostic.png"
+    comparison_csv: "data/processed/attribution/case_001_spill_comparisons.csv"
+    comparison_json: "data/processed/attribution/case_001_spill_comparisons.json"
+    comparison_summary: "data/processed/attribution/case_001_spill_comparison_summary.json"
+    comparison_diagnostic: "data/processed/attribution/case_001_spill_comparison_diagnostic.png"
+    hypothesis_evidence_csv: "data/processed/attribution/case_001_hypothesis_evidence.csv"
+    hypothesis_evidence_json: "data/processed/attribution/case_001_hypothesis_evidence.json"
+    vessel_summary_csv: "data/processed/attribution/case_001_vessel_summary.csv"
+    vessel_summary_json: "data/processed/attribution/case_001_vessel_summary.json"
+    explanation_report: "data/processed/attribution/case_001_evidence_explanation_report.md"
+    attribution_diagnostic: "data/processed/attribution/case_001_attribution_diagnostic.png"
+
+uncertainty:
+  files:
+    uncertainty_summary_csv: "data/processed/attribution/case_001_uncertainty_summary.csv"
+    uncertainty_summary_json: "data/processed/attribution/case_001_uncertainty_summary.json"
+    hypothesis_rank_stability_csv: "data/processed/attribution/case_001_hypothesis_rank_stability.csv"
+    source_location_uncertainty_geojson: "data/processed/attribution/case_001_source_location_uncertainty.geojson"
+    source_time_sensitivity_csv: "data/processed/attribution/case_001_source_time_sensitivity.csv"
+    environmental_sensitivity_csv: "data/processed/attribution/case_001_environmental_sensitivity.csv"
+    ais_sensitivity_csv: "data/processed/attribution/case_001_ais_sensitivity.csv"
+    uncertainty_diagnostic: "data/processed/attribution/case_001_uncertainty_diagnostic.png"
+
+validation:
+  incident_name: "Huntington Beach Pipeline / San Pedro Bay Oil Spill"
+  incident_type: "pipeline_failure"
+  source_type: "pipeline" # vessel, pipeline, natural, unknown, other
+  ground_truth_quality: "VERIFIED" # VERIFIED, PROBABLE, UNVERIFIED
+  ground_truth_source: "NTSB Accident Report DCA22FM001 / USCG Investigation"
+  ground_truth_confidence: 1.0
+  reference_source_location:
+    lon: -118.0500
+    lat: 33.6000
+    depth_m: 30.0
+  reference_source_time_utc: "2021-10-02T01:00:00Z"
+  reference_vessel_mmsi: null
+  reference_vessel_name: null
+  validation_role: "NEGATIVE_NON_VESSEL_CASE"
+  evaluation_criteria:
+    max_tolerated_vessel_support_state: "MODERATE_SUPPORT"
+    false_high_support_threshold: 0.70
+  notes: >
+    Known origin is Amplify Energy Beta field underwater pipeline rupture (Pipeline corridor).
+    Used as a NEGATIVE SAFETY CASE to verify that passing maritime traffic (5-10 km away)
+    is NOT falsely attributed with HIGH_SUPPORT.
+
+

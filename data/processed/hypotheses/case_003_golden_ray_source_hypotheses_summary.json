@@ -1,0 +1,532 @@
+{
+  "case_id": "case_003_golden_ray",
+  "generated_timestamp_utc": "2026-09-11T14:17:15.904999+00:00",
+  "total_candidates": 256,
+  "total_hypotheses": 256,
+  "unique_vessels": 25,
+  "hypotheses_per_vessel": {
+    "311828000": {
+      "vessel_name": "KUJAWY",
+      "hypothesis_count": 15,
+      "hypothesis_ids": [
+        "4DH_0001",
+        "4DH_0023",
+        "4DH_0046",
+        "4DH_0066",
+        "4DH_0084",
+        "4DH_0095",
+        "4DH_0117",
+        "4DH_0140",
+        "4DH_0158",
+        "4DH_0164",
+        "4DH_0169",
+        "4DH_0191",
+        "4DH_0211",
+        "4DH_0226",
+        "4DH_0232"
+      ],
+      "min_distance_m": 6664.91,
+      "max_distance_m": 9247.35
+    },
+    "338102856": {
+      "vessel_name": "RESPONDER",
+      "hypothesis_count": 8,
+      "hypothesis_ids": [
+        "4DH_0002",
+        "4DH_0024",
+        "4DH_0096",
+        "4DH_0118",
+        "4DH_0170",
+        "4DH_0192",
+        "4DH_0237",
+        "4DH_0244"
+      ],
+      "min_distance_m": 1851.78,
+      "max_distance_m": 7912.23
+    },
+    "338102861": {
+      "vessel_name": "RECOVERY",
+      "hypothesis_count": 8,
+      "hypothesis_ids": [
+        "4DH_0003",
+        "4DH_0025",
+        "4DH_0097",
+        "4DH_0119",
+        "4DH_0171",
+        "4DH_0193",
+        "4DH_0238",
+        "4DH_0245"
+      ],
+      "min_distance_m": 2071.37,
+      "max_distance_m": 7842.56
+    },
+    "338143506": {
+      "vessel_name": "MORNING SUN II",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0004",
+        "4DH_0026",
+        "4DH_0047",
+        "4DH_0067",
+        "4DH_0098",
+        "4DH_0120",
+        "4DH_0141",
+        "4DH_0172",
+        "4DH_0194",
+        "4DH_0212"
+      ],
+      "min_distance_m": 9162.82,
+      "max_distance_m": 10229.97
+    },
+    "338182224": {
+      "vessel_name": "SEA SALT",
+      "hypothesis_count": 4,
+      "hypothesis_ids": [
+        "4DH_0092",
+        "4DH_0167",
+        "4DH_0235",
+        "4DH_0255"
+      ],
+      "min_distance_m": 1865.11,
+      "max_distance_m": 8294.59
+    },
+    "338184094": {
+      "vessel_name": "DULCINEA",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0005",
+        "4DH_0027",
+        "4DH_0048",
+        "4DH_0068",
+        "4DH_0099",
+        "4DH_0121",
+        "4DH_0142",
+        "4DH_0173",
+        "4DH_0195",
+        "4DH_0213"
+      ],
+      "min_distance_m": 8888.5,
+      "max_distance_m": 9776.02
+    },
+    "338235704": {
+      "vessel_name": "BRUNSWICK",
+      "hypothesis_count": 8,
+      "hypothesis_ids": [
+        "4DH_0006",
+        "4DH_0028",
+        "4DH_0100",
+        "4DH_0122",
+        "4DH_0174",
+        "4DH_0196",
+        "4DH_0239",
+        "4DH_0246"
+      ],
+      "min_distance_m": 1994.38,
+      "max_distance_m": 7946.6
+    },
+    "338335542": {
+      "vessel_name": "STILL WATERS",
+      "hypothesis_count": 9,
+      "hypothesis_ids": [
+        "4DH_0007",
+        "4DH_0029",
+        "4DH_0049",
+        "4DH_0069",
+        "4DH_0085",
+        "4DH_0101",
+        "4DH_0123",
+        "4DH_0143",
+        "4DH_0175"
+      ],
+      "min_distance_m": 5737.11,
+      "max_distance_m": 10261.43
+    },
+    "339759000": {
+      "vessel_name": "REGALEC",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0008",
+        "4DH_0030",
+        "4DH_0050",
+        "4DH_0070",
+        "4DH_0102",
+        "4DH_0124",
+        "4DH_0144",
+        "4DH_0176",
+        "4DH_0197",
+        "4DH_0214"
+      ],
+      "min_distance_m": 9020.48,
+      "max_distance_m": 9982.52
+    },
+    "367063030": {
+      "vessel_name": "EMERALD PRINCESS II",
+      "hypothesis_count": 19,
+      "hypothesis_ids": [
+        "4DH_0009",
+        "4DH_0031",
+        "4DH_0051",
+        "4DH_0071",
+        "4DH_0086",
+        "4DH_0093",
+        "4DH_0103",
+        "4DH_0125",
+        "4DH_0145",
+        "4DH_0159",
+        "4DH_0165",
+        "4DH_0177",
+        "4DH_0198",
+        "4DH_0215",
+        "4DH_0233",
+        "4DH_0240",
+        "4DH_0247",
+        "4DH_0251",
+        "4DH_0254"
+      ],
+      "min_distance_m": 4879.47,
+      "max_distance_m": 10201.9
+    },
+    "367094180": {
+      "vessel_name": "CHICORY",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0010",
+        "4DH_0032",
+        "4DH_0052",
+        "4DH_0072",
+        "4DH_0104",
+        "4DH_0126",
+        "4DH_0146",
+        "4DH_0178",
+        "4DH_0199",
+        "4DH_0216"
+      ],
+      "min_distance_m": 8875.53,
+      "max_distance_m": 9768.65
+    },
+    "367157730": {
+      "vessel_name": "AESTIVAL",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0011",
+        "4DH_0033",
+        "4DH_0053",
+        "4DH_0073",
+        "4DH_0105",
+        "4DH_0127",
+        "4DH_0147",
+        "4DH_0179",
+        "4DH_0200",
+        "4DH_0217"
+      ],
+      "min_distance_m": 9047.62,
+      "max_distance_m": 10065.88
+    },
+    "367305420": {
+      "vessel_name": "DOROTHY MORAN",
+      "hypothesis_count": 15,
+      "hypothesis_ids": [
+        "4DH_0012",
+        "4DH_0034",
+        "4DH_0054",
+        "4DH_0074",
+        "4DH_0087",
+        "4DH_0106",
+        "4DH_0128",
+        "4DH_0148",
+        "4DH_0160",
+        "4DH_0180",
+        "4DH_0201",
+        "4DH_0218",
+        "4DH_0227",
+        "4DH_0241",
+        "4DH_0248"
+      ],
+      "min_distance_m": 1946.28,
+      "max_distance_m": 10038.8
+    },
+    "367369550": {
+      "vessel_name": "ANN MORAN",
+      "hypothesis_count": 15,
+      "hypothesis_ids": [
+        "4DH_0013",
+        "4DH_0035",
+        "4DH_0055",
+        "4DH_0075",
+        "4DH_0088",
+        "4DH_0107",
+        "4DH_0129",
+        "4DH_0149",
+        "4DH_0161",
+        "4DH_0181",
+        "4DH_0202",
+        "4DH_0219",
+        "4DH_0228",
+        "4DH_0242",
+        "4DH_0249"
+      ],
+      "min_distance_m": 1940.63,
+      "max_distance_m": 10002.06
+    },
+    "367458950": {
+      "vessel_name": "WYOMING WIND",
+      "hypothesis_count": 7,
+      "hypothesis_ids": [
+        "4DH_0036",
+        "4DH_0056",
+        "4DH_0076",
+        "4DH_0130",
+        "4DH_0150",
+        "4DH_0203",
+        "4DH_0220"
+      ],
+      "min_distance_m": 9075.24,
+      "max_distance_m": 9962.7
+    },
+    "367569620": {
+      "vessel_name": "PURA VIDA",
+      "hypothesis_count": 9,
+      "hypothesis_ids": [
+        "4DH_0014",
+        "4DH_0037",
+        "4DH_0057",
+        "4DH_0077",
+        "4DH_0089",
+        "4DH_0108",
+        "4DH_0131",
+        "4DH_0151",
+        "4DH_0182"
+      ],
+      "min_distance_m": 5713.48,
+      "max_distance_m": 10239.24
+    },
+    "367691290": {
+      "vessel_name": "MISS LEXY",
+      "hypothesis_count": 15,
+      "hypothesis_ids": [
+        "4DH_0015",
+        "4DH_0038",
+        "4DH_0058",
+        "4DH_0078",
+        "4DH_0090",
+        "4DH_0109",
+        "4DH_0132",
+        "4DH_0152",
+        "4DH_0162",
+        "4DH_0166",
+        "4DH_0183",
+        "4DH_0204",
+        "4DH_0221",
+        "4DH_0229",
+        "4DH_0234"
+      ],
+      "min_distance_m": 7821.16,
+      "max_distance_m": 10414.47
+    },
+    "367753660": {
+      "vessel_name": "AQUAMARINE",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0016",
+        "4DH_0039",
+        "4DH_0059",
+        "4DH_0079",
+        "4DH_0110",
+        "4DH_0133",
+        "4DH_0153",
+        "4DH_0184",
+        "4DH_0205",
+        "4DH_0222"
+      ],
+      "min_distance_m": 8920.77,
+      "max_distance_m": 9857.71
+    },
+    "367762440": {
+      "vessel_name": "SILVER GIRL II",
+      "hypothesis_count": 12,
+      "hypothesis_ids": [
+        "4DH_0017",
+        "4DH_0040",
+        "4DH_0060",
+        "4DH_0080",
+        "4DH_0111",
+        "4DH_0134",
+        "4DH_0154",
+        "4DH_0163",
+        "4DH_0185",
+        "4DH_0206",
+        "4DH_0223",
+        "4DH_0230"
+      ],
+      "min_distance_m": 8836.65,
+      "max_distance_m": 10281.01
+    },
+    "368004680": {
+      "vessel_name": "TAKE IT EASY",
+      "hypothesis_count": 9,
+      "hypothesis_ids": [
+        "4DH_0018",
+        "4DH_0041",
+        "4DH_0061",
+        "4DH_0081",
+        "4DH_0091",
+        "4DH_0112",
+        "4DH_0135",
+        "4DH_0155",
+        "4DH_0186"
+      ],
+      "min_distance_m": 5664.28,
+      "max_distance_m": 10186.23
+    },
+    "369201000": {
+      "vessel_name": "SALTY VIXEN",
+      "hypothesis_count": 10,
+      "hypothesis_ids": [
+        "4DH_0019",
+        "4DH_0042",
+        "4DH_0062",
+        "4DH_0082",
+        "4DH_0113",
+        "4DH_0136",
+        "4DH_0156",
+        "4DH_0187",
+        "4DH_0207",
+        "4DH_0224"
+      ],
+      "min_distance_m": 8953.9,
+      "max_distance_m": 9912.22
+    },
+    "369273000": {
+      "vessel_name": "ESCAPE PLAN",
+      "hypothesis_count": 8,
+      "hypothesis_ids": [
+        "4DH_0020",
+        "4DH_0043",
+        "4DH_0063",
+        "4DH_0083",
+        "4DH_0114",
+        "4DH_0137",
+        "4DH_0188",
+        "4DH_0208"
+      ],
+      "min_distance_m": 9228.13,
+      "max_distance_m": 10049.94
+    },
+    "369970979": {
+      "vessel_name": "S3005 NRT1",
+      "hypothesis_count": 3,
+      "hypothesis_ids": [
+        "4DH_0094",
+        "4DH_0168",
+        "4DH_0236"
+      ],
+      "min_distance_m": 7389.11,
+      "max_distance_m": 8186.84
+    },
+    "538004697": {
+      "vessel_name": "EMERALD ACE",
+      "hypothesis_count": 8,
+      "hypothesis_ids": [
+        "4DH_0021",
+        "4DH_0044",
+        "4DH_0064",
+        "4DH_0115",
+        "4DH_0138",
+        "4DH_0189",
+        "4DH_0209",
+        "4DH_0252"
+      ],
+      "min_distance_m": 8070.27,
+      "max_distance_m": 9625.43
+    },
+    "538007762": {
+      "vessel_name": "UNKNOWN",
+      "hypothesis_count": 14,
+      "hypothesis_ids": [
+        "4DH_0022",
+        "4DH_0045",
+        "4DH_0065",
+        "4DH_0116",
+        "4DH_0139",
+        "4DH_0157",
+        "4DH_0190",
+        "4DH_0210",
+        "4DH_0225",
+        "4DH_0231",
+        "4DH_0243",
+        "4DH_0250",
+        "4DH_0253",
+        "4DH_0256"
+      ],
+      "min_distance_m": 1701.57,
+      "max_distance_m": 10362.94
+    }
+  },
+  "source_time_distribution": {
+    "2019-09-08T09:25:31.797740+00:00": 73,
+    "2019-09-08T07:25:31.797740+00:00": 73,
+    "2019-09-08T05:25:31.797740+00:00": 57,
+    "2019-09-08T03:25:31.797740+00:00": 31,
+    "2019-09-07T23:25:31.797740+00:00": 14,
+    "2019-09-07T17:25:31.797740+00:00": 8
+  },
+  "source_age_distribution": {
+    "2.0": 73,
+    "4.0": 73,
+    "6.0": 57,
+    "8.0": 31,
+    "12.0": 14,
+    "18.0": 8
+  },
+  "ais_quality_distribution": {
+    "bracketed_interpolation": 256
+  },
+  "distance_statistics": {
+    "count": 256,
+    "min_m": 1701.57,
+    "max_m": 10414.47,
+    "mean_m": 8039.4513671875,
+    "median_m": 8913.880000000001,
+    "p25_m": 7179.297500000001,
+    "p75_m": 9567.29
+  },
+  "closest_hypotheses": [
+    {
+      "hypothesis_id": "4DH_0065",
+      "vessel_name": "UNKNOWN",
+      "mmsi": 538007762,
+      "vessel_source_distance_m": 1701.57,
+      "source_plausibility": 0.4678
+    },
+    {
+      "hypothesis_id": "4DH_0002",
+      "vessel_name": "RESPONDER",
+      "mmsi": 338102856,
+      "vessel_source_distance_m": 1851.78,
+      "source_plausibility": 0.5274
+    },
+    {
+      "hypothesis_id": "4DH_0092",
+      "vessel_name": "SEA SALT",
+      "mmsi": 338182224,
+      "vessel_source_distance_m": 1865.11,
+      "source_plausibility": 0.3263
+    },
+    {
+      "hypothesis_id": "4DH_0022",
+      "vessel_name": "UNKNOWN",
+      "mmsi": 538007762,
+      "vessel_source_distance_m": 1929.62,
+      "source_plausibility": 0.5274
+    },
+    {
+      "hypothesis_id": "4DH_0013",
+      "vessel_name": "ANN MORAN",
+      "mmsi": 367369550,
+      "vessel_source_distance_m": 1940.63,
+      "source_plausibility": 0.5274
+    }
+  ],
+  "scientific_guardrail_notice": "Hypotheses represent descriptive 4D physical pairings (vessel, release location, release time). They do NOT constitute attribution or guilt rankings. Forward counterfactual simulation will evaluate hypothesis viability in Phase 7.",
+  "reference_pipeline_notice": "Pipeline rupture coordinates were strictly excluded from hypothesis generation."
+}

@@ -1,0 +1,37 @@
+{
+  "status": "BLOCKED_PENDING_POSITIVE_REAL_CASE_DATA",
+  "ready_for_positive_real_case_validation": false,
+  "summary": "Validation pipeline is blocked from claiming real-world vessel attribution accuracy. The only ingested real incident is Case_001 (Huntington Beach pipeline rupture, a negative non-vessel case). At least one independent positive vessel-caused historical incident (e.g. MV Wakashio) must be downloaded and ingested to evaluate true culprit recovery.",
+  "inventory_statistics": {
+    "total_registered_cases": 16,
+    "real_historical_cases_count": 6,
+    "synthetic_benchmark_cases_count": 6,
+    "locally_available_real_cases": 1,
+    "locally_available_positive_vessel_cases": 0,
+    "locally_available_negative_cases": 1,
+    "potentially_available_positive_cases": 5
+  },
+  "missing_positive_data_requirements": [
+    {
+      "case_id": "case_002_wakashio",
+      "incident_name": "MV Wakashio Grounding",
+      "priority": "HIGH (Recommended Primary Positive Benchmark)",
+      "required_satellite_scene": "S1A_IW_GRDH_1SDV_20200806T014312_20200806T014337_033780_03EC26",
+      "required_ais_mmsi": 356508000,
+      "download_source": "Copernicus Open Access Hub / Spire Global"
+    },
+    {
+      "case_id": "case_004_os35",
+      "incident_name": "MV OS 35 Collision & Grounding",
+      "priority": "HIGH (High-Density Traffic Disambiguation Benchmark)",
+      "required_satellite_scene": "S1A_IW_GRDH_1SDV_20220901T061448_20220901T061513_044807_0559F0",
+      "required_ais_mmsi": 572396000,
+      "download_source": "Copernicus Hub / Gibraltar Port Authority"
+    }
+  ],
+  "guardrails": {
+    "synthetic_mixing_permitted": false,
+    "score_calibration_permitted": false,
+    "min_cases_for_probability_calibration": 30
+  }
+}
