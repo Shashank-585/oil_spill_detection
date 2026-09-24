@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useInvestigationStore } from '../../store/investigationStore';
 import { useActiveCase } from '../../context/CaseContext';
 import { useSpillComparisonsQuery } from '../../api/casesApi';
 import { MonospaceValue } from '../common/MonospaceValue';
 import { StatusBadge } from '../common/StatusBadge';
 import { CandidatePreview } from '../attribution/CandidatePreview';
+import { CandidateComparisonModal } from '../attribution/CandidateComparisonModal';
 import {
   X,
   ChevronRight,
@@ -21,6 +22,8 @@ export const InspectorDrawer: React.FC = () => {
   const setSelectedMmsi = useInvestigationStore((s) => s.setSelectedMmsi);
   const selectedHypothesisId = useInvestigationStore((s) => s.selectedHypothesisId);
   const setSelectedHypothesisId = useInvestigationStore((s) => s.setSelectedHypothesisId);
+
+  const [comparisonModalOpen, setComparisonModalOpen] = useState(false);
 
   const {
     activeCaseId,
@@ -327,7 +330,10 @@ export const InspectorDrawer: React.FC = () => {
               </div>
 
               {/* Candidate Evidentiary Details */}
-              <CandidatePreview vessel={currentCandidate} />
+              <CandidatePreview
+                vessel={currentCandidate}
+                onOpenComparison={() => setComparisonModalOpen(true)}
+              />
             </>
           ) : (
             <div
@@ -437,6 +443,16 @@ export const InspectorDrawer: React.FC = () => {
           </section>
         )}
       </div>
+
+      {/* Candidate Comparison Modal */}
+      {comparisonModalOpen && currentCandidate && attributionRanking && (
+        <CandidateComparisonModal
+          candidates={attributionRanking}
+          initialCandidateA={topCandidate}
+          initialCandidateB={currentCandidate}
+          onClose={() => setComparisonModalOpen(false)}
+        />
+      )}
     </aside>
   );
 };

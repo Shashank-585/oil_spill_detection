@@ -10,13 +10,16 @@ import { CounterfactualViewer } from './components/attribution/CounterfactualVie
 import { SarView } from './components/observation/SarView';
 import { AisView } from './components/observation/AisView';
 import { DriftView } from './components/observation/DriftView';
-import { AuditView } from './components/audit/AuditView';
+import { InvestigationReportView } from './components/report/InvestigationReportView';
+import { HistoricalReplayBar } from './components/timeline/HistoricalReplayBar';
 import { useInvestigationStore, type WorkspaceView } from './store/investigationStore';
 import './styles/globals.css';
 
 export const App: React.FC = () => {
   const activeCaseId = useInvestigationStore((s) => s.activeCaseId);
+  const activeStage = useInvestigationStore((s) => s.activeStage);
   const activeWorkspace = useInvestigationStore((s) => s.activeWorkspace);
+  const isReplayMode = useInvestigationStore((s) => s.isReplayMode);
   const setActiveCaseId = useInvestigationStore((s) => s.setActiveCaseId);
   const setActiveWorkspace = useInvestigationStore((s) => s.setActiveWorkspace);
 
@@ -31,10 +34,18 @@ export const App: React.FC = () => {
         setActiveCaseId(caseParam);
         if (pathParts[2]) {
           const rawView = pathParts[2].toLowerCase();
-          const mappedView: WorkspaceView =
-            rawView === 'attribution'
-              ? 'candidates'
-              : (rawView as WorkspaceView);
+          let mappedView: WorkspaceView = 'overview';
+          if (rawView === 'attribution' || rawView === 'attribute' || rawView === 'candidates') {
+            mappedView = 'candidates';
+          } else if (rawView === 'observe') {
+            mappedView = 'overview';
+          } else if (rawView === 'investigate') {
+            mappedView = 'drift';
+          } else if (rawView === 'report') {
+            mappedView = 'audit';
+          } else {
+            mappedView = rawView as WorkspaceView;
+          }
           setActiveWorkspace(mappedView);
           return;
         }
@@ -49,7 +60,13 @@ export const App: React.FC = () => {
         setActiveCaseId(caseParam);
       }
       if (viewParam) {
-        setActiveWorkspace(viewParam);
+        let mappedView: WorkspaceView = viewParam;
+        const raw = String(viewParam).toLowerCase();
+        if (raw === 'attribution' || raw === 'attribute') mappedView = 'candidates';
+        else if (raw === 'observe') mappedView = 'overview';
+        else if (raw === 'investigate') mappedView = 'drift';
+        else if (raw === 'report') mappedView = 'audit';
+        setActiveWorkspace(mappedView);
       }
     };
 
@@ -101,14 +118,14 @@ export const App: React.FC = () => {
 
         {/* Center Investigation Workspace (Map + Overlays + Timeline) */}
         <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', overflow: 'hidden' }}>
-          {/* Active Workspace Banner (Subtle tag) */}
+          {/* Active Workflow Stage & Workspace Badge */}
           <div
             style={{
               position: 'absolute',
               top: '16px',
               right: '56px',
               zIndex: 10,
-              backgroundColor: 'rgba(17, 22, 32, 0.85)',
+              backgroundColor: 'rgba(17, 22, 32, 0.88)',
               border: '1px solid var(--color-border-subtle)',
               borderRadius: 'var(--radius-xs)',
               padding: '4px 10px',
@@ -116,11 +133,15 @@ export const App: React.FC = () => {
               fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              color: 'var(--color-accent-blue)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
               boxShadow: 'var(--shadow-sm)',
             }}
           >
-            WORKSPACE: {activeWorkspace}
+            <span style={{ color: 'var(--color-accent-blue)' }}>STAGE: {activeStage}</span>
+            <span style={{ color: 'var(--color-text-muted)' }}>·</span>
+            <span style={{ color: 'var(--color-text-secondary)' }}>VIEW: {activeWorkspace}</span>
           </div>
 
           {/* Geospatial Viewport (Dominates 80%+ of view) */}
@@ -147,9 +168,12 @@ export const App: React.FC = () => {
               <UncertaintyView onClose={() => setActiveWorkspace('overview')} />
             )}
             {activeWorkspace === 'audit' && (
-              <AuditView onClose={() => setActiveWorkspace('overview')} />
+              <InvestigationReportView onClose={() => setActiveWorkspace('overview')} />
             )}
           </main>
+
+          {/* Historical Event Replay Floating HUD (Phase 22) */}
+          {isReplayMode && <HistoricalReplayBar />}
 
           {/* Master Timeline Scrubber */}
           <MasterTimelineScrubber />
@@ -163,4 +187,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-

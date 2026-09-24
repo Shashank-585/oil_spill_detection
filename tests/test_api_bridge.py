@@ -343,3 +343,81 @@ def test_spill_comparisons():
     assert resp_missing.json()["detail"]["error"] == "DATASET_NOT_AVAILABLE"
 
 
+def test_investigation_dossier():
+    """Verify Phase 23 16-section investigation dossier endpoints and exact case constraints."""
+    # 1. Case 003 Golden Ray
+    resp3 = client.get("/api/cases/case_003_golden_ray/dossier")
+    assert resp3.status_code == 200
+    d3 = resp3.json()
+    assert d3["dossier_version"] == "1.0.0"
+    assert d3["case_id"] == "case_003_golden_ray"
+
+    # 16 sections verification
+    expected_sections = [
+        "case_identification",
+        "executive_summary",
+        "satellite_observation",
+        "detected_slick",
+        "environmental_conditions",
+        "source_reconstruction",
+        "ais_coverage",
+        "candidate_vessels",
+        "hypotheses_4d",
+        "counterfactual_simulation",
+        "evidence_ranking",
+        "causal_consistency",
+        "uncertainty",
+        "data_limitations",
+        "conclusion",
+        "provenance",
+    ]
+    for sec in expected_sections:
+        assert sec in d3, f"Missing section {sec} in Case 003 dossier"
+
+    # Core 7 questions
+    qa3 = d3["executive_summary"]["core_questions"]
+    assert len(qa3) == 7
+
+    # Case 003 exact numbers
+    assert d3["source_reconstruction"]["total_source_hypotheses"] == 42
+    assert d3["hypotheses_4d"]["total_hypotheses_count"] == 256
+    assert d3["candidate_vessels"]["candidate_vessels_count"] == 25
+    assert d3["evidence_ranking"]["top_vessel_name"] == "GOLDEN RAY"
+    assert d3["evidence_ranking"]["top_vessel_mmsi"] == 538007762
+    assert d3["causal_consistency"]["causal_status_top_candidate"] == "AT_RELEASE"
+
+    # Verify alias /report
+    resp_alias = client.get("/api/cases/case_003_golden_ray/report")
+    assert resp_alias.status_code == 200
+    assert resp_alias.json()["case_id"] == "case_003_golden_ray"
+
+    # 2. Case 001 Negative Control
+    resp1 = client.get("/api/cases/case_001/dossier")
+    assert resp1.status_code == 200
+    d1 = resp1.json()
+    assert d1["case_identification"]["validation_role"] == "NEGATIVE_NON_VESSEL_CASE"
+    assert d1["data_limitations"]["is_negative_control"] is True
+    assert "Pipeline" in d1["conclusion"]["best_supported_hypothesis"]
+
+    # 3. Case 002 Wakashio Benchmark
+    resp2 = client.get("/api/cases/case_002_wakashio/dossier")
+    assert resp2.status_code == 200
+    d2 = resp2.json()
+    assert d2["ais_coverage"]["archive_available"] is False
+    assert d2["data_limitations"]["ais_archive_missing"] is True
+    assert d2["candidate_vessels"]["candidate_vessels_count"] == 0
+
+
+def test_simulation_detail_and_traversal():
+    """Verify simulation detail endpoint and path traversal rejection for hypothesis_id."""
+    # Path traversal rejection
+    resp_trav = client.get("/api/cases/case_003_golden_ray/attribution/simulations/..%2F..%2Fetc")
+    assert resp_trav.status_code in [400, 404]
+
+    # Nonexistent hypothesis
+    resp_missing = client.get("/api/cases/case_003_golden_ray/attribution/simulations/hyp_nonexistent_999")
+    assert resp_missing.status_code == 404
+
+
+
+

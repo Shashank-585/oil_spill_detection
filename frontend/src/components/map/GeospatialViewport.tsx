@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import * as maplibregl from 'maplibre-gl';
 import { MapboxOverlay } from '@deck.gl/mapbox';
-import { GeoJsonLayer } from '@deck.gl/layers';
+import { GeoJsonLayer, ScatterplotLayer } from '@deck.gl/layers';
 import { useInvestigationStore } from '../../store/investigationStore';
 import { useActiveCase } from '../../context/CaseContext';
 import {
@@ -10,10 +10,12 @@ import {
   useAisTracksQuery,
   useDriftTrajectoriesQuery,
   useHypothesesQuery,
+  useSimulationDetailQuery,
+  useSpillComparisonsQuery,
 } from '../../api/casesApi';
 import { MapLayerControls } from './MapLayerControls';
 import { MapLegend } from './MapLegend';
-import { ZoomIn, ZoomOut, Compass, X } from 'lucide-react';
+import { ZoomIn, ZoomOut, Compass, X, Target } from 'lucide-react';
 
 // Esri Dark Gray Canvas basemap: free, reliable, official, zero watermark, dark nautical aesthetic
 const ESRI_DARK_STYLE: maplibregl.StyleSpecification = {
@@ -121,6 +123,7 @@ export const GeospatialViewport: React.FC = () => {
   const inspectorOpen = useInvestigationStore((s) => s.inspectorOpen);
   const toggleInspector = useInvestigationStore((s) => s.toggleInspector);
   const currentTimeUtc = useInvestigationStore((s) => s.currentTimeUtc);
+  const activeWorkspace = useInvestigationStore((s) => s.activeWorkspace);
 
   const { activeCaseId, activeCase } = useActiveCase();
 
@@ -130,6 +133,20 @@ export const GeospatialViewport: React.FC = () => {
   const { data: aisTracksData } = useAisTracksQuery(activeCaseId);
   const { data: driftData } = useDriftTrajectoriesQuery(activeCaseId);
   const { data: hypothesesData } = useHypothesesQuery(activeCaseId);
+  const { data: spillComparisons } = useSpillComparisonsQuery(activeCaseId);
+  const { data: simulationDetail } = useSimulationDetailQuery(
+    activeCaseId,
+    selectedHypothesisId,
+    Boolean(selectedHypothesisId)
+  );
+
+  const activeComparison = useMemo(() => {
+    if (!spillComparisons || !spillComparisons.length) return null;
+    if (selectedHypothesisId) {
+      return spillComparisons.find((c) => c.hypothesis_id === selectedHypothesisId) || null;
+    }
+    return null;
+  }, [spillComparisons, selectedHypothesisId]);
 
   const currentEpoch = useMemo(() => new Date(currentTimeUtc).getTime(), [currentTimeUtc]);
 
@@ -213,6 +230,121 @@ export const GeospatialViewport: React.FC = () => {
     }
     return { type: 'FeatureCollection', features: pts };
   }, [indexedDriftTrajectories, mapLayers.driftParticles, currentEpoch]);
+
+  // Geospatial vectors for Counterfactual Simulation Visualization
+  const simulationTrajectoriesGeoJson = useMemo(() => {
+    if (!simulationDetail?.trajectories || !simulationDetail.trajectories.length) {
+      return { type: 'FeatureCollection', features: [] };
+    }
+    const features = simulationDetail.trajectories.map((traj) => ({
+      type: 'Feature',
+      geometry: {
+        type: 'LineString',
+        coordinates: traj.coordinates,
+      },
+      properties: {
+        track_index: traj.track_index,
+      },
+    }));
+    return { type: 'FeatureCollection', features };
+  }, [simulationDetail]);
+
+  const counterfactualSourceGeoJson = useMemo(() => {
+    const relLat = activeComparison?.release_lat ?? (simulationDetail?.metadata as any)?.release_lat;
+    const relLon = activeComparison?.release_lon ?? (simulationDetail?.metadata as any)?.release_lon;
+    if (relLat == null || relLon == null) {
+      return { type: 'FeatureCollection', features: [] };
+    }
+    return {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [relLon, relLat],
+          },
+          properties: {
+            hypothesis_id: selectedHypothesisId,
+            mmsi: activeComparison?.mmsi,
+            release_time: activeComparison?.release_timestamp,
+            label: 'HYPOTHESIS RELEASE SOURCE POINT',
+          },
+        },
+      ],
+    };
+  }, [activeComparison, simulationDetail, selectedHypothesisId]);
+
+  const centroidOffsetVectorGeoJson = useMemo(() => {
+    const predLat = activeComparison?.predicted_centroid_lat;
+    const predLon = activeComparison?.predicted_centroid_lon;
+    const obsLat = activeComparison?.observed_centroid_lat;
+    const obsLon = activeComparison?.observed_centroid_lon;
+    if (predLat == null || predLon == null || obsLat == null || obsLon == null) {
+      return { type: 'FeatureCollection', features: [] };
+    }
+    return {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: [
+              [predLon, predLat],
+              [obsLon, obsLat],
+            ],
+          },
+          properties: {
+            centroid_error_m: activeComparison?.centroid_error_m,
+            label: `Centroid Error: ${activeComparison?.centroid_error_m?.toFixed(1) ?? 'N/A'} m`,
+          },
+        },
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [predLon, predLat],
+          },
+          properties: {
+            type: 'predicted_centroid',
+            label: 'Predicted Slick Centroid',
+          },
+        },
+      ],
+    };
+  }, [activeComparison]);
+
+  // Smoothly center the map view on the counterfactual simulation when active
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapLoaded || activeWorkspace !== 'evidence' || !activeComparison) return;
+    const pLat = activeComparison.predicted_centroid_lat;
+    const pLon = activeComparison.predicted_centroid_lon;
+
+    if (pLat != null && pLon != null) {
+      const oLat = activeComparison.observed_centroid_lat ?? pLat;
+      const oLon = activeComparison.observed_centroid_lon ?? pLon;
+      const rLat = activeComparison.release_lat ?? pLat;
+      const rLon = activeComparison.release_lon ?? pLon;
+
+      const minLon = Math.min(pLon, oLon, rLon);
+      const maxLon = Math.max(pLon, oLon, rLon);
+      const minLat = Math.min(pLat, oLat, rLat);
+      const maxLat = Math.max(pLat, oLat, rLat);
+
+      if (isFinite(minLon) && isFinite(maxLon) && isFinite(minLat) && isFinite(maxLat)) {
+        const pad = 0.02;
+        map.fitBounds(
+          [
+            [minLon - pad, minLat - pad],
+            [maxLon + pad, maxLat + pad],
+          ],
+          { padding: { top: 70, bottom: 70, left: 70, right: 540 }, duration: 900 }
+        );
+      }
+    }
+  }, [activeWorkspace, activeComparison?.hypothesis_id, mapLoaded]);
 
   // 1. Initialize MapLibre Map and deck.gl MapboxOverlay
   useEffect(() => {
@@ -369,6 +501,17 @@ export const GeospatialViewport: React.FC = () => {
     }
   }, [activeCaseId, activeCase, mapLoaded]);
 
+  // Synchronize Incident Marker and Satellite Footprint visibility
+  useEffect(() => {
+    if (incidentMarkerRef.current) {
+      incidentMarkerRef.current.getElement().style.display = mapLayers.incidentPoint ? 'flex' : 'none';
+    }
+    const map = mapRef.current;
+    if (map && mapLoaded && map.getLayer('case-aoi-layer')) {
+      map.setLayoutProperty('case-aoi-layer', 'visibility', mapLayers.satelliteFootprint ? 'visible' : 'none');
+    }
+  }, [mapLayers.incidentPoint, mapLayers.satelliteFootprint, mapLoaded]);
+
   // 3. Render Georeferenced SAR Visualization Derivative Layer
   useEffect(() => {
     const map = mapRef.current;
@@ -423,15 +566,32 @@ export const GeospatialViewport: React.FC = () => {
       new GeoJsonLayer({
         id: 'slicks-layer',
         data: (slicksData as any) || [],
-        visible: mapLayers.slickPolygons && Boolean(slicksData?.features?.length),
+        visible: (activeWorkspace === 'evidence' || mapLayers.slickPolygons) && Boolean(slicksData?.features?.length),
         pickable: true,
         filled: true,
         stroked: true,
         lineWidthUnits: 'pixels',
-        getFillColor: [210, 153, 34, 150],
-        getLineColor: [250, 190, 50, 255],
-        getLineWidth: 2,
+        getFillColor: (f: any) => {
+          const props = f?.properties || {};
+          const isCompared = activeComparison && (props.slick_id === activeComparison.observed_slick_id || props.id === activeComparison.observed_slick_id);
+          return isCompared ? [250, 190, 50, 185] : [210, 153, 34, 150];
+        },
+        getLineColor: (f: any) => {
+          const props = f?.properties || {};
+          const isCompared = activeComparison && (props.slick_id === activeComparison.observed_slick_id || props.id === activeComparison.observed_slick_id);
+          return isCompared ? [255, 255, 255, 255] : [250, 190, 50, 255];
+        },
+        getLineWidth: (f: any) => {
+          const props = f?.properties || {};
+          const isCompared = activeComparison && (props.slick_id === activeComparison.observed_slick_id || props.id === activeComparison.observed_slick_id);
+          return isCompared ? 3.5 : 2;
+        },
         lineWidthMinPixels: 1.5,
+        updateTriggers: {
+          getFillColor: [activeComparison?.observed_slick_id],
+          getLineColor: [activeComparison?.observed_slick_id],
+          getLineWidth: [activeComparison?.observed_slick_id],
+        },
         onClick: (info) => {
           if (info.object) {
             const props = (info.object as any).properties || {};
@@ -629,6 +789,113 @@ export const GeospatialViewport: React.FC = () => {
           }
         },
       }),
+
+      // 4G. Counterfactual Forward Simulation Particle Plume
+      new ScatterplotLayer({
+        id: 'counterfactual-particles-layer',
+        data: simulationDetail?.particles || [],
+        visible: Boolean(simulationDetail?.particles?.length),
+        pickable: true,
+        opacity: 0.85,
+        getPosition: (d: any) => [d.lon, d.lat],
+        getRadius: 5,
+        radiusMinPixels: 3.5,
+        radiusMaxPixels: 12,
+        getFillColor: [56, 189, 248, 225], // Vibrant Cyan / Electric Blue
+        getLineColor: [255, 255, 255, 220],
+        getLineWidth: 1,
+        lineWidthUnits: 'pixels',
+        updateTriggers: {
+          getPosition: [simulationDetail?.hypothesis_id],
+        },
+        onClick: (info) => {
+          if (info.object) {
+            setSelectedFeature({
+              type: 'drift',
+              title: `Forward Simulated Particle #${(info.object as any).particle_id}`,
+              properties: info.object as any,
+            });
+          }
+        },
+      }),
+
+      // 4H. Counterfactual Trajectories
+      new GeoJsonLayer({
+        id: 'counterfactual-trajectories-layer',
+        data: simulationTrajectoriesGeoJson as any,
+        visible: Boolean(simulationTrajectoriesGeoJson.features.length),
+        pickable: false,
+        stroked: true,
+        filled: false,
+        lineWidthUnits: 'pixels',
+        getLineColor: [56, 189, 248, 130],
+        getLineWidth: 1.5,
+        lineWidthMinPixels: 1,
+        updateTriggers: {
+          data: [simulationDetail?.hypothesis_id],
+        },
+      }),
+
+      // 4I. Counterfactual Release Source Point
+      new GeoJsonLayer({
+        id: 'counterfactual-source-layer',
+        data: counterfactualSourceGeoJson as any,
+        visible: Boolean(counterfactualSourceGeoJson.features.length),
+        pickable: true,
+        pointType: 'circle',
+        pointRadiusUnits: 'pixels',
+        getPointRadius: 8,
+        pointRadiusMinPixels: 6,
+        pointRadiusMaxPixels: 16,
+        getFillColor: [251, 146, 60, 255], // Orange / Coral release point
+        getLineColor: [255, 255, 255, 255],
+        getLineWidth: 2.5,
+        lineWidthUnits: 'pixels',
+        updateTriggers: {
+          data: [activeComparison?.hypothesis_id],
+        },
+        onClick: (info) => {
+          if (info.object) {
+            const props = (info.object as any).properties || {};
+            setSelectedFeature({
+              type: 'hypothesis',
+              title: 'Hypothesis Release Origin Point (T_release)',
+              properties: props,
+            });
+          }
+        },
+      }),
+
+      // 4J. Simulated vs Observed Centroid Offset Vector
+      new GeoJsonLayer({
+        id: 'counterfactual-centroid-offset-layer',
+        data: centroidOffsetVectorGeoJson as any,
+        visible: (activeWorkspace === 'evidence') && Boolean(centroidOffsetVectorGeoJson.features.length),
+        pickable: true,
+        stroked: true,
+        filled: true,
+        lineWidthUnits: 'pixels',
+        getLineColor: [248, 81, 73, 230], // Red/Coral offset line
+        getLineWidth: 2.5,
+        lineWidthMinPixels: 1.5,
+        pointType: 'circle',
+        pointRadiusUnits: 'pixels',
+        getPointRadius: 5.5,
+        getFillColor: [56, 189, 248, 255], // Cyan predicted centroid point
+        getLineColor2: [255, 255, 255, 255],
+        updateTriggers: {
+          data: [activeComparison?.hypothesis_id],
+        },
+        onClick: (info) => {
+          if (info.object) {
+            setSelectedFeature({
+              type: 'drift',
+              title: 'Centroid Displacement Vector',
+              properties: (info.object as any).properties || {},
+            });
+          }
+        },
+      }),
     ];
 
     overlay.setProps({ layers });
@@ -645,6 +912,12 @@ export const GeospatialViewport: React.FC = () => {
     selectedMmsi,
     selectedHypothesisId,
     inspectorOpen,
+    activeWorkspace,
+    activeComparison,
+    simulationDetail,
+    simulationTrajectoriesGeoJson,
+    counterfactualSourceGeoJson,
+    centroidOffsetVectorGeoJson,
     setSelectedMmsi,
     setSelectedHypothesisId,
     toggleInspector,
@@ -772,6 +1045,89 @@ export const GeospatialViewport: React.FC = () => {
           <ZoomOut size={15} />
         </button>
       </div>
+
+      {/* Dedicated Counterfactual Legend Overlay */}
+      {activeWorkspace === 'evidence' && (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '48px',
+            left: '16px',
+            zIndex: 15,
+            backgroundColor: 'rgba(10, 13, 19, 0.94)',
+            border: '1px solid var(--color-border-subtle)',
+            borderRadius: 'var(--radius-sm)',
+            padding: '10px 14px',
+            boxShadow: 'var(--shadow-lg)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '6px',
+            minWidth: '240px',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2px' }}>
+            <span
+              style={{
+                fontSize: 'var(--text-2xs)',
+                fontWeight: 700,
+                color: 'var(--color-accent-cyan)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Counterfactual Map Legend
+            </span>
+            {activeComparison && (
+              <button
+                onClick={() => {
+                  const pLat = activeComparison.predicted_centroid_lat;
+                  const pLon = activeComparison.predicted_centroid_lon;
+                  if (mapRef.current && pLat && pLon) {
+                    mapRef.current.flyTo({ center: [pLon, pLat], zoom: 12.5, duration: 800 });
+                  }
+                }}
+                style={{
+                  fontSize: '9px',
+                  color: 'var(--color-accent-cyan)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '3px',
+                }}
+                title="Focus on Simulation Plume"
+              >
+                <Target size={11} />
+                Focus
+              </button>
+            )}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
+            <div style={{ width: '12px', height: '12px', backgroundColor: 'rgba(250, 190, 50, 0.5)', border: '2px solid #ffffff', borderRadius: '2px' }} />
+            <span>Observed SAR Slick ({activeComparison?.observed_slick_id || 'CS_0035'})</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
+            <div style={{ width: '8px', height: '8px', backgroundColor: '#38bdf8', borderRadius: '50%', boxShadow: '0 0 6px #38bdf8' }} />
+            <span>Simulated Particle Plume ({simulationDetail?.particles?.length ?? 500} pts)</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
+            <div style={{ width: '10px', height: '10px', backgroundColor: '#fb923c', border: '1.5px solid #ffffff', borderRadius: '2px', transform: 'rotate(45deg)' }} />
+            <span>Hypothesis Release Point (T₀)</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
+            <div style={{ width: '16px', height: '2px', backgroundColor: '#38bdf8' }} />
+            <span>Forward Drift Trajectory</span>
+          </div>
+          {activeComparison?.centroid_error_m != null && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
+              <div style={{ width: '16px', height: '2px', backgroundColor: '#f85149' }} />
+              <span>Centroid Error: <strong className="font-mono" style={{ color: 'var(--color-text-primary)' }}>{activeComparison.centroid_error_m.toFixed(1)} m</strong></span>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Telemetry Footer */}
       <div

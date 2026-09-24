@@ -2,10 +2,19 @@ import React from 'react';
 import { useInvestigationStore } from '../../store/investigationStore';
 import { useActiveCase } from '../../context/CaseContext';
 import { MonospaceValue } from '../common/MonospaceValue';
-import { RotateCcw, Calendar, Crosshair, Radio, Navigation, Clock } from 'lucide-react';
+import { RotateCcw, Calendar, Crosshair, Radio, Navigation, Clock, Film } from 'lucide-react';
 
 export const MasterTimelineScrubber: React.FC = () => {
-  const { currentTimeUtc, setCurrentTimeUtc } = useInvestigationStore();
+  const {
+    currentTimeUtc,
+    setCurrentTimeUtc,
+    isReplayMode,
+    setReplayMode,
+    isPlaying,
+    setIsPlaying,
+    togglePlayPause,
+    playbackSpeed,
+  } = useInvestigationStore();
   const { activeCase } = useActiveCase();
 
   // Dynamic T0 and SAR timestamps based on active case
@@ -30,6 +39,71 @@ export const MasterTimelineScrubber: React.FC = () => {
       setCurrentTimeUtc(t0Str);
     }
   }, [t0Str, setCurrentTimeUtc]);
+
+  // Keyboard shortcut: Spacebar to toggle Play/Pause
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const activeTag = (document.activeElement as HTMLElement)?.tagName;
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(activeTag)) {
+        return;
+      }
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlayPause();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [togglePlayPause]);
+
+  // 60 FPS Animation Loop via requestAnimationFrame
+  const lastTimeRef = React.useRef<number | null>(null);
+  const animFrameIdRef = React.useRef<number | null>(null);
+
+  React.useEffect(() => {
+    if (!isPlaying) {
+      lastTimeRef.current = null;
+      if (animFrameIdRef.current) {
+        cancelAnimationFrame(animFrameIdRef.current);
+        animFrameIdRef.current = null;
+      }
+      return;
+    }
+
+    const baseAdvancePerSec = 600 * 1000; // 10 minutes simulated per 1 real second at 1x
+
+    const step = (now: number) => {
+      if (lastTimeRef.current !== null) {
+        const deltaMs = now - lastTimeRef.current;
+        // Cap deltaMs to 100ms to avoid huge jumps on tab switch/frame lag
+        const safeDeltaSec = Math.min(deltaMs / 1000, 0.1);
+        const advanceSimMs = safeDeltaSec * baseAdvancePerSec * playbackSpeed;
+
+        const currEpoch = new Date(useInvestigationStore.getState().currentTimeUtc).getTime();
+        const nextEpoch = currEpoch + advanceSimMs;
+
+        if (nextEpoch >= endEpoch) {
+          setCurrentTimeUtc(new Date(endEpoch).toISOString());
+          setIsPlaying(false);
+          return;
+        } else {
+          setCurrentTimeUtc(new Date(nextEpoch).toISOString());
+        }
+      }
+      lastTimeRef.current = now;
+      animFrameIdRef.current = requestAnimationFrame(step);
+    };
+
+    animFrameIdRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (animFrameIdRef.current) {
+        cancelAnimationFrame(animFrameIdRef.current);
+        animFrameIdRef.current = null;
+      }
+      lastTimeRef.current = null;
+    };
+  }, [isPlaying, playbackSpeed, endEpoch, setCurrentTimeUtc, setIsPlaying]);
 
   const currentEpoch = new Date(currentTimeUtc).getTime();
   const currentPct = Math.min(Math.max(((currentEpoch - startEpoch) / totalDuration) * 100, 0), 100);
@@ -90,6 +164,28 @@ export const MasterTimelineScrubber: React.FC = () => {
           >
             <RotateCcw size={10} />
             <span>SNAP TO T₀</span>
+          </button>
+          <button
+            onClick={() => setReplayMode(!isReplayMode)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              padding: '2px 8px',
+              backgroundColor: isReplayMode ? 'rgba(56, 189, 248, 0.22)' : 'var(--color-bg-base)',
+              border: `1px solid ${isReplayMode ? 'var(--color-accent-cyan)' : 'var(--color-border-subtle)'}`,
+              borderRadius: 'var(--radius-xs)',
+              fontSize: 'var(--text-2xs)',
+              fontWeight: 700,
+              color: isReplayMode ? 'var(--color-accent-cyan)' : 'var(--color-text-secondary)',
+              cursor: 'pointer',
+              marginLeft: '4px',
+              transition: 'all 0.15s ease',
+            }}
+            title="Toggle Historical Event Replay Mode (Phase 22)"
+          >
+            <Film size={11} color={isReplayMode ? 'var(--color-accent-cyan)' : 'var(--color-accent-blue)'} />
+            <span>{isReplayMode ? 'EXIT REPLAY' : 'EVENT REPLAY'}</span>
           </button>
         </div>
 

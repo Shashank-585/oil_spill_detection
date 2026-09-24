@@ -90,6 +90,40 @@ export interface EvidenceComponents {
   ais_track_quality: number;
 }
 
+export interface UnderlyingMetrics {
+  centroid_error_m?: number | null;
+  mean_particle_distance_m?: number | null;
+  vessel_source_distance_m?: number | null;
+  release_timestamp?: string | null;
+  ais_gap_seconds?: number | null;
+  ais_track_quality?: string | null;
+  coverage?: number | null;
+  iou?: number | null;
+  causal_precedence_status?: string | null;
+  causal_eligibility?: boolean | null;
+  has_conflict?: boolean | null;
+  conflict_description?: string | null;
+  source_score?: number | null;
+  spatial_score?: number | null;
+  temporal_score?: number | null;
+  drift_score?: number | null;
+  ais_quality_score?: number | null;
+}
+
+export interface LimitingFactor {
+  dimension: string;
+  label: string;
+  severity: 'DISQUALIFYING' | 'HIGH_LIMITING' | 'MODERATE_LIMITING' | string;
+  detail: string;
+  underlying_value?: string | null;
+}
+
+export interface EvidenceBreakdown {
+  why_ranked_highly: string[];
+  why_not_ranked_higher: string[];
+  limiting_factors: LimitingFactor[];
+}
+
 export interface VesselAttributionItem {
   mmsi: number;
   vessel_name: string;
@@ -104,6 +138,10 @@ export interface VesselAttributionItem {
   compatible_hypotheses_count: number;
   evidence_components?: EvidenceComponents | null;
   best_hypothesis_explanation?: string | null;
+  primary_strength?: string | null;
+  primary_weakness?: string | null;
+  underlying_metrics?: UnderlyingMetrics | null;
+  evidence_breakdown?: EvidenceBreakdown | null;
 }
 
 export interface UncertaintySummaryResponse {
@@ -340,15 +378,21 @@ export interface SpillComparisonItem {
   observed_slick_id: string;
   release_timestamp: string;
   observation_timestamp: string;
+  release_lat?: number;
+  release_lon?: number;
   simulation_duration_hours?: number;
   particle_count?: number;
   active_particle_count?: number;
+  active_particle_fraction?: number;
+  simulation_status?: string;
   predicted_centroid_lat?: number;
   predicted_centroid_lon?: number;
   observed_centroid_lat?: number;
   observed_centroid_lon?: number;
   centroid_error_m?: number;
   mean_particle_distance_m?: number;
+  median_particle_distance_m?: number;
+  p90_particle_distance_m?: number;
   coverage?: number;
   in_slick_fraction?: number;
   intersection_area_m2?: number;
@@ -358,8 +402,40 @@ export interface SpillComparisonItem {
   observed_area_m2?: number;
   predicted_length_m?: number;
   predicted_width_m?: number;
+  predicted_aspect_ratio?: number;
+  predicted_orientation_deg?: number;
   observed_length_m?: number;
   observed_width_m?: number;
+  observed_aspect_ratio?: number;
+  observed_orientation_deg?: number;
+  delta_length_m?: number;
+  delta_width_m?: number;
+  delta_aspect_ratio?: number;
+  delta_orientation_deg?: number;
+  norm_centroid_score?: number;
+  norm_particle_score?: number;
+  norm_coverage_score?: number;
+  norm_iou_score?: number;
+}
+
+export interface SimulationParticle {
+  particle_id: number;
+  lat: number;
+  lon: number;
+  status: string;
+}
+
+export interface SimulationTrajectory {
+  track_index: number;
+  coordinates: [number, number][];
+}
+
+export interface SimulationDetailResponse {
+  case_id: string;
+  hypothesis_id: string;
+  metadata: SpillComparisonItem | Record<string, any>;
+  particles: SimulationParticle[];
+  trajectories: SimulationTrajectory[];
 }
 
 export async function fetchSpillComparisons(caseId: string, hypothesisId?: string): Promise<SpillComparisonItem[]> {
@@ -376,5 +452,198 @@ export function useSpillComparisonsQuery(caseId: string | null, hypothesisId?: s
     retry: 1,
   });
 }
+
+export async function fetchSimulationDetail(caseId: string, hypothesisId: string): Promise<SimulationDetailResponse> {
+  return apiFetch<SimulationDetailResponse>(
+    `/api/cases/${encodeURIComponent(caseId)}/attribution/simulations/${encodeURIComponent(hypothesisId)}`
+  );
+}
+
+export function useSimulationDetailQuery(caseId: string | null, hypothesisId: string | null, enabled: boolean = true) {
+  return useQuery({
+    queryKey: ['case', caseId, 'simulationDetail', hypothesisId] as const,
+    queryFn: () => fetchSimulationDetail(caseId!, hypothesisId!),
+    enabled: Boolean(caseId) && Boolean(hypothesisId) && enabled,
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
+}
+
+// ============================================================================
+// PHASE 23: INVESTIGATION DOSSIER & EXPORT TYPES & HOOKS
+// ============================================================================
+
+export interface ExecutiveQAItem {
+  question: string;
+  answer: string;
+  status: string;
+  key_metric?: string | null;
+}
+
+export interface Section1CaseIdentification {
+  case_id: string;
+  name: string;
+  incident_type: string;
+  location_name?: string | null;
+  origin_coordinates?: { latitude: number; longitude: number } | null;
+  incident_t0_utc: string;
+  observation_timestamp_utc: string;
+  validation_role: string;
+  ground_truth_source?: string | null;
+  status_category: string;
+}
+
+export interface Section2ExecutiveSummary {
+  core_questions: ExecutiveQAItem[];
+  summary_narrative: string;
+}
+
+export interface Section3SatelliteObservation {
+  platform: string;
+  instrument: string;
+  sensor_mode: string;
+  scene_id?: string | null;
+  timestamp_utc: string;
+  orbit_direction?: string | null;
+  calibrated_file?: string | null;
+}
+
+export interface Section4DetectedSlick {
+  slicks_count: number;
+  total_area_m2: number;
+  total_area_hectares: number;
+  mean_backscatter_sigma0_db?: number | null;
+  damping_ratio_db?: number | null;
+  segmentation_algorithm: string;
+}
+
+export interface Section5EnvironmentalConditions {
+  ocean_currents_source: string;
+  ocean_currents_file?: string | null;
+  wind_source: string;
+  wind_file?: string | null;
+  spatial_coverage?: Record<string, number> | null;
+  temporal_coverage?: Record<string, any> | null;
+}
+
+export interface Section6SourceReconstruction {
+  model_name: string;
+  integration_scheme: string;
+  leeway_factor: string;
+  wind_deflection_deg: string;
+  turbulent_diffusion_dh: string;
+  release_horizons_hours: number[];
+  candidate_slicks_evaluated: number;
+  total_source_hypotheses: number;
+}
+
+export interface Section7AisCoverage {
+  spatial_window?: Record<string, number> | null;
+  temporal_window?: Record<string, any> | null;
+  archive_available: boolean;
+  total_candidate_mmsis: number;
+  track_quality_notes: string;
+}
+
+export interface Section8CandidateVessels {
+  total_vessels_in_corridor: number;
+  candidate_vessels_count: number;
+  filtering_criteria: string;
+  top_candidates_preview: Record<string, any>[];
+}
+
+export interface Section9Hypotheses4D {
+  total_hypotheses_count: number;
+  dimensions: string[];
+  generation_method: string;
+}
+
+export interface Section10CounterfactualSimulation {
+  simulation_engine: string;
+  particle_count_per_run: number;
+  total_simulations_run: number;
+  evaluation_metric: string;
+  mean_iou?: number | null;
+  top_hypothesis_iou?: number | null;
+}
+
+export interface Section11EvidenceRanking {
+  ranking_count: number;
+  top_vessel_name?: string | null;
+  top_vessel_mmsi?: number | null;
+  top_vessel_score?: number | null;
+  candidates: Record<string, any>[];
+}
+
+export interface Section12CausalConsistency {
+  enforced: boolean;
+  causal_status_top_candidate?: string | null;
+  disqualified_post_release_count: number;
+  notes: string;
+}
+
+export interface Section13Uncertainty {
+  ensemble_size: number;
+  random_seed: number;
+  rank_stability_score?: number | null;
+  margin_to_rank_2?: number | null;
+  confidence_category: string;
+}
+
+export interface Section14DataLimitations {
+  limitations: string[];
+  is_negative_control: boolean;
+  ais_archive_missing: boolean;
+}
+
+export interface Section15Conclusion {
+  best_supported_hypothesis: string;
+  synthesis_statement: string;
+  decision_support_role: string;
+}
+
+export interface Section16Provenance {
+  sha256_checksum: string;
+  generated_at_utc: string;
+  system_version: string;
+  non_deceptive_statement: string;
+}
+
+export interface InvestigationDossier {
+  dossier_version: string;
+  case_id: string;
+  case_identification: Section1CaseIdentification;
+  executive_summary: Section2ExecutiveSummary;
+  satellite_observation: Section3SatelliteObservation;
+  detected_slick: Section4DetectedSlick;
+  environmental_conditions: Section5EnvironmentalConditions;
+  source_reconstruction: Section6SourceReconstruction;
+  ais_coverage: Section7AisCoverage;
+  candidate_vessels: Section8CandidateVessels;
+  hypotheses_4d: Section9Hypotheses4D;
+  counterfactual_simulation: Section10CounterfactualSimulation;
+  evidence_ranking: Section11EvidenceRanking;
+  causal_consistency: Section12CausalConsistency;
+  uncertainty: Section13Uncertainty;
+  data_limitations: Section14DataLimitations;
+  conclusion: Section15Conclusion;
+  provenance: Section16Provenance;
+}
+
+export async function fetchInvestigationDossier(caseId: string): Promise<InvestigationDossier> {
+  return apiFetch<InvestigationDossier>(`/api/cases/${encodeURIComponent(caseId)}/dossier`);
+}
+
+export function useInvestigationDossierQuery(caseId: string | null) {
+  return useQuery({
+    queryKey: ['case', caseId, 'dossier'] as const,
+    queryFn: () => fetchInvestigationDossier(caseId!),
+    enabled: Boolean(caseId),
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
+}
+
+
 
 

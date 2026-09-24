@@ -62,3 +62,67 @@ button:focus-visible {
   outline: 1px solid var(--color-accent-blue);
   outline-offset: 1px;
 }
+
+/* ==========================================================================
+   Print & PDF Export Styles (Phase 23)
+   ========================================================================== */
+@media print {
+  body, html, #root {
+    overflow: visible !important;
+    height: auto !important;
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  /* Hide app navigation chrome, rails, timeline, and interactive buttons */
+  header,
+  nav,
+  .no-print,
+  button,
+  input[type="range"] {
+    display: none !important;
+  }
+
+  /* Expand dossier to full printable document */
+  .investigation-dossier-container {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .investigation-dossier-card {
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    color: #111827 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 12px;
+  }
+
+  .investigation-dossier-table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .investigation-dossier-table th,
+  .investigation-dossier-table td {
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+  }
+
+  /* Page break rules */
+  .print-page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+}
+

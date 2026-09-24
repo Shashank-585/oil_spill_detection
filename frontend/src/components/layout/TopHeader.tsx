@@ -5,6 +5,8 @@ import { MonospaceValue } from '../common/MonospaceValue';
 import { StatusBadge } from '../common/StatusBadge';
 import { Anchor, Compass, Clock, CheckCircle2, ShieldCheck, AlertCircle, RefreshCw } from 'lucide-react';
 
+import { InvestigationStepper } from '../workflow/InvestigationStepper';
+
 export const TopHeader: React.FC = () => {
   const causalConsistencyEnabled = useInvestigationStore((s) => s.causalConsistencyEnabled);
   const setCausalConsistencyEnabled = useInvestigationStore((s) => s.setCausalConsistencyEnabled);
@@ -116,36 +118,41 @@ export const TopHeader: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. Center: Prominent Coordinated Investigation Time T₀ */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          backgroundColor: 'var(--color-bg-base)',
-          padding: '4px 12px',
-          borderRadius: 'var(--radius-sm)',
-          border: '1px solid var(--color-border-subtle)',
-        }}
-      >
-        <Clock size={14} color="var(--color-accent-amber)" />
-        <span
+      {/* 2. Center: Investigation Workflow Stepper & Event T0 */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <InvestigationStepper />
+
+        <div
           style={{
-            fontSize: 'var(--text-2xs)',
-            color: 'var(--color-text-secondary)',
-            textTransform: 'uppercase',
-            fontWeight: 600,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            backgroundColor: 'var(--color-bg-base)',
+            padding: '4px 10px',
+            borderRadius: 'var(--radius-sm)',
+            border: '1px solid var(--color-border-subtle)',
           }}
+          title="Incident origin / discharge timestamp (T0)"
         >
-          INVESTIGATION T₀ (EVENT):
-        </span>
-        {isLoadingCaseDetail ? (
-          <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-accent-amber)', opacity: 0.8 }}>
-            FETCHING...
+          <Clock size={13} color="var(--color-accent-amber)" />
+          <span
+            style={{
+              fontSize: 'var(--text-2xs)',
+              color: 'var(--color-text-secondary)',
+              textTransform: 'uppercase',
+              fontWeight: 600,
+            }}
+          >
+            T₀:
           </span>
-        ) : (
-          <MonospaceValue value={eventTime} />
-        )}
+          {isLoadingCaseDetail ? (
+            <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-accent-amber)', opacity: 0.8 }}>
+              SYNCING...
+            </span>
+          ) : (
+            <MonospaceValue value={eventTime} />
+          )}
+        </div>
       </div>
 
       {/* 3. Right: System Operational Readiness & Causal Physics Toggle */}

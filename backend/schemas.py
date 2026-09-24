@@ -86,6 +86,40 @@ class EvidenceComponents(BaseModel):
     ais_track_quality: float
 
 
+class UnderlyingMetrics(BaseModel):
+    centroid_error_m: Optional[float] = None
+    mean_particle_distance_m: Optional[float] = None
+    vessel_source_distance_m: Optional[float] = None
+    release_timestamp: Optional[str] = None
+    ais_gap_seconds: Optional[float] = None
+    ais_track_quality: Optional[str] = None
+    coverage: Optional[float] = None
+    iou: Optional[float] = None
+    causal_precedence_status: Optional[str] = None
+    causal_eligibility: Optional[bool] = None
+    has_conflict: Optional[bool] = None
+    conflict_description: Optional[str] = None
+    source_score: Optional[float] = None
+    spatial_score: Optional[float] = None
+    temporal_score: Optional[float] = None
+    drift_score: Optional[float] = None
+    ais_quality_score: Optional[float] = None
+
+
+class LimitingFactor(BaseModel):
+    dimension: str
+    label: str
+    severity: str
+    detail: str
+    underlying_value: Optional[str] = None
+
+
+class EvidenceBreakdown(BaseModel):
+    why_ranked_highly: List[str] = Field(default_factory=list)
+    why_not_ranked_higher: List[str] = Field(default_factory=list)
+    limiting_factors: List[LimitingFactor] = Field(default_factory=list)
+
+
 class VesselAttributionItem(BaseModel):
     mmsi: int
     vessel_name: str
@@ -100,6 +134,10 @@ class VesselAttributionItem(BaseModel):
     compatible_hypotheses_count: int = 1
     evidence_components: Optional[Dict[str, float]] = None
     best_hypothesis_explanation: Optional[str] = None
+    primary_strength: Optional[str] = None
+    primary_weakness: Optional[str] = None
+    underlying_metrics: Optional[UnderlyingMetrics] = None
+    evidence_breakdown: Optional[EvidenceBreakdown] = None
 
 
 class SlickFeature(BaseModel):
@@ -155,4 +193,166 @@ class SarRasterInfo(BaseModel):
 class ErrorResponse(BaseModel):
     error: str
     message: str
+
+
+# ============================================================================
+# PHASE 23: INVESTIGATION DOSSIER & EXPORT MODELS
+# ============================================================================
+
+class ExecutiveQAItem(BaseModel):
+    question: str
+    answer: str
+    status: str
+    key_metric: Optional[str] = None
+
+
+class Section1CaseIdentification(BaseModel):
+    case_id: str
+    name: str
+    incident_type: str
+    location_name: Optional[str] = None
+    origin_coordinates: Optional[Dict[str, float]] = None
+    incident_t0_utc: str
+    observation_timestamp_utc: str
+    validation_role: str
+    ground_truth_source: Optional[str] = None
+    status_category: str
+
+
+class Section2ExecutiveSummary(BaseModel):
+    core_questions: List[ExecutiveQAItem] = Field(default_factory=list)
+    summary_narrative: str
+
+
+class Section3SatelliteObservation(BaseModel):
+    platform: str
+    instrument: str
+    sensor_mode: str
+    scene_id: Optional[str] = None
+    timestamp_utc: str
+    orbit_direction: Optional[str] = None
+    calibrated_file: Optional[str] = None
+
+
+class Section4DetectedSlick(BaseModel):
+    slicks_count: int
+    total_area_m2: float
+    total_area_hectares: float
+    mean_backscatter_sigma0_db: Optional[float] = None
+    damping_ratio_db: Optional[float] = None
+    segmentation_algorithm: str
+
+
+class Section5EnvironmentalConditions(BaseModel):
+    ocean_currents_source: str
+    ocean_currents_file: Optional[str] = None
+    wind_source: str
+    wind_file: Optional[str] = None
+    spatial_coverage: Optional[Dict[str, float]] = None
+    temporal_coverage: Optional[Dict[str, Any]] = None
+
+
+class Section6SourceReconstruction(BaseModel):
+    model_name: str
+    integration_scheme: str
+    leeway_factor: str
+    wind_deflection_deg: str
+    turbulent_diffusion_dh: str
+    release_horizons_hours: List[int] = Field(default_factory=list)
+    candidate_slicks_evaluated: int
+    total_source_hypotheses: int
+
+
+class Section7AisCoverage(BaseModel):
+    spatial_window: Optional[Dict[str, float]] = None
+    temporal_window: Optional[Dict[str, Any]] = None
+    archive_available: bool
+    total_candidate_mmsis: int
+    track_quality_notes: str
+
+
+class Section8CandidateVessels(BaseModel):
+    total_vessels_in_corridor: int
+    candidate_vessels_count: int
+    filtering_criteria: str
+    top_candidates_preview: List[Dict[str, Any]] = Field(default_factory=list)
+
+
+class Section9Hypotheses4D(BaseModel):
+    total_hypotheses_count: int
+    dimensions: List[str] = Field(default_factory=lambda: ["Longitude", "Latitude", "Depth", "Release_Time"])
+    generation_method: str
+
+
+class Section10CounterfactualSimulation(BaseModel):
+    simulation_engine: str
+    particle_count_per_run: int
+    total_simulations_run: int
+    evaluation_metric: str
+    mean_iou: Optional[float] = None
+    top_hypothesis_iou: Optional[float] = None
+
+
+class Section11EvidenceRanking(BaseModel):
+    ranking_count: int
+    top_vessel_name: Optional[str] = None
+    top_vessel_mmsi: Optional[int] = None
+    top_vessel_score: Optional[float] = None
+    candidates: List[Dict[str, Any]] = Field(default_factory=list)
+
+
+class Section12CausalConsistency(BaseModel):
+    enforced: bool
+    causal_status_top_candidate: Optional[str] = None
+    disqualified_post_release_count: int = 0
+    notes: str
+
+
+class Section13Uncertainty(BaseModel):
+    ensemble_size: int
+    random_seed: int
+    rank_stability_score: Optional[float] = None
+    margin_to_rank_2: Optional[float] = None
+    confidence_category: str
+
+
+class Section14DataLimitations(BaseModel):
+    limitations: List[str] = Field(default_factory=list)
+    is_negative_control: bool
+    ais_archive_missing: bool
+
+
+class Section15Conclusion(BaseModel):
+    best_supported_hypothesis: str
+    synthesis_statement: str
+    decision_support_role: str
+
+
+class Section16Provenance(BaseModel):
+    sha256_checksum: str
+    generated_at_utc: str
+    system_version: str
+    non_deceptive_statement: str
+
+
+class InvestigationDossier(BaseModel):
+    dossier_version: str = "1.0.0"
+    case_id: str
+    case_identification: Section1CaseIdentification
+    executive_summary: Section2ExecutiveSummary
+    satellite_observation: Section3SatelliteObservation
+    detected_slick: Section4DetectedSlick
+    environmental_conditions: Section5EnvironmentalConditions
+    source_reconstruction: Section6SourceReconstruction
+    ais_coverage: Section7AisCoverage
+    candidate_vessels: Section8CandidateVessels
+    hypotheses_4d: Section9Hypotheses4D
+    counterfactual_simulation: Section10CounterfactualSimulation
+    evidence_ranking: Section11EvidenceRanking
+    causal_consistency: Section12CausalConsistency
+    uncertainty: Section13Uncertainty
+    data_limitations: Section14DataLimitations
+    conclusion: Section15Conclusion
+    provenance: Section16Provenance
+
 

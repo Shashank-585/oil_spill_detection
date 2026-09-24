@@ -14,24 +14,26 @@ import {
 interface NavItem {
   id: WorkspaceView;
   label: string;
-  category: 'OBSERVE' | 'ATTRIBUTE' | 'DOCUMENT';
+  category: 'OBSERVE' | 'INVESTIGATE' | 'ATTRIBUTE' | 'REPORT';
   icon: React.ComponentType<{ size: number; color?: string }>;
 }
 
 const NAV_ITEMS: NavItem[] = [
-  // OBSERVE
+  // 1. OBSERVE
   { id: 'overview', label: 'Overview', category: 'OBSERVE', icon: Compass },
   { id: 'sar', label: 'SAR Imagery', category: 'OBSERVE', icon: Radio },
   { id: 'ais', label: 'AIS Traffic', category: 'OBSERVE', icon: Ship },
-  { id: 'drift', label: 'Lagrangian Drift', category: 'OBSERVE', icon: Wind },
 
-  // ATTRIBUTE
+  // 2. INVESTIGATE
+  { id: 'drift', label: 'Lagrangian Drift', category: 'INVESTIGATE', icon: Wind },
+
+  // 3. ATTRIBUTE
   { id: 'candidates', label: 'Candidates', category: 'ATTRIBUTE', icon: Users },
   { id: 'evidence', label: 'Evidence Matrix', category: 'ATTRIBUTE', icon: BarChart3 },
   { id: 'uncertainty', label: 'Uncertainty', category: 'ATTRIBUTE', icon: HelpCircle },
 
-  // DOCUMENT
-  { id: 'audit', label: 'Audit & Export', category: 'DOCUMENT', icon: FileText },
+  // 4. REPORT
+  { id: 'audit', label: 'Investigation Report & Audit', category: 'REPORT', icon: FileText },
 ];
 
 export const NavigationRail: React.FC = () => {
@@ -58,7 +60,8 @@ export const NavigationRail: React.FC = () => {
         {NAV_ITEMS.map((item, index) => {
           const isActive = activeWorkspace === item.id;
           const Icon = item.icon;
-          const showSeparator = index === 4 || index === 7;
+          // Separator after OBSERVE (index 2), after INVESTIGATE (index 3), and after ATTRIBUTE (index 6)
+          const showSeparator = index === 3 || index === 4 || index === 7;
 
           return (
             <React.Fragment key={item.id}>

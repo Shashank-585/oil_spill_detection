@@ -22,14 +22,35 @@ from backend.schemas import (
     CaseSummary,
     DatasetsAvailable,
     ErrorResponse,
+    EvidenceBreakdown,
     EventInfo,
+    LimitingFactor,
     LocationInfo,
     ObservationInfo,
     SarRasterInfo,
     SlickFeatureCollection,
     UncertaintySummary,
+    UnderlyingMetrics,
     VesselAttributionItem,
     VesselCandidateItem,
+    InvestigationDossier,
+    ExecutiveQAItem,
+    Section1CaseIdentification,
+    Section2ExecutiveSummary,
+    Section3SatelliteObservation,
+    Section4DetectedSlick,
+    Section5EnvironmentalConditions,
+    Section6SourceReconstruction,
+    Section7AisCoverage,
+    Section8CandidateVessels,
+    Section9Hypotheses4D,
+    Section10CounterfactualSimulation,
+    Section11EvidenceRanking,
+    Section12CausalConsistency,
+    Section13Uncertainty,
+    Section14DataLimitations,
+    Section15Conclusion,
+    Section16Provenance,
 )
 from src.common.paths import (
     ATTRIBUTION_PROCESSED_DIR,
@@ -183,7 +204,7 @@ def list_cases():
                     location=loc,
                     event_time_utc=temporal.get("spill_incident_estimated_start"),
                     observation_time_utc=sat.get("observation_timestamp_utc"),
-                    validation_role=val.get("role"),
+                    validation_role=val.get("validation_role") or val.get("role"),
                     ground_truth_quality=val.get("ground_truth_quality"),
                     datasets_available=avail,
                 )
@@ -252,7 +273,7 @@ def get_case_detail(case_id: str):
         bounding_box=bounds,
         event=event_info,
         observation=obs_info,
-        validation_role=val.get("role"),
+        validation_role=val.get("validation_role") or val.get("role"),
         ground_truth_quality=val.get("ground_truth_quality"),
         ground_truth_source=val.get("ground_truth_source"),
         datasets=_get_dataset_availability(cfg.case_id),
@@ -354,6 +375,204 @@ def get_ais_vessels(case_id: str):
     return result
 
 
+def _safe_float(val, default=None):
+    if val is None:
+        return default
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+
+def _build_explainability(ev_detail: dict, row: dict, vessel_rank: int):
+    if not ev_detail:
+        return None, None, None, None
+
+    centroid_err = _safe_float(ev_detail.get("centroid_error_m"))
+    mean_part_dist = _safe_float(ev_detail.get("mean_particle_distance_m"))
+    source_dist = _safe_float(ev_detail.get("vessel_source_distance_m"))
+    rel_time = ev_detail.get("release_timestamp")
+    ais_gap = _safe_float(ev_detail.get("ais_gap_seconds"))
+    ais_quality = ev_detail.get("ais_track_quality")
+    coverage = _safe_float(ev_detail.get("coverage"))
+    iou = _safe_float(ev_detail.get("iou"))
+
+    drift_sc = _safe_float(ev_detail.get("drift_score"), 0.0)
+    spatial_sc = _safe_float(ev_detail.get("spatial_score"), 0.0)
+    temporal_sc = _safe_float(ev_detail.get("temporal_score"), 0.0)
+    source_sc = _safe_float(ev_detail.get("source_score"), 0.0)
+    ais_sc = _safe_float(ev_detail.get("ais_quality_score"), 0.0)
+
+    causal_status = str(ev_detail.get("causal_precedence_status", "UNKNOWN"))
+    raw_elig = ev_detail.get("causal_eligibility")
+    if isinstance(raw_elig, str):
+        causal_elig = raw_elig.lower() in ("true", "1", "yes")
+    elif isinstance(raw_elig, bool):
+        causal_elig = raw_elig
+    else:
+        causal_elig = None
+
+    raw_conflict = ev_detail.get("has_conflict")
+    if isinstance(raw_conflict, str):
+        has_conflict = raw_conflict.lower() in ("true", "1", "yes")
+    elif isinstance(raw_conflict, bool):
+        has_conflict = raw_conflict
+    else:
+        has_conflict = False
+
+    conflict_desc = ev_detail.get("conflict_description")
+    if conflict_desc in ("None", "", None):
+        conflict_desc = None
+
+    metrics = UnderlyingMetrics(
+        centroid_error_m=centroid_err,
+        mean_particle_distance_m=mean_part_dist,
+        vessel_source_distance_m=source_dist,
+        release_timestamp=rel_time,
+        ais_gap_seconds=ais_gap,
+        ais_track_quality=ais_quality,
+        coverage=coverage,
+        iou=iou,
+        causal_precedence_status=causal_status,
+        causal_eligibility=causal_elig,
+        has_conflict=has_conflict,
+        conflict_description=conflict_desc,
+        source_score=source_sc,
+        spatial_score=spatial_sc,
+        temporal_score=temporal_sc,
+        drift_score=drift_sc,
+        ais_quality_score=ais_sc,
+    )
+
+    primary_str = ev_detail.get("primary_strength") or row.get("best_hypothesis_strength")
+    primary_wk = ev_detail.get("primary_weakness") or row.get("best_hypothesis_weakness")
+
+    # Build Why Ranked Highly
+    why_highly = []
+    if drift_sc >= 0.70:
+        err_str = f"Centroid error: {centroid_err:.1f} m" if centroid_err is not None else f"Drift score: {drift_sc:.2f}"
+        why_highly.append(f"Physical drift compatibility: {err_str} (score: {drift_sc:.2f})")
+    elif drift_sc >= 0.60:
+        why_highly.append(f"Physical drift compatibility: Consistent drift trajectory (score: {drift_sc:.2f})")
+
+    if spatial_sc >= 0.60:
+        dist_str = f"Source distance: {source_dist:,.1f} m" if source_dist is not None else f"Spatial score: {spatial_sc:.2f}"
+        why_highly.append(f"Spatial compatibility: {dist_str} (score: {spatial_sc:.2f})")
+
+    if temporal_sc >= 0.80:
+        time_str = f"Release time: {rel_time}" if rel_time else "Coincides with release window"
+        why_highly.append(f"Temporal compatibility: {time_str} (score: {temporal_sc:.2f})")
+
+    if ais_sc >= 0.60:
+        qual_str = f"Track quality: {ais_quality}" if ais_quality else "AIS telemetry consistent"
+        if ais_gap is not None:
+            qual_str += f" ({ais_gap:.0f}s gap)"
+        why_highly.append(f"AIS trajectory compatibility: {qual_str} (score: {ais_sc:.2f})")
+
+    if causal_status == "AT_RELEASE" and causal_elig is not False:
+        why_highly.append("Causal consistency: Status: AT_RELEASE (eligible)")
+    elif causal_status not in ("POST_RELEASE", "UNKNOWN") and causal_elig is not False:
+        why_highly.append(f"Causal consistency: Status: {causal_status}")
+
+    if iou and iou >= 0.08:
+        why_highly.append(f"Forward simulation compatibility: Slick dispersion matches observed geometry (IoU: {iou:.3f})")
+
+    # Build Why Not Ranked Higher / Limiting factors
+    why_not = []
+    limiting_factors = []
+
+    # 1. Post-event check
+    if causal_status == "POST_RELEASE" or causal_elig is False:
+        reason = "Not eligible as a release-source explanation because its relevant AIS presence occurs after the hypothesized release."
+        why_not.append(reason)
+        limiting_factors.append(LimitingFactor(
+            dimension="causal",
+            label="Post-Event AIS Presence",
+            severity="DISQUALIFYING",
+            detail=reason,
+            underlying_value=f"Status: {causal_status}, Eligible: {causal_elig}"
+        ))
+
+    # 2. Spatial limitation
+    if (source_dist and source_dist >= 3000.0) or (spatial_sc < 0.40):
+        dist_km = (source_dist / 1000.0) if source_dist else 0.0
+        reason = f"Candidate vessel was {dist_km:.1f} km away from hypothesized release position at candidate release time (spatial score: {spatial_sc:.2f})."
+        why_not.append(reason)
+        limiting_factors.append(LimitingFactor(
+            dimension="spatial",
+            label="Poor Spatial Match",
+            severity="HIGH_LIMITING" if spatial_sc < 0.25 else "MODERATE_LIMITING",
+            detail=reason,
+            underlying_value=f"{dist_km:.1f} km distance (score: {spatial_sc:.2f})"
+        ))
+
+    # 3. Drift limitation
+    if (centroid_err and centroid_err >= 100.0) or (drift_sc < 0.60):
+        reason = f"Substantial displacement from simulated backward drift trajectory (centroid error: {centroid_err:.1f} m, drift score: {drift_sc:.2f})."
+        why_not.append(reason)
+        limiting_factors.append(LimitingFactor(
+            dimension="drift",
+            label="Poor Drift Match",
+            severity="HIGH_LIMITING" if drift_sc < 0.50 else "MODERATE_LIMITING",
+            detail=reason,
+            underlying_value=f"Centroid error: {centroid_err:.1f} m (score: {drift_sc:.2f})"
+        ))
+
+    # 4. Temporal limitation
+    if temporal_sc < 0.65:
+        reason = f"Candidate AIS telemetry deviates from hypothesized release time (temporal score: {temporal_sc:.2f})."
+        why_not.append(reason)
+        limiting_factors.append(LimitingFactor(
+            dimension="temporal",
+            label="Poor Temporal Match",
+            severity="MODERATE_LIMITING",
+            detail=reason,
+            underlying_value=f"Temporal score: {temporal_sc:.2f}"
+        ))
+
+    # 5. AIS telemetry limitation
+    if (ais_gap and ais_gap > 1800.0) or (ais_sc < 0.50):
+        reason = f"Insufficient AIS evidence due to sparse telemetry or significant track gap ({ais_gap:.0f}s gap, score: {ais_sc:.2f})."
+        why_not.append(reason)
+        limiting_factors.append(LimitingFactor(
+            dimension="ais",
+            label="Insufficient AIS Evidence",
+            severity="MODERATE_LIMITING",
+            detail=reason,
+            underlying_value=f"AIS gap: {ais_gap:.0f} s (score: {ais_sc:.2f})"
+        ))
+
+    # 6. Forward simulation limitation
+    if (iou is not None and iou < 0.05) and (coverage is not None and coverage < 0.70):
+        reason = f"Forward trajectory simulation exhibits low geometric overlap with observed slick (IoU: {iou:.3f}, coverage: {coverage:.2f})."
+        why_not.append(reason)
+        limiting_factors.append(LimitingFactor(
+            dimension="forward_simulation",
+            label="Poor Forward Simulation Match",
+            severity="MODERATE_LIMITING",
+            detail=reason,
+            underlying_value=f"IoU: {iou:.3f}, Coverage: {coverage:.2f}"
+        ))
+
+    # 7. Discrepancy conflict from artifact
+    if has_conflict and conflict_desc:
+        limiting_factors.append(LimitingFactor(
+            dimension="evidence_conflict",
+            label="Dimensional Discrepancy",
+            severity="MODERATE_LIMITING",
+            detail=conflict_desc,
+            underlying_value=conflict_desc
+        ))
+
+    breakdown = EvidenceBreakdown(
+        why_ranked_highly=why_highly,
+        why_not_ranked_higher=why_not,
+        limiting_factors=limiting_factors,
+    )
+
+    return primary_str, primary_wk, metrics, breakdown
+
+
 @app.get("/api/cases/{case_id}/attribution/ranking", response_model=List[VesselAttributionItem])
 def get_attribution_ranking(case_id: str):
     """
@@ -361,6 +580,7 @@ def get_attribution_ranking(case_id: str):
     Preserves exact backend scores, ranks, and evidence component decompositions.
     Uses validated causal consistency artifacts if present (Phase 13), falling back
     to baseline attribution outputs.
+    Enriches each candidate with deterministic why / why-not explainability and underlying metrics.
     """
     _safe_resolve_case_id(case_id)
     attr_dir = resolve_path(ATTRIBUTION_PROCESSED_DIR)
@@ -407,6 +627,7 @@ def get_attribution_ranking(case_id: str):
                 mmsi_val = int(row["mmsi"])
                 hid = row.get("best_hypothesis_id", "")
                 ev_detail = evidence_map.get(hid, {})
+                v_rank = int(row["vessel_rank"])
 
                 components = None
                 if ev_detail:
@@ -424,12 +645,14 @@ def get_attribution_ranking(case_id: str):
                 else:
                     vname = raw_name
 
+                prim_str, prim_wk, und_metrics, ev_breakdown = _build_explainability(ev_detail, row, v_rank)
+
                 results.append(
                     VesselAttributionItem(
                         mmsi=mmsi_val,
                         vessel_name=vname,
                         vessel_type=str(row.get("vessel_type", "UNKNOWN")),
-                        vessel_rank=int(row["vessel_rank"]),
+                        vessel_rank=v_rank,
                         best_evidence_score=float(row["best_evidence_score"]),
                         mean_evidence_score=float(row.get("mean_evidence_score", row["best_evidence_score"])),
                         vessel_evidence_state=str(row.get("vessel_evidence_state", "UNKNOWN")),
@@ -439,6 +662,10 @@ def get_attribution_ranking(case_id: str):
                         compatible_hypotheses_count=int(row.get("compatible_hypotheses_count", 1)),
                         evidence_components=components,
                         best_hypothesis_explanation=row.get("best_hypothesis_explanation"),
+                        primary_strength=prim_str,
+                        primary_weakness=prim_wk,
+                        underlying_metrics=und_metrics,
+                        evidence_breakdown=ev_breakdown,
                     )
                 )
         results.sort(key=lambda x: x.vessel_rank)
@@ -453,6 +680,7 @@ def get_attribution_ranking(case_id: str):
             mmsi_val = int(row["mmsi"])
             hid = row.get("best_hypothesis_id", "")
             ev_detail = evidence_map.get(hid, {})
+            v_rank = int(row["vessel_rank"])
 
             components = None
             if ev_detail:
@@ -470,12 +698,14 @@ def get_attribution_ranking(case_id: str):
             else:
                 vname = raw_name
 
+            prim_str, prim_wk, und_metrics, ev_breakdown = _build_explainability(ev_detail, row, v_rank)
+
             results.append(
                 VesselAttributionItem(
                     mmsi=mmsi_val,
                     vessel_name=vname,
                     vessel_type=str(row.get("vessel_type", "UNKNOWN")),
-                    vessel_rank=int(row["vessel_rank"]),
+                    vessel_rank=v_rank,
                     best_evidence_score=float(row["best_evidence_score"]),
                     mean_evidence_score=float(row.get("mean_evidence_score", row["best_evidence_score"])),
                     vessel_evidence_state=str(row.get("vessel_evidence_state", "UNKNOWN")),
@@ -485,6 +715,10 @@ def get_attribution_ranking(case_id: str):
                     compatible_hypotheses_count=int(row.get("compatible_hypotheses_count", 1)),
                     evidence_components=components,
                     best_hypothesis_explanation=row.get("best_hypothesis_explanation"),
+                    primary_strength=prim_str,
+                    primary_weakness=prim_wk,
+                    underlying_metrics=und_metrics,
+                    evidence_breakdown=ev_breakdown,
                 )
             )
 
@@ -797,5 +1031,124 @@ def get_spill_comparisons(case_id: str, hypothesis_id: Optional[str] = None):
         return JSONResponse(content=filtered)
 
     return JSONResponse(content=data)
+
+
+@app.get("/api/cases/{case_id}/attribution/simulations/{hypothesis_id}")
+def get_simulation_detail(case_id: str, hypothesis_id: str):
+    """
+    Expose forward hydrodynamic simulation particles and sampled trajectory for a hypothesis.
+    Used by deck.gl for interactive counterfactual plume and drift visualization.
+    """
+    _safe_resolve_case_id(case_id)
+    if ".." in hypothesis_id or "/" in hypothesis_id or "\\" in hypothesis_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={"error": "INVALID_HYPOTHESIS_ID", "message": "Path traversal detected in hypothesis_id."},
+        )
+    sim_dir = resolve_path(f"data/processed/attribution/simulations/{hypothesis_id}")
+
+    particles = []
+    trajectories = []
+    metadata = {}
+
+    if sim_dir.is_dir():
+        meta_file = sim_dir / "simulation_metadata.json"
+        if meta_file.is_file():
+            try:
+                with open(meta_file, "r", encoding="utf-8") as f:
+                    metadata = json.load(f)
+            except Exception:
+                pass
+
+        particles_file = sim_dir / "final_particles.json"
+        if particles_file.is_file():
+            try:
+                with open(particles_file, "r", encoding="utf-8") as f:
+                    raw_particles = json.load(f)
+                    # Extract compact [lon, lat] and particle info
+                    particles = [
+                        {
+                            "particle_id": p.get("particle_id", idx),
+                            "lat": float(p["lat"]),
+                            "lon": float(p["lon"]),
+                            "status": p.get("status", "active"),
+                        }
+                        for idx, p in enumerate(raw_particles)
+                        if "lat" in p and "lon" in p
+                    ]
+            except Exception:
+                pass
+
+        traj_file = sim_dir / "trajectory.json"
+        if traj_file.is_file():
+            try:
+                with open(traj_file, "r", encoding="utf-8") as f:
+                    raw_trajs = json.load(f)
+                    # Subsample representative trajectory tracks (every 25th track)
+                    step = 25 if len(raw_trajs) > 25 else 1
+                    sampled = []
+                    for i in range(0, len(raw_trajs), step):
+                        track = raw_trajs[i]
+                        coords = [[float(pt["lon"]), float(pt["lat"])] for pt in track if "lon" in pt and "lat" in pt]
+                        if coords:
+                            sampled.append({
+                                "track_index": i,
+                                "coordinates": coords,
+                            })
+                    trajectories = sampled
+            except Exception:
+                pass
+
+    # If simulation directory didn't exist or lacked metadata, fallback to spill-comparisons
+    if not metadata:
+        comp_path = resolve_path(f"data/processed/attribution/{case_id}_spill_comparisons.json")
+        if comp_path.is_file():
+            try:
+                with open(comp_path, "r", encoding="utf-8") as f:
+                    comps = json.load(f)
+                matched = next((c for c in comps if c.get("hypothesis_id") == hypothesis_id), None)
+                if matched:
+                    metadata = matched
+            except Exception:
+                pass
+
+    if not metadata and not particles:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={
+                "error": "SIMULATION_NOT_FOUND",
+                "message": f"Simulation artifacts for hypothesis '{hypothesis_id}' not found.",
+            },
+        )
+
+    return JSONResponse(content={
+        "case_id": case_id,
+        "hypothesis_id": hypothesis_id,
+        "metadata": metadata,
+        "particles": particles,
+        "trajectories": trajectories,
+    })
+
+
+# ============================================================================
+# PHASE 23: INVESTIGATION DOSSIER & EXPORT ENDPOINTS
+# ============================================================================
+
+from backend.dossier_builder import build_investigation_dossier
+
+
+@app.get("/api/cases/{case_id}/dossier", response_model=InvestigationDossier)
+@app.get("/api/cases/{case_id}/report", response_model=InvestigationDossier)
+def get_investigation_dossier(case_id: str):
+    """
+    Generate an investigator-facing 16-section investigation dossier from existing scientific outputs.
+    Adheres strictly to decision-support terminology (best-supported hypothesis, investigation evidence,
+    data limitation).
+    Answers the 7 fundamental investigator questions.
+    """
+    _safe_resolve_case_id(case_id)
+    return build_investigation_dossier(case_id)
+
+
 
 
