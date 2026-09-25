@@ -644,6 +644,216 @@ export function useInvestigationDossierQuery(caseId: string | null) {
   });
 }
 
+// ============================================================================
+// Phase 24: Authority Notification & Alert Workflow
+// ============================================================================
+
+export interface AuthorityAlert {
+  alert_id: string;
+  case_id: string;
+  alert_type: string;
+  timestamp_utc: string;
+  severity: 'INFO' | 'NOTICE' | 'ACTION_REQUIRED' | string;
+  subject: string;
+  summary: string;
+  body_markdown: string;
+  case_name: string;
+  observation_time_utc?: string | null;
+  satellite_platform?: string | null;
+  investigation_status: string;
+  slick_count: number;
+  slick_total_area_ha: number;
+  candidate_vessel_count: number;
+  attribution_status: string;
+  top_supported_hypothesis?: string | null;
+  key_limitations: string[];
+  dossier_link: string;
+  recommended_authority_actions: string[];
+}
+
+export interface NotificationFeedResponse {
+  case_id: string;
+  alerts: AuthorityAlert[];
+  total_alerts: number;
+  latest_attribution_alert?: AuthorityAlert | null;
+}
+
+export async function fetchCaseNotifications(caseId: string): Promise<NotificationFeedResponse> {
+  return apiFetch<NotificationFeedResponse>(`/api/cases/${encodeURIComponent(caseId)}/notifications`);
+}
+
+export function useCaseNotificationsQuery(caseId: string | null) {
+  return useQuery({
+    queryKey: ['case', caseId, 'notifications'] as const,
+    queryFn: () => fetchCaseNotifications(caseId!),
+    enabled: Boolean(caseId),
+    staleTime: 60 * 1000,
+    retry: 1,
+  });
+}
+
+export async function fetchAllNotifications(): Promise<AuthorityAlert[]> {
+  return apiFetch<AuthorityAlert[]>(`/api/notifications`);
+}
+
+export function useAllNotificationsQuery() {
+  return useQuery({
+    queryKey: ['notifications', 'all'] as const,
+    queryFn: () => fetchAllNotifications(),
+    staleTime: 60 * 1000,
+    retry: 1,
+  });
+}
+
+// ==============================================================================
+// Phase 25: Data Readiness & Reproducible Provenance
+// ==============================================================================
+
+export type ReadinessStatus = 'READY' | 'LIMITED' | 'UNAVAILABLE' | 'NOT REQUIRED';
+
+export interface ReadinessCheckItem {
+  name: string;
+  status: ReadinessStatus;
+  details: string;
+  source?: string | null;
+}
+
+export interface DatasetProvenanceRecord {
+  dataset_name: string;
+  source: string;
+  acquisition_time?: string | null;
+  processing_version: string;
+  sha256_checksum?: string | null;
+  artifact_timestamp?: string | null;
+  record_type: string;
+}
+
+export interface DataReadinessReport {
+  case_id: string;
+  case_name: string;
+  validation_role: string;
+  overall_status: ReadinessStatus;
+  checks: ReadinessCheckItem[];
+  data_limitations: string[];
+  provenance_records: DatasetProvenanceRecord[];
+  summary_notes: string;
+}
+
+export async function fetchCaseReadiness(caseId: string): Promise<DataReadinessReport> {
+  return apiFetch<DataReadinessReport>(`/api/cases/${encodeURIComponent(caseId)}/readiness`);
+}
+
+export function useCaseReadinessQuery(caseId: string | null) {
+  return useQuery({
+    queryKey: ['case', caseId, 'readiness'] as const,
+    queryFn: () => fetchCaseReadiness(caseId!),
+    enabled: Boolean(caseId),
+    staleTime: 60 * 1000,
+    retry: 1,
+  });
+}
+
+export async function fetchCaseProvenance(caseId: string): Promise<DatasetProvenanceRecord[]> {
+  return apiFetch<DatasetProvenanceRecord[]>(`/api/cases/${encodeURIComponent(caseId)}/provenance`);
+}
+
+export function useCaseProvenanceQuery(caseId: string | null) {
+  return useQuery({
+    queryKey: ['case', caseId, 'provenance'] as const,
+    queryFn: () => fetchCaseProvenance(caseId!),
+    enabled: Boolean(caseId),
+    staleTime: 60 * 1000,
+    retry: 1,
+  });
+}
+
+// ==============================================================================
+// Phase 26: Satellite Observation Metadata Upgrade
+// ==============================================================================
+
+export interface Sentinel1Metadata {
+  platform: string;
+  sensor: string;
+  acquisition_time_utc: string;
+  mode: string;
+  product_type: string;
+  polarization_used: string;
+  polarization_explanation: string;
+  polarizations_available: string[];
+  orbit_direction?: string | null;
+  relative_orbit?: number | null;
+  spatial_resolution?: string | null;
+  scene_dimensions?: string | null;
+  scene_coverage?: string | null;
+  processing_status: string;
+  speckle_filter?: string | null;
+  cfar_detector_info?: string | null;
+}
+
+export interface Sentinel2Metadata {
+  available: boolean;
+  platform?: string | null;
+  sensor?: string | null;
+  acquisition_time_utc?: string | null;
+  cloud_cover_percentage?: number | null;
+  cloud_cover_text?: string | null;
+  available_bands: string[];
+  product_type?: string | null;
+  role: string;
+  pipeline_usage_disclaimer: string;
+  details?: string | null;
+}
+
+export interface TimelineObservationEvent {
+  event_id: string;
+  label: string;
+  event_type: 'PRE_EVENT' | 'INCIDENT_REFERENCE' | 'OPERATIONAL_SAR' | 'SUPPORTING_OPTICAL' | 'POST_EVENT' | string;
+  timestamp_utc: string;
+  platform?: string | null;
+  observation_nature: 'ACTUAL_OBSERVATION' | 'INCIDENT_REFERENCE' | 'REVISIT_OPPORTUNITY' | string;
+  relative_to_incident_hours: number;
+  description: string;
+}
+
+export interface ObservationTimeline {
+  incident_time_utc: string;
+  operational_observation_time_utc: string;
+  events: TimelineObservationEvent[];
+}
+
+export interface RevisitContext {
+  constellation_nominal_repeat_days: number;
+  constellation_dual_repeat_days: number;
+  sub_cycle_revisit_opportunity_hours: string;
+  revisit_distinction_notice: string;
+  case_revisit_audit: string;
+}
+
+export interface SatelliteObservationPackage {
+  case_id: string;
+  case_name: string;
+  sentinel1: Sentinel1Metadata;
+  sentinel2?: Sentinel2Metadata | null;
+  timeline: ObservationTimeline;
+  revisit_context: RevisitContext;
+}
+
+export async function fetchCaseSatelliteObservations(caseId: string): Promise<SatelliteObservationPackage> {
+  return apiFetch<SatelliteObservationPackage>(`/api/cases/${encodeURIComponent(caseId)}/satellite/observations`);
+}
+
+export function useCaseSatelliteObservationsQuery(caseId: string | null) {
+  return useQuery({
+    queryKey: ['case', caseId, 'satellite-observations'] as const,
+    queryFn: () => fetchCaseSatelliteObservations(caseId!),
+    enabled: Boolean(caseId),
+    staleTime: 60 * 1000,
+    retry: 1,
+  });
+}
+
+
+
 
 
 

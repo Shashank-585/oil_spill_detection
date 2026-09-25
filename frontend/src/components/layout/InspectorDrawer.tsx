@@ -6,6 +6,9 @@ import { MonospaceValue } from '../common/MonospaceValue';
 import { StatusBadge } from '../common/StatusBadge';
 import { CandidatePreview } from '../attribution/CandidatePreview';
 import { CandidateComparisonModal } from '../attribution/CandidateComparisonModal';
+import { DataReadinessPanel } from '../common/DataReadinessPanel';
+import { DataReadinessModal } from '../common/DataReadinessModal';
+import { DomainTooltip } from '../common/DomainTooltip';
 import {
   X,
   ChevronRight,
@@ -24,6 +27,7 @@ export const InspectorDrawer: React.FC = () => {
   const setSelectedHypothesisId = useInvestigationStore((s) => s.setSelectedHypothesisId);
 
   const [comparisonModalOpen, setComparisonModalOpen] = useState(false);
+  const [readinessModalOpen, setReadinessModalOpen] = useState(false);
 
   const {
     activeCaseId,
@@ -211,8 +215,20 @@ export const InspectorDrawer: React.FC = () => {
           ) : null}
         </section>
 
+        {/* SECTION: DATA READINESS & PROVENANCE (Phase 25) */}
+        <section style={{ padding: '12px 14px', borderBottom: '1px solid var(--color-border-subtle)', backgroundColor: 'rgba(10, 13, 19, 0.4)' }}>
+          <DataReadinessPanel
+            caseId={activeCaseId}
+            compact={true}
+            showHeader={true}
+            showProvenance={false}
+            onOpenFullModal={() => setReadinessModalOpen(true)}
+          />
+        </section>
+
         {/* SECTION 2: ATTRIBUTION LEADERBOARD / SELECTED CANDIDATE */}
         <section style={{ padding: '14px 16px', borderBottom: '1px solid var(--color-border-subtle)' }}>
+
           <div
             style={{
               display: 'flex',
@@ -254,17 +270,19 @@ export const InspectorDrawer: React.FC = () => {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <AlertTriangle size={14} color="var(--color-accent-amber)" />
-                <span
-                  style={{
-                    fontSize: 'var(--text-xs)',
-                    fontWeight: 700,
-                    color: 'var(--color-accent-amber)',
-                    letterSpacing: '0.04em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  AIS ATTRIBUTION
-                </span>
+                <DomainTooltip term="AIS" inline>
+                  <span
+                    style={{
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 700,
+                      color: 'var(--color-accent-amber)',
+                      letterSpacing: '0.04em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    AIS ATTRIBUTION
+                  </span>
+                </DomainTooltip>
               </div>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--color-text-primary)' }}>
                 ARCHIVE DATA UNAVAILABLE
@@ -361,17 +379,19 @@ export const InspectorDrawer: React.FC = () => {
                 marginBottom: '10px',
               }}
             >
-              <div
-                style={{
-                  fontSize: 'var(--text-2xs)',
-                  fontWeight: 700,
-                  color: 'var(--color-text-muted)',
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                4D HYPOTHESIS & FORWARD VALIDATION
-              </div>
+              <DomainTooltip term="4D hypothesis" inline>
+                <div
+                  style={{
+                    fontSize: 'var(--text-2xs)',
+                    fontWeight: 700,
+                    color: 'var(--color-text-muted)',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  4D HYPOTHESIS & FORWARD VALIDATION
+                </div>
+              </DomainTooltip>
               <span className="font-mono" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-accent-cyan)', fontWeight: 700 }}>
                 {currentHypothesisId}
               </span>
@@ -410,7 +430,9 @@ export const InspectorDrawer: React.FC = () => {
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-2xs)' }}>Intersection over Union (IoU):</span>
+                    <DomainTooltip term="IoU" inline>
+                      <span style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-2xs)' }}>Intersection over Union (IoU):</span>
+                    </DomainTooltip>
                     <span className="font-mono" style={{ fontWeight: 700, color: currentComp.iou > 0.1 ? 'var(--color-accent-emerald)' : 'var(--color-accent-cyan)' }}>
                       {(currentComp.iou * 100).toFixed(2)}%
                     </span>
@@ -453,6 +475,13 @@ export const InspectorDrawer: React.FC = () => {
           onClose={() => setComparisonModalOpen(false)}
         />
       )}
+
+      {/* Data Readiness & Provenance Modal (Phase 25) */}
+      <DataReadinessModal
+        isOpen={readinessModalOpen}
+        onClose={() => setReadinessModalOpen(false)}
+        caseId={activeCaseId}
+      />
     </aside>
   );
 };

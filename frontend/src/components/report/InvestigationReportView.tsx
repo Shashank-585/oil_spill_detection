@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useActiveCase } from '../../context/CaseContext';
 import { useInvestigationDossierQuery } from '../../api/casesApi';
-import { useInvestigationStore } from '../../store/investigationStore';
 import { MonospaceValue } from '../common/MonospaceValue';
 import { StatusBadge } from '../common/StatusBadge';
 import {
@@ -14,31 +13,28 @@ import {
   X,
   FileSpreadsheet,
   AlertTriangle,
-  Info,
   Compass,
   Radio,
   Wind,
-  Ship,
   Layers,
-  HelpCircle,
-  Clock,
-  MapPin,
-  Check,
-  ExternalLink,
 } from 'lucide-react';
+import { DataReadinessPanel } from '../common/DataReadinessPanel';
+import { SatelliteObservationPanel } from '../observation/SatelliteObservationPanel';
 
 interface InvestigationReportViewProps {
+
+
   onClose?: () => void;
 }
 
 export const InvestigationReportView: React.FC<InvestigationReportViewProps> = ({ onClose }) => {
   const { activeCaseId } = useActiveCase();
-  const setActiveStage = useInvestigationStore((s) => s.setActiveStage);
 
   const { data: dossier, isLoading, isError } = useInvestigationDossierQuery(activeCaseId);
 
   const [copied, setCopied] = useState(false);
   const [exportNotice, setExportNotice] = useState<string | null>(null);
+  const [showSatPackage, setShowSatPackage] = useState(false);
 
   // Export JSON Report
   const handleExportJson = () => {
@@ -598,6 +594,34 @@ export const InvestigationReportView: React.FC<InvestigationReportViewProps> = (
                   </div>
                 </div>
               </div>
+
+              <button
+                onClick={() => setShowSatPackage(!showSatPackage)}
+                style={{
+                  background: 'none',
+                  border: '1px solid var(--color-border-subtle)',
+                  borderRadius: 'var(--radius-xs)',
+                  color: 'var(--color-accent-blue)',
+                  fontSize: 'var(--text-2xs)',
+                  fontWeight: 700,
+                  padding: '6px 10px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '6px',
+                  backgroundColor: showSatPackage ? 'rgba(56, 139, 253, 0.12)' : 'var(--color-bg-base)',
+                }}
+              >
+                <Radio size={12} />
+                <span>{showSatPackage ? 'HIDE DETAILED OBSERVATION PACKAGE' : 'INSPECT FULL SATELLITE METADATA & TIMELINE (S1/S2)'}</span>
+              </button>
+
+              {showSatPackage && (
+                <div style={{ marginTop: '8px' }}>
+                  <SatelliteObservationPanel caseId={activeCaseId} compact={true} />
+                </div>
+              )}
             </div>
 
             {/* Section 4 */}
@@ -910,7 +934,7 @@ export const InvestigationReportView: React.FC<InvestigationReportViewProps> = (
                 <div>
                   <div style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-tertiary)' }}>RANK STABILITY SCORE</div>
                   <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: '#10b981', marginTop: '2px' }}>
-                    {(sec13.rank_stability_score * 100).toFixed(0)}% Stable
+                    {sec13.rank_stability_score != null ? `${(sec13.rank_stability_score * 100).toFixed(0)}% Stable` : 'N/A'}
                   </div>
                 </div>
                 <div>
@@ -929,7 +953,7 @@ export const InvestigationReportView: React.FC<InvestigationReportViewProps> = (
             </div>
           </div>
 
-          {/* SECTION 14: Data Limitations */}
+          {/* SECTION 14: Data Limitations & Readiness */}
           <div
             className="dossier-card"
             style={{
@@ -939,17 +963,27 @@ export const InvestigationReportView: React.FC<InvestigationReportViewProps> = (
               padding: '16px 20px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '10px',
+              gap: '12px',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <AlertTriangle size={16} color="var(--color-accent-amber)" />
               <span style={{ fontSize: 'var(--text-xs)', fontWeight: 800, color: 'var(--color-accent-amber)', letterSpacing: '0.06em' }}>
-                SECTION 14 · DATA LIMITATIONS & SYSTEM BOUNDARIES
+                SECTION 14 · DATA READINESS, LIMITATIONS & SYSTEM BOUNDARIES
               </span>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <DataReadinessPanel
+              caseId={activeCaseId}
+              compact={false}
+              showHeader={false}
+              showProvenance={true}
+            />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', borderTop: '1px solid var(--color-border-subtle)', paddingTop: '10px' }}>
+              <span style={{ fontSize: 'var(--text-2xs)', fontWeight: 700, color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
+                INVESTIGATION BOUNDARY NOTES
+              </span>
               {sec14.limitations.map((lim: string, idx: number) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--text-xs)', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
                   <span style={{ color: 'var(--color-accent-amber)', fontWeight: 700 }}>•</span>
@@ -958,6 +992,7 @@ export const InvestigationReportView: React.FC<InvestigationReportViewProps> = (
               ))}
             </div>
           </div>
+
 
           {/* SECTION 15: Conclusion */}
           <div

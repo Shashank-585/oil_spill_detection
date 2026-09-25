@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { VesselAttributionItem } from '../../api/casesApi';
 import { MonospaceValue } from '../common/MonospaceValue';
 import { CausalTagPill } from './CausalTagPill';
+import { DomainTooltip } from '../common/DomainTooltip';
 import {
   X,
   GitCompare,
@@ -444,7 +445,9 @@ export const CandidateComparisonModal: React.FC<CandidateComparisonModalProps> =
                 <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
                   <td style={{ padding: '10px 14px', color: 'var(--color-text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <Radio size={13} color="var(--color-accent-purple)" />
-                    <span>AIS Trajectory Quality</span>
+                    <DomainTooltip term="AIS" inline>
+                      <span>AIS Trajectory Quality</span>
+                    </DomainTooltip>
                   </td>
                   <td style={{ padding: '10px 14px' }}>
                     <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
@@ -468,7 +471,9 @@ export const CandidateComparisonModal: React.FC<CandidateComparisonModalProps> =
                 <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
                   <td style={{ padding: '10px 14px', color: 'var(--color-text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <ShieldAlert size={13} color="var(--color-accent-emerald)" />
-                    <span>Causal Status</span>
+                    <DomainTooltip term="Causal consistency" inline>
+                      <span>Causal Status</span>
+                    </DomainTooltip>
                   </td>
                   <td style={{ padding: '10px 14px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -493,7 +498,9 @@ export const CandidateComparisonModal: React.FC<CandidateComparisonModalProps> =
                   <tr>
                     <td style={{ padding: '10px 14px', color: 'var(--color-text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <Layers size={13} color="var(--color-accent-cyan)" />
-                      <span>Forward Slick IoU</span>
+                      <DomainTooltip term="IoU" inline>
+                        <span>Forward Slick IoU</span>
+                      </DomainTooltip>
                     </td>
                     <td style={{ padding: '10px 14px', fontFamily: 'var(--font-mono)' }}>
                       <div style={{ fontWeight: 700, color: 'var(--color-text-primary)' }}>

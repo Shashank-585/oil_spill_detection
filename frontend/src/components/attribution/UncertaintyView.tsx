@@ -3,6 +3,7 @@ import { useActiveCase } from '../../context/CaseContext';
 import { useUncertaintyQuery } from '../../api/casesApi';
 import { MonospaceValue } from '../common/MonospaceValue';
 import { StatusBadge } from '../common/StatusBadge';
+import { DomainTooltip } from '../common/DomainTooltip';
 import { HelpCircle, AlertTriangle, ShieldAlert, RefreshCw, X } from 'lucide-react';
 
 export const UncertaintyView: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
@@ -46,17 +47,19 @@ export const UncertaintyView: React.FC<{ onClose?: () => void }> = ({ onClose })
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <HelpCircle size={16} color="var(--color-accent-amber)" />
           <div>
-            <span
-              style={{
-                fontSize: 'var(--text-xs)',
-                fontWeight: 700,
-                color: 'var(--color-text-primary)',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-              }}
-            >
-              MONTE CARLO UNCERTAINTY & RANK STABILITY ANALYSIS
-            </span>
+            <DomainTooltip term="Uncertainty" inline>
+              <span
+                style={{
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 700,
+                  color: 'var(--color-text-primary)',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                MONTE CARLO UNCERTAINTY & RANK STABILITY ANALYSIS
+              </span>
+            </DomainTooltip>
             <span
               style={{
                 fontSize: 'var(--text-2xs)',

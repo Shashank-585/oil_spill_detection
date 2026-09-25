@@ -9,7 +9,8 @@ export type WorkspaceView =
   | 'candidates'
   | 'evidence'
   | 'uncertainty'
-  | 'audit';
+  | 'audit'
+  | 'alerts';
 
 export interface MapLayerVisibility {
   sarRaster: boolean;

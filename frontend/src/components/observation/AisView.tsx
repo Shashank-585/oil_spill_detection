@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useActiveCase } from '../../context/CaseContext';
 import { useAisVesselsQuery, useAisTracksQuery } from '../../api/casesApi';
 import { useInvestigationStore } from '../../store/investigationStore';
+import { DomainTooltip } from '../common/DomainTooltip';
 import { Ship, Eye, Search, RefreshCw, X, ChevronRight, ShieldAlert } from 'lucide-react';
 
 interface AisViewProps {
@@ -88,17 +89,19 @@ export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Ship size={16} color="var(--color-accent-blue)" />
           <div>
-            <span
-              style={{
-                fontSize: 'var(--text-xs)',
-                fontWeight: 700,
-                color: 'var(--color-text-primary)',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-              }}
-            >
-              AUTOMATIC IDENTIFICATION SYSTEM (AIS) MARITIME TRAFFIC CORRIDOR
-            </span>
+            <DomainTooltip term="AIS" inline>
+              <span
+                style={{
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 700,
+                  color: 'var(--color-text-primary)',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                AUTOMATIC IDENTIFICATION SYSTEM (AIS) MARITIME TRAFFIC CORRIDOR
+              </span>
+            </DomainTooltip>
             <span
               style={{
                 display: 'block',

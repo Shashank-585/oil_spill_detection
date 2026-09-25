@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useActiveCase } from '../../context/CaseContext';
 import { useSarStatsQuery, useSlicksQuery } from '../../api/casesApi';
 import { useInvestigationStore } from '../../store/investigationStore';
 import { MonospaceValue } from '../common/MonospaceValue';
 import { Radio, Eye, Layers, Activity, RefreshCw, X, Database } from 'lucide-react';
+import { SatelliteObservationPanel } from './SatelliteObservationPanel';
 
 interface SarViewProps {
   onClose?: () => void;
@@ -13,7 +14,10 @@ export const SarView: React.FC<SarViewProps> = ({ onClose }) => {
   const { activeCaseId, activeCase } = useActiveCase();
   const setMapLayerVisibility = useInvestigationStore((s) => s.setMapLayerVisibility);
 
+  const [activeTab, setActiveTab] = useState<'METADATA' | 'RADIOMETRY'>('METADATA');
+
   const { data: sarStats } = useSarStatsQuery(activeCaseId);
+
   const { data: slicksData, isLoading: isLoadingSlicks } = useSlicksQuery(activeCaseId);
 
   const rasterMeta = (sarStats?.raster_metadata as Record<string, unknown>) || {};
@@ -131,16 +135,72 @@ export const SarView: React.FC<SarViewProps> = ({ onClose }) => {
         </div>
       </div>
 
-      {/* 2. Scrollable Content Body */}
-      <div style={{ padding: '16px 20px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {/* Top Summary Banner */}
-        <div
+      {/* Sub-navigation Tabs (Phase 26) */}
+      <div
+        style={{
+          display: 'flex',
+          borderBottom: '1px solid var(--color-border-subtle)',
+          backgroundColor: 'rgba(10, 13, 19, 0.7)',
+          padding: '0 18px',
+          gap: '8px',
+        }}
+      >
+        <button
+          onClick={() => setActiveTab('METADATA')}
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            padding: '10px 14px',
+            border: 'none',
+            borderBottom: activeTab === 'METADATA' ? '2px solid var(--color-accent-blue)' : '2px solid transparent',
+            color: activeTab === 'METADATA' ? 'var(--color-accent-blue)' : 'var(--color-text-secondary)',
+            fontSize: 'var(--text-xs)',
+            fontWeight: 700,
+            background: 'none',
+            cursor: 'pointer',
           }}
         >
+          <Radio size={14} />
+          <span>SATELLITE OBSERVATIONS & PROVENANCE</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('RADIOMETRY')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            padding: '10px 14px',
+            border: 'none',
+            borderBottom: activeTab === 'RADIOMETRY' ? '2px solid var(--color-accent-cyan)' : '2px solid transparent',
+            color: activeTab === 'RADIOMETRY' ? 'var(--color-accent-cyan)' : 'var(--color-text-secondary)',
+            fontSize: 'var(--text-xs)',
+            fontWeight: 700,
+            background: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          <Activity size={14} />
+          <span>RADIOMETRIC CALIBRATION & SLICK DETECTION</span>
+        </button>
+      </div>
+
+      {/* 2. Scrollable Content Body */}
+      <div style={{ padding: '16px 20px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        {activeTab === 'METADATA' ? (
+          <SatelliteObservationPanel caseId={activeCaseId} compact={false} />
+        ) : (
+          <>
+            {/* Top Summary Banner */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '12px',
+              }}
+            >
+
           <div
             style={{
               backgroundColor: 'var(--color-bg-surface)',
@@ -412,7 +472,10 @@ export const SarView: React.FC<SarViewProps> = ({ onClose }) => {
             </div>
           )}
         </div>
+        </>
+        )}
       </div>
     </div>
   );
 };
+

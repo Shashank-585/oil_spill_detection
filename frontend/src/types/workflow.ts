@@ -55,7 +55,7 @@ export const INVESTIGATION_STAGES: StageDefinition[] = [
     tagline: 'Forensic Findings & Provenance',
     purpose: 'Produce an investigator-facing summary with evidence breakdown, limitations, and court-admissible exports.',
     defaultWorkspace: 'audit',
-    associatedWorkspaces: ['audit'],
+    associatedWorkspaces: ['audit', 'alerts'],
   },
 ];
 
@@ -72,6 +72,7 @@ export function getStageForWorkspace(workspace: WorkspaceView): InvestigationSta
     case 'uncertainty':
       return 'attribute';
     case 'audit':
+    case 'alerts':
       return 'report';
     default:
       return 'observe';

@@ -1150,5 +1150,114 @@ def get_investigation_dossier(case_id: str):
     return build_investigation_dossier(case_id)
 
 
+# ============================================================================
+# PHASE 24: AUTHORITY NOTIFICATION & ALERT WORKFLOW ENDPOINTS
+# ============================================================================
+
+from backend.notification_builder import build_authority_notifications
+from backend.schemas import AuthorityAlert, NotificationFeedResponse
+
+
+@app.get("/api/cases/{case_id}/notifications", response_model=NotificationFeedResponse)
+def get_case_notifications(case_id: str):
+    """
+    Deliver structured decision-support notifications and authority dispatch memos
+    for an investigation case from existing scientific artifacts.
+    """
+    _safe_resolve_case_id(case_id)
+    return build_authority_notifications(case_id)
+
+
+@app.get("/api/notifications", response_model=List[AuthorityAlert])
+def get_all_notifications():
+    """
+    Retrieve all authority alerts across all registered cases in chronological order.
+    """
+    cases_dir = resolve_path(CASES_DIR)
+    case_ids = []
+    if cases_dir.is_dir():
+        for p in sorted(cases_dir.glob("*.yaml")):
+            case_ids.append(p.stem)
+        for p in sorted(cases_dir.glob("*.yml")):
+            if p.stem not in case_ids:
+                case_ids.append(p.stem)
+
+    all_alerts: List[AuthorityAlert] = []
+    for cid in case_ids:
+        try:
+            feed = build_authority_notifications(cid)
+            all_alerts.extend(feed.alerts)
+        except Exception:
+            continue
+
+    # Sort descending by timestamp
+    all_alerts.sort(key=lambda a: a.timestamp_utc, reverse=True)
+    return all_alerts
+
+
+@app.get("/api/notifications/{alert_id}", response_model=AuthorityAlert)
+def get_single_notification(alert_id: str):
+    """
+    Retrieve a specific authority alert by unique alert identifier.
+    """
+    all_alerts = get_all_notifications()
+    for alert in all_alerts:
+        if alert.alert_id == alert_id:
+            return alert
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail={"error": "ALERT_NOT_FOUND", "message": f"Authority alert '{alert_id}' not found."},
+    )
+
+
+# ============================================================================
+# PHASE 25: DATA READINESS & PROVENANCE ENDPOINTS
+# ============================================================================
+
+from backend.readiness_builder import build_data_readiness_report
+from backend.schemas import DataReadinessReport, DatasetProvenanceRecord
+
+
+@app.get("/api/cases/{case_id}/readiness", response_model=DataReadinessReport)
+def get_case_data_readiness(case_id: str):
+    """
+    Expose data availability, pillar checks, and data limitations for a case.
+    Statuses strictly limited to: READY, LIMITED, UNAVAILABLE, NOT REQUIRED.
+    """
+    _safe_resolve_case_id(case_id)
+    return build_data_readiness_report(case_id)
+
+
+@app.get("/api/cases/{case_id}/provenance", response_model=List[DatasetProvenanceRecord])
+def get_case_reproducible_provenance(case_id: str):
+    """
+    Expose reproducible provenance records (dataset name, source, acquisition time,
+    processing version, SHA-256 where available, artifact timestamp).
+    """
+    _safe_resolve_case_id(case_id)
+    report = build_data_readiness_report(case_id)
+    return report.provenance_records
+
+
+# ============================================================================
+# Phase 26: Satellite Observation Metadata Upgrade
+# ============================================================================
+
+from backend.satellite_builder import build_satellite_observation_package
+from backend.schemas import SatelliteObservationPackage
+
+
+@app.get("/api/cases/{case_id}/satellite/observations", response_model=SatelliteObservationPackage)
+def get_case_satellite_observations(case_id: str):
+    """
+    Expose detailed satellite observation package distinguishing operational Sentinel-1
+    SAR (channel actually used by detector) from supporting Sentinel-2 optical imagery,
+    along with observation timeline and revisit context.
+    """
+    _safe_resolve_case_id(case_id)
+    return build_satellite_observation_package(case_id)
+
+
+
 
 

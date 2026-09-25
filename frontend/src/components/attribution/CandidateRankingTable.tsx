@@ -5,6 +5,7 @@ import { MonospaceValue } from '../common/MonospaceValue';
 import { StatusBadge } from '../common/StatusBadge';
 import { CausalTagPill } from './CausalTagPill';
 import { CandidateComparisonModal } from './CandidateComparisonModal';
+import { DomainTooltip } from '../common/DomainTooltip';
 import type { VesselAttributionItem } from '../../api/casesApi';
 import {
   Users,
@@ -225,9 +226,17 @@ export const CandidateRankingTable: React.FC<{ onClose?: () => void }> = ({ onCl
                   <th style={{ padding: '8px 10px' }}>Vessel Name</th>
                   <th style={{ padding: '8px 10px' }}>MMSI</th>
                   <th style={{ padding: '8px 10px' }}>Type</th>
-                  <th style={{ padding: '8px 10px' }}>Best Hypothesis</th>
+                  <th style={{ padding: '8px 10px' }}>
+                    <DomainTooltip term="4D hypothesis" inline>
+                      <span>Best Hypothesis</span>
+                    </DomainTooltip>
+                  </th>
                   <th style={{ padding: '8px 10px', textAlign: 'right' }}>Compatibility</th>
-                  <th style={{ padding: '8px 10px' }}>Causal Status</th>
+                  <th style={{ padding: '8px 10px' }}>
+                    <DomainTooltip term="Causal consistency" inline>
+                      <span>Causal Status</span>
+                    </DomainTooltip>
+                  </th>
                   <th style={{ padding: '8px 10px' }}>Support State</th>
                   <th style={{ padding: '8px 10px', textAlign: 'center' }}>Explain</th>
                   <th style={{ padding: '8px 10px', textAlign: 'center' }}>Actions</th>

@@ -11,6 +11,7 @@ import { SarView } from './components/observation/SarView';
 import { AisView } from './components/observation/AisView';
 import { DriftView } from './components/observation/DriftView';
 import { InvestigationReportView } from './components/report/InvestigationReportView';
+import { AuthorityNotificationView } from './components/notifications/AuthorityNotificationView';
 import { HistoricalReplayBar } from './components/timeline/HistoricalReplayBar';
 import { useInvestigationStore, type WorkspaceView } from './store/investigationStore';
 import './styles/globals.css';
@@ -43,6 +44,8 @@ export const App: React.FC = () => {
             mappedView = 'drift';
           } else if (rawView === 'report') {
             mappedView = 'audit';
+          } else if (rawView === 'alerts' || rawView === 'notifications') {
+            mappedView = 'alerts';
           } else {
             mappedView = rawView as WorkspaceView;
           }
@@ -66,6 +69,7 @@ export const App: React.FC = () => {
         else if (raw === 'observe') mappedView = 'overview';
         else if (raw === 'investigate') mappedView = 'drift';
         else if (raw === 'report') mappedView = 'audit';
+        else if (raw === 'alerts' || raw === 'notifications') mappedView = 'alerts';
         setActiveWorkspace(mappedView);
       }
     };
@@ -169,6 +173,9 @@ export const App: React.FC = () => {
             )}
             {activeWorkspace === 'audit' && (
               <InvestigationReportView onClose={() => setActiveWorkspace('overview')} />
+            )}
+            {activeWorkspace === 'alerts' && (
+              <AuthorityNotificationView onClose={() => setActiveWorkspace('overview')} />
             )}
           </main>
 

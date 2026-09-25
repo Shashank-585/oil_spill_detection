@@ -356,3 +356,147 @@ class InvestigationDossier(BaseModel):
     provenance: Section16Provenance
 
 
+# ==============================================================================
+# Phase 24: Authority Notification & Alert Models
+# ==============================================================================
+
+class AuthorityAlert(BaseModel):
+    alert_id: str
+    case_id: str
+    alert_type: str  # POTENTIAL_SPILL_DETECTED, INVESTIGATION_READY, STRONGLY_SUPPORTED_HYPOTHESIS, INSUFFICIENT_EVIDENCE, AIS_DATA_UNAVAILABLE, INVESTIGATION_UPDATED
+    timestamp_utc: str
+    severity: str = "NOTICE"  # INFO, NOTICE, ACTION_REQUIRED (non-prejudicial; avoids unsupported "high risk")
+    subject: str
+    summary: str
+    body_markdown: str
+    case_name: str
+    observation_time_utc: Optional[str] = None
+    satellite_platform: Optional[str] = None
+    investigation_status: str
+    slick_count: int = 0
+    slick_total_area_ha: float = 0.0
+    candidate_vessel_count: int = 0
+    attribution_status: str  # STRONGLY_SUPPORTED, INSUFFICIENT_EVIDENCE, AIS_UNAVAILABLE, NEGATIVE_CONTROL, PRELIMINARY
+    top_supported_hypothesis: Optional[str] = None
+    key_limitations: List[str] = Field(default_factory=list)
+    dossier_link: str
+    recommended_authority_actions: List[str] = Field(default_factory=list)
+
+
+class NotificationFeedResponse(BaseModel):
+    case_id: str
+    alerts: List[AuthorityAlert] = Field(default_factory=list)
+    total_alerts: int = 0
+    latest_attribution_alert: Optional[AuthorityAlert] = None
+
+
+# ==============================================================================
+# Phase 25: Data Readiness & Provenance Models
+# ==============================================================================
+
+class ReadinessCheckItem(BaseModel):
+    name: str  # Satellite, Environmental, AIS, Temporal overlap, Spatial coverage, Ground truth, Artifact availability
+    status: str  # Strictly one of: READY, LIMITED, UNAVAILABLE, NOT REQUIRED
+    details: str
+    source: Optional[str] = None
+
+
+class DatasetProvenanceRecord(BaseModel):
+    dataset_name: str
+    source: str
+    acquisition_time: Optional[str] = None
+    processing_version: str = "v1.0.0"
+    sha256_checksum: Optional[str] = None
+    artifact_timestamp: Optional[str] = None
+    record_type: str = "reproducible provenance"
+
+
+class DataReadinessReport(BaseModel):
+    case_id: str
+    case_name: str
+    validation_role: str
+    overall_status: str  # READY, LIMITED, UNAVAILABLE, NOT REQUIRED
+    checks: List[ReadinessCheckItem] = Field(default_factory=list)
+    data_limitations: List[str] = Field(default_factory=list)
+    provenance_records: List[DatasetProvenanceRecord] = Field(default_factory=list)
+    summary_notes: str
+
+
+# ==============================================================================
+# Phase 26: Satellite Observation Metadata Models
+# ==============================================================================
+
+class Sentinel1Metadata(BaseModel):
+    platform: str
+    sensor: str
+    acquisition_time_utc: str
+    mode: str
+    product_type: str
+    polarization_used: str  # e.g., "VV"
+    polarization_explanation: str
+    polarizations_available: List[str] = Field(default_factory=list)
+    orbit_direction: Optional[str] = None
+    relative_orbit: Optional[int] = None
+    spatial_resolution: Optional[str] = None
+    scene_dimensions: Optional[str] = None
+    scene_coverage: Optional[str] = None
+    processing_status: str  # e.g., "CALIBRATED_AND_DETECTED"
+    speckle_filter: Optional[str] = None
+    cfar_detector_info: Optional[str] = None
+
+
+class Sentinel2Metadata(BaseModel):
+    available: bool = False
+    platform: Optional[str] = None
+    sensor: Optional[str] = None
+    acquisition_time_utc: Optional[str] = None
+    cloud_cover_percentage: Optional[float] = None
+    cloud_cover_text: Optional[str] = None
+    available_bands: List[str] = Field(default_factory=list)
+    product_type: Optional[str] = None
+    role: str = "Supporting optical observation"
+    pipeline_usage_disclaimer: str = (
+        "Supporting optical observation only. Not ingested by the operational SAR dark-spot detection pipeline."
+    )
+    details: Optional[str] = None
+
+
+class TimelineObservationEvent(BaseModel):
+    event_id: str
+    label: str
+    event_type: str  # PRE_EVENT, INCIDENT_REFERENCE, OPERATIONAL_SAR, SUPPORTING_OPTICAL, POST_EVENT
+    timestamp_utc: str
+    platform: Optional[str] = None
+    observation_nature: str  # ACTUAL_OBSERVATION, INCIDENT_REFERENCE, REVISIT_OPPORTUNITY
+    relative_to_incident_hours: float
+    description: str
+
+
+class ObservationTimeline(BaseModel):
+    incident_time_utc: str
+    operational_observation_time_utc: str
+    events: List[TimelineObservationEvent] = Field(default_factory=list)
+
+
+class RevisitContext(BaseModel):
+    constellation_nominal_repeat_days: int = 12
+    constellation_dual_repeat_days: int = 6
+    sub_cycle_revisit_opportunity_hours: str
+    revisit_distinction_notice: str = (
+        "Satellite orbital revisit opportunity refers to geometric satellite track overpass geometry, "
+        "whereas actual acquired observation requires active instrument scheduling, payload commanding, "
+        "and successful data downlink and processing."
+    )
+    case_revisit_audit: str
+
+
+class SatelliteObservationPackage(BaseModel):
+    case_id: str
+    case_name: str
+    sentinel1: Sentinel1Metadata
+    sentinel2: Optional[Sentinel2Metadata] = None
+    timeline: ObservationTimeline
+    revisit_context: RevisitContext
+
+
+
