@@ -296,6 +296,9 @@ def build_satellite_observation_package(case_id: str) -> SatelliteObservationPac
         ),
     )
 
+    from backend.sar_pipeline.engine import get_sar_observations_for_case
+    obs_list = [o.model_dump() for o in get_sar_observations_for_case(case_id)]
+
     return SatelliteObservationPackage(
         case_id=case_id,
         case_name=cfg.name,
@@ -303,4 +306,5 @@ def build_satellite_observation_package(case_id: str) -> SatelliteObservationPac
         sentinel2=s2_meta,
         timeline=timeline,
         revisit_context=revisit,
+        observations=obs_list,
     )

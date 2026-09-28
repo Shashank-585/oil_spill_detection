@@ -1,59 +1,77 @@
 /* ==========================================================================
    SIH26143 Maritime Intelligence - Core Design Tokens
-   Restrained, high-density, scientific dark-theme tokens.
+   Deep Ocean + Warm Sand Maritime Forensic Workstation Design System
    ========================================================================== */
 
 :root {
-  /* Surface & Base Backgrounds */
-  --color-bg-base: #0a0d13;
-  --color-bg-surface: #111620;
-  --color-bg-surface-raised: #18202d;
-  --color-bg-surface-hover: #1f2a3c;
-  --color-bg-surface-active: #28374d;
+  /* Surface & Base Backgrounds (Deep Ocean Palette) */
+  --color-bg-deep: #0B181A;          /* Deepest Ocean */
+  --color-bg: #102326;               /* Deep Ocean Base */
+  --color-surface: #183236;          /* Ocean Slate Surface */
+  --color-surface-panel: #1C393C;    /* Panel Surface */
+  --color-surface-elevated: #234447; /* Elevated Interactive Panel */
+
+  /* Semantic aliases for backwards compatibility with existing UI */
+  --color-bg-base: var(--color-bg-deep);
+  --color-bg-surface: var(--color-bg);
+  --color-bg-surface-raised: var(--color-surface);
+  --color-bg-surface-hover: var(--color-surface-panel);
+  --color-bg-surface-active: var(--color-surface-elevated);
 
   /* Borders & Dividers */
-  --color-border-subtle: #243042;
-  --color-border-strong: #384961;
-  --color-border-focus: #4b668d;
+  --color-border-subtle: #243D40;
+  --color-border: #36585A;
+  --color-border-strong: #36585A;
+  --color-border-focus: #5F918A;
 
-  /* Typography Colors */
-  --color-text-primary: #e6edf3;
-  --color-text-secondary: #8b9bb4;
-  --color-text-muted: #53647c;
-  --color-text-inverse: #0a0d13;
-  --color-text-monospace: #79c0ff;
+  /* Typography Colors (Warm Parchment & Neutral Slate) */
+  --color-text-primary: #E8E3D5;    /* Warm Off-White Primary */
+  --color-text-secondary: #B8C4BE;  /* Secondary Sage/Slate */
+  --color-text-muted: #829692;      /* Muted Maritime Gray */
+  --color-text-disabled: #5F716E;   /* Inactive / Disabled */
+  --color-text-inverse: #0B181A;
+  --color-text-monospace: #E0C994;  /* Pale Sand Data Readout */
 
-  /* Domain Status Accents */
-  --color-accent-blue: #388bfd;
-  --color-accent-cyan: #39c5cf;
-  --color-accent-amber: #d29922;
-  --color-accent-crimson: #f85149;
-  --color-accent-emerald: #2ea043;
-  --color-accent-purple: #bc8cff;
+  /* Maritime Domain Semantic Accents */
+  --color-accent-teal: #5F918A;       /* Muted Teal: Primary Interactive, Stepper Completed */
+  --color-accent-seafoam: #78AFA5;    /* Seafoam: Active Navigation, Analytical Highlights */
+  --color-accent-sand: #D1B27C;       /* Warm Sand: Key Metrics, Observed SAR Slick */
+  --color-accent-sand-pale: #E0C994;  /* Pale Sand: Timestamps & Inspection Markers */
+  --color-warning-rust: #B86F52;      /* Rust / Orange: Origin Release Point, Warnings */
+  --color-danger: #A95D58;            /* Muted Red: Mismatches, Destructive */
+  --color-success: #7D9C79;           /* Muted Green: Verified, Ready, Positive */
 
-  /* Causal Consistency Badges */
-  --tag-pre-event-bg: rgba(46, 160, 67, 0.15);
-  --tag-pre-event-border: rgba(46, 160, 67, 0.4);
-  --tag-pre-event-text: #3fb950;
+  /* Legacy Accent Aliases (Remapped from Neon to Deep Ocean / Warm Sand) */
+  --color-accent-blue: var(--color-accent-teal);
+  --color-accent-cyan: var(--color-accent-seafoam);
+  --color-accent-amber: var(--color-accent-sand);
+  --color-accent-crimson: var(--color-danger);
+  --color-accent-emerald: var(--color-success);
+  --color-accent-purple: var(--color-accent-sand-pale);
 
-  --tag-post-event-bg: rgba(248, 81, 73, 0.15);
-  --tag-post-event-border: rgba(248, 81, 73, 0.4);
-  --tag-post-event-text: #f85149;
+  /* Causal Consistency Badges (Muted, Scientific) */
+  --tag-pre-event-bg: rgba(125, 156, 121, 0.15);
+  --tag-pre-event-border: rgba(125, 156, 121, 0.4);
+  --tag-pre-event-text: #7D9C79;
 
-  --tag-neutral-bg: rgba(139, 155, 180, 0.12);
-  --tag-neutral-border: rgba(139, 155, 180, 0.3);
-  --tag-neutral-text: #8b9bb4;
+  --tag-post-event-bg: rgba(184, 111, 82, 0.15);
+  --tag-post-event-border: rgba(184, 111, 82, 0.4);
+  --tag-post-event-text: #B86F52;
+
+  --tag-neutral-bg: rgba(184, 196, 190, 0.12);
+  --tag-neutral-border: rgba(184, 196, 190, 0.3);
+  --tag-neutral-text: #B8C4BE;
 
   /* Fonts */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
   /* Type Scale */
-  --text-2xs: 10px;
-  --text-xs: 11px;
-  --text-sm: 12px;
-  --text-base: 13px;
-  --text-md: 14px;
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 15px;
   --text-lg: 16px;
   --text-xl: 18px;
 
@@ -66,19 +84,19 @@
   --space-6: 24px;
   --space-8: 32px;
 
-  /* Structural Radii */
+  /* Structural Radii (Restrained 2-6px, avoiding oversized rounded cards) */
   --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 6px;
 
   /* Dimensions */
-  --header-height: 48px;
-  --nav-rail-width: 56px;
-  --inspector-width: 380px;
-  --timeline-height: 84px;
+  --header-height: 44px;
+  --nav-rail-width: 44px;
+  --inspector-width: 360px;
+  --timeline-height: 44px;
 
-  /* Shadows (Subtle, non-neon) */
+  /* Shadows (Subtle, non-neon, no colored glows) */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.45);
-  --shadow-panel: -2px 0 12px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 5px rgba(0, 0, 0, 0.45);
+  --shadow-panel: -2px 0 10px rgba(0, 0, 0, 0.5);
 }

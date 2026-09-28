@@ -600,6 +600,10 @@ export interface Section15Conclusion {
   best_supported_hypothesis: string;
   synthesis_statement: string;
   decision_support_role: string;
+  observed?: string;
+  reconstructed?: string;
+  attribution?: string;
+  reference_context?: string;
 }
 
 export interface Section16Provenance {
@@ -836,6 +840,7 @@ export interface SatelliteObservationPackage {
   sentinel2?: Sentinel2Metadata | null;
   timeline: ObservationTimeline;
   revisit_context: RevisitContext;
+  observations?: SARObservationRecord[];
 }
 
 export async function fetchCaseSatelliteObservations(caseId: string): Promise<SatelliteObservationPackage> {
@@ -849,6 +854,143 @@ export function useCaseSatelliteObservationsQuery(caseId: string | null) {
     enabled: Boolean(caseId),
     staleTime: 60 * 1000,
     retry: 1,
+  });
+}
+
+// ============================================================================
+// Phase 5: Operational SAR Observation Processing Pipeline Types & Queries
+// ============================================================================
+
+export interface SARValidationCheckItem {
+  check_id: string;
+  name: string;
+  passed: boolean;
+  status: 'PASSED' | 'FAILED' | 'WARNING';
+  message: string;
+  details?: string | null;
+}
+
+export interface SARValidationResult {
+  case_id: string;
+  observation_id: string;
+  is_valid: boolean;
+  overall_status: 'READY_FOR_PROCESSING' | 'VALIDATION_FAILED';
+  checks: SARValidationCheckItem[];
+  metadata_summary: Record<string, unknown>;
+  timestamp_utc: string;
+}
+
+export interface SARObservationRecord {
+  observation_id: string;
+  case_id: string;
+  platform: string;
+  sensor: string;
+  acquisition_timestamp_utc: string;
+  polarization: string;
+  polarizations_available: string[];
+  acquisition_mode: string;
+  product_type: string;
+  crs: string;
+  raster_dimensions: { width: number; height: number };
+  spatial_resolution: string;
+  geographic_bounds: number[];
+  source_artifact: string;
+  processing_status: string;
+  role: string;
+  is_operational: boolean;
+  validation_status?: string | null;
+  calibrated_radiometry_available: boolean;
+  speckle_filter_info?: string | null;
+  detector_info?: string | null;
+}
+
+export interface SARJobStage {
+  stage_id: string;
+  name: string;
+  status: 'PENDING' | 'IN_PROGRESS' | 'COMPLETE' | 'SKIPPED_CALIBRATED_INPUT' | 'FAILED';
+  details: string;
+  duration_ms?: number | null;
+}
+
+export interface SARProcessingJob {
+  job_id: string;
+  case_id: string;
+  observation_id: string;
+  current_stage: 'QUEUED' | 'VALIDATING' | 'CALIBRATING' | 'FILTERING' | 'DETECTING' | 'VECTORIZING' | 'COMPLETE' | 'FAILED';
+  start_time_utc: string;
+  completion_time_utc?: string | null;
+  stages: SARJobStage[];
+  output_artifacts: Record<string, string>;
+  error_message?: string | null;
+}
+
+export interface ProvenanceStep {
+  step_number: number;
+  stage: 'SOURCE' | 'CALIBRATION' | 'FILTER' | 'DETECTION' | 'VECTORIZATION' | 'ATTRIBUTION';
+  title: string;
+  method: string;
+  input_artifact: string;
+  output_artifact: string;
+  details: string;
+  status: string;
+}
+
+export interface SARDetectionSummary {
+  total_candidates: number;
+  accepted_candidates: number;
+  rejected_candidates: number;
+  rejection_reasons: Record<string, number>;
+  accepted_candidate_ids: string[];
+  total_slick_area_ha?: number | null;
+}
+
+export interface SARJobResult {
+  job_id: string;
+  case_id: string;
+  observation_id: string;
+  status: string;
+  observation: Record<string, unknown>;
+  detection: SARDetectionSummary;
+  provenance_chain: ProvenanceStep[];
+  output_artifacts: Record<string, string>;
+  elapsed_seconds?: number | null;
+}
+
+export async function fetchCaseSatelliteValidation(caseId: string): Promise<SARValidationResult> {
+  return apiFetch<SARValidationResult>(`/api/cases/${encodeURIComponent(caseId)}/satellite/validation`);
+}
+
+export function useCaseSatelliteValidationQuery(caseId: string | null) {
+  return useQuery({
+    queryKey: ['case', caseId, 'satellite-validation'] as const,
+    queryFn: () => fetchCaseSatelliteValidation(caseId!),
+    enabled: Boolean(caseId),
+    staleTime: 60 * 1000,
+    retry: 1,
+  });
+}
+
+export async function triggerSARProcessingJob(caseId: string, reprocess = false): Promise<SARProcessingJob> {
+  return apiFetch<SARProcessingJob>(`/api/cases/${encodeURIComponent(caseId)}/satellite/process`, {
+    method: 'POST',
+    body: JSON.stringify({ reprocess }),
+  });
+}
+
+export async function fetchSARJob(jobId: string): Promise<SARProcessingJob> {
+  return apiFetch<SARProcessingJob>(`/api/satellite/jobs/${encodeURIComponent(jobId)}`);
+}
+
+export async function fetchSARJobResults(jobId: string): Promise<SARJobResult> {
+  return apiFetch<SARJobResult>(`/api/satellite/jobs/${encodeURIComponent(jobId)}/results`);
+}
+
+export function useSARJobResultsQuery(jobId: string | null) {
+  return useQuery({
+    queryKey: ['sar-job-results', jobId] as const,
+    queryFn: () => fetchSARJobResults(jobId!),
+    enabled: Boolean(jobId),
+    staleTime: 300 * 1000,
   });
 }
 

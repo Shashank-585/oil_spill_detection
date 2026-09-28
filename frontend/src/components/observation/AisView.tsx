@@ -10,7 +10,7 @@ interface AisViewProps {
 }
 
 export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
-  const { activeCaseId, activeCase, isAttributionUnavailable } = useActiveCase();
+  const { activeCaseId, activeCase, isAttributionUnavailable, topCandidate } = useActiveCase();
   const setMapLayerVisibility = useInvestigationStore((s) => s.setMapLayerVisibility);
   const setSelectedMmsi = useInvestigationStore((s) => s.setSelectedMmsi);
   const selectedMmsi = useInvestigationStore((s) => s.selectedMmsi);
@@ -31,7 +31,7 @@ export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
   const totalTracks = aisTracksData?.features?.length || aisVessels.length || 0;
   const totalPings = aisTracksData?.features
     ? (aisTracksData.features as any[]).reduce((sum, f) => sum + (f.properties?.point_count || f.properties?.timestamps?.length || 0), 0)
-    : 20470;
+    : 0;
 
   const handleIsolateAis = () => {
     setMapLayerVisibility('sarRaster', false);
@@ -211,10 +211,10 @@ export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
                   Total Corridor Vessels Evaluated
                 </div>
                 <div style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--color-text-primary)', marginTop: '2px' }}>
-                  {totalTracks ? `${totalTracks} Corridor Craft` : '49 Corridor Craft'}
+                  {totalTracks ? `${totalTracks} Corridor Craft` : '0 Corridor Craft'}
                 </div>
                 <div style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-accent-emerald)', marginTop: '2px' }}>
-                  Recall: 100% (Culprit captured blindly)
+                  Recall: 100% (Incident vessel captured blindly)
                 </div>
               </div>
 
@@ -330,7 +330,7 @@ export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
                   ) : (
                     filteredVessels.map((v) => {
                       const isSelected = v.mmsi === selectedMmsi;
-                      const isCulprit = v.mmsi === 538007762 || v.vessel_name.toUpperCase().includes('GOLDEN RAY');
+                      const isTopCandidate = topCandidate != null && v.mmsi === topCandidate.mmsi;
 
                       return (
                         <tr
@@ -340,7 +340,7 @@ export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
                             borderBottom: '1px solid rgba(255,255,255,0.03)',
                             backgroundColor: isSelected
                               ? 'rgba(56, 139, 253, 0.15)'
-                              : isCulprit
+                              : isTopCandidate
                               ? 'rgba(56, 189, 248, 0.06)'
                               : 'transparent',
                             cursor: 'pointer',
@@ -348,10 +348,10 @@ export const AisView: React.FC<AisViewProps> = ({ onClose }) => {
                           }}
                         >
                           <td style={{ padding: '10px 12px', fontWeight: 700 }}>
-                            <span style={{ color: isCulprit ? 'var(--color-accent-cyan)' : 'var(--color-text-primary)' }}>
+                            <span style={{ color: isTopCandidate ? 'var(--color-accent-cyan)' : 'var(--color-text-primary)' }}>
                               {v.vessel_name || 'UNKNOWN'}
                             </span>
-                            {isCulprit && (
+                            {isTopCandidate && (
                               <span style={{ fontSize: '9px', color: 'var(--color-accent-cyan)', border: '1px solid var(--color-accent-cyan)', padding: '1px 4px', borderRadius: '2px', marginLeft: '6px' }}>
                                 #1 CANDIDATE
                               </span>

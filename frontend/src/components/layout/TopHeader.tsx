@@ -1,43 +1,45 @@
 import React, { useState } from 'react';
 import { useInvestigationStore } from '../../store/investigationStore';
 import { useActiveCase } from '../../context/CaseContext';
-import { MonospaceValue } from '../common/MonospaceValue';
-import { StatusBadge } from '../common/StatusBadge';
-import { Anchor, Compass, Clock, CheckCircle2, ShieldCheck, AlertCircle, RefreshCw, Bell, Database } from 'lucide-react';
+import {
+  Compass,
+  Film,
+  Bell,
+  Database,
+  ShieldCheck,
+  PanelRightClose,
+  PanelRightOpen,
+  RefreshCw,
+  Radio,
+} from 'lucide-react';
 import { useCaseNotificationsQuery, useCaseReadinessQuery } from '../../api/casesApi';
 import { DataReadinessModal } from '../common/DataReadinessModal';
-
 import { InvestigationStepper } from '../workflow/InvestigationStepper';
 import { DomainTooltip } from '../common/DomainTooltip';
-
+import { EvidenceStatusIndicator } from '../common/EvidenceStatusIndicator';
 
 export const TopHeader: React.FC = () => {
+  const isReplayMode = useInvestigationStore((s) => s.isReplayMode);
+  const setReplayMode = useInvestigationStore((s) => s.setReplayMode);
   const causalConsistencyEnabled = useInvestigationStore((s) => s.causalConsistencyEnabled);
   const setCausalConsistencyEnabled = useInvestigationStore((s) => s.setCausalConsistencyEnabled);
   const activeWorkspace = useInvestigationStore((s) => s.activeWorkspace);
   const setActiveWorkspace = useInvestigationStore((s) => s.setActiveWorkspace);
+  const inspectorOpen = useInvestigationStore((s) => s.inspectorOpen);
+  const toggleInspector = useInvestigationStore((s) => s.toggleInspector);
+
   const {
     activeCaseId,
     setActiveCaseId,
     cases,
     isLoadingCases,
-    activeCase,
-    isLoadingCaseDetail,
     caseDetailError,
   } = useActiveCase();
 
   const [readinessModalOpen, setReadinessModalOpen] = useState(false);
   const { data: readinessData } = useCaseReadinessQuery(activeCaseId);
-
   const { data: notificationFeed } = useCaseNotificationsQuery(activeCaseId);
   const alertCount = notificationFeed?.total_alerts || 0;
-
-
-  // Investigation Event T0 derived from active case
-  const eventTime =
-    activeCase?.event?.estimated_start_utc ||
-    activeCase?.event?.search_start_utc ||
-    (isLoadingCaseDetail ? 'SYNCING T₀...' : 'T₀ UNRECORDED');
 
   return (
     <header
@@ -48,43 +50,33 @@ export const TopHeader: React.FC = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 16px',
+        padding: '0 12px',
         zIndex: 20,
         flexShrink: 0,
+        userSelect: 'none',
       }}
     >
-      {/* 1. Left: Prominent Active Incident Title & Switcher */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      {/* 1. LEFT: Incident Switcher & Demo Shortcuts */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            backgroundColor: 'var(--color-bg-surface-raised)',
-            padding: '4px 10px',
+            gap: '6px',
+            backgroundColor: 'var(--color-bg-base)',
+            padding: '3px 8px',
             borderRadius: 'var(--radius-sm)',
             border: caseDetailError
-              ? '1px solid var(--color-accent-crimson)'
+              ? '1px solid var(--color-danger)'
               : '1px solid var(--color-border-subtle)',
           }}
         >
-          <Compass size={15} color="var(--color-accent-cyan)" />
-          <span
-            style={{
-              fontSize: 'var(--text-2xs)',
-              color: 'var(--color-text-muted)',
-              textTransform: 'uppercase',
-              fontWeight: 600,
-            }}
-          >
-            INCIDENT:
-          </span>
-
+          <Compass size={14} color="var(--color-accent-teal)" />
           {isLoadingCases ? (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '2px 4px' }}>
-              <RefreshCw size={12} className="animate-spin" color="var(--color-accent-blue)" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <RefreshCw size={11} className="animate-spin" color="var(--color-accent-teal)" />
               <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-muted)' }}>
-                DISCOVERING CASES...
+                DISCOVERING...
               </span>
             </div>
           ) : (
@@ -95,234 +87,242 @@ export const TopHeader: React.FC = () => {
                 backgroundColor: 'transparent',
                 color: 'var(--color-text-primary)',
                 border: 'none',
-                fontSize: 'var(--text-sm)',
+                fontSize: 'var(--text-xs)',
                 fontWeight: 700,
                 letterSpacing: '0.02em',
                 cursor: 'pointer',
                 outline: 'none',
-                maxWidth: '420px',
+                maxWidth: '280px',
               }}
               title="Select registered investigation case"
             >
-              {cases.map((c) => {
-                const roleTag = c.validation_role
-                  ? ` · [${c.validation_role.replace(/_/g, ' ').toUpperCase()}]`
-                  : '';
-                return (
-                  <option
-                    key={c.case_id}
-                    value={c.case_id}
-                    style={{ backgroundColor: 'var(--color-bg-surface)', color: 'var(--color-text-primary)' }}
-                  >
-                    {c.case_id.toUpperCase()} · {c.name.toUpperCase()}{roleTag}
-                  </option>
-                );
-              })}
+              {cases.map((c) => (
+                <option
+                  key={c.case_id}
+                  value={c.case_id}
+                  style={{ backgroundColor: 'var(--color-bg-surface)', color: 'var(--color-text-primary)' }}
+                >
+                  {c.case_id.toUpperCase()} · {c.name}
+                </option>
+              ))}
             </select>
           )}
         </div>
 
-        {/* Demo Quick-Selection Pills for Live Jury Presentation */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-          <span style={{ fontSize: '10px', color: 'var(--color-text-muted)', fontWeight: 700, letterSpacing: '0.04em' }}>
-            DEMO:
-          </span>
+        {/* Rapid Jury Demo Pills */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
           <button
             onClick={() => setActiveCaseId('case_003_golden_ray')}
             style={{
-              padding: '2px 8px',
-              fontSize: '11px',
+              padding: '2px 6px',
+              fontSize: '10px',
+              fontFamily: 'var(--font-mono)',
               fontWeight: activeCaseId === 'case_003_golden_ray' ? 700 : 500,
-              backgroundColor: activeCaseId === 'case_003_golden_ray' ? 'rgba(56, 189, 248, 0.16)' : 'var(--color-bg-surface-raised)',
-              border: `1px solid ${activeCaseId === 'case_003_golden_ray' ? 'var(--color-accent-cyan)' : 'var(--color-border-subtle)'}`,
+              backgroundColor: activeCaseId === 'case_003_golden_ray' ? 'rgba(209, 178, 124, 0.16)' : 'transparent',
+              border: `1px solid ${activeCaseId === 'case_003_golden_ray' ? 'var(--color-accent-sand)' : 'var(--color-border-subtle)'}`,
               borderRadius: 'var(--radius-xs)',
-              color: activeCaseId === 'case_003_golden_ray' ? 'var(--color-accent-cyan)' : 'var(--color-text-secondary)',
+              color: activeCaseId === 'case_003_golden_ray' ? 'var(--color-accent-sand)' : 'var(--color-text-muted)',
               cursor: 'pointer',
-              transition: 'all 0.15s ease',
             }}
-            title="Golden Ray Benchmark Case: Complete 4D end-to-end evidence workflow"
+            title="Case 003 Golden Ray Benchmark"
           >
-            GOLDEN RAY
+            CASE 003
           </button>
           <button
             onClick={() => setActiveCaseId('case_001')}
             style={{
-              padding: '2px 8px',
-              fontSize: '11px',
+              padding: '2px 6px',
+              fontSize: '10px',
+              fontFamily: 'var(--font-mono)',
               fontWeight: activeCaseId === 'case_001' ? 700 : 500,
-              backgroundColor: activeCaseId === 'case_001' ? 'rgba(46, 160, 67, 0.16)' : 'var(--color-bg-surface-raised)',
-              border: `1px solid ${activeCaseId === 'case_001' ? 'var(--color-accent-emerald)' : 'var(--color-border-subtle)'}`,
+              backgroundColor: activeCaseId === 'case_001' ? 'rgba(184, 196, 190, 0.14)' : 'transparent',
+              border: `1px solid ${activeCaseId === 'case_001' ? 'var(--color-border)' : 'var(--color-border-subtle)'}`,
               borderRadius: 'var(--radius-xs)',
-              color: activeCaseId === 'case_001' ? 'var(--color-accent-emerald)' : 'var(--color-text-secondary)',
+              color: activeCaseId === 'case_001' ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
               cursor: 'pointer',
-              transition: 'all 0.15s ease',
             }}
-            title="Case 001 Negative-Control: Natural seepage baseline with zero false attribution"
+            title="Case 001 Negative-Control"
           >
-            CASE 001 (NEG-CTRL)
+            CASE 001
           </button>
           <button
             onClick={() => setActiveCaseId('case_002_wakashio')}
             style={{
-              padding: '2px 8px',
-              fontSize: '11px',
+              padding: '2px 6px',
+              fontSize: '10px',
+              fontFamily: 'var(--font-mono)',
               fontWeight: activeCaseId === 'case_002_wakashio' ? 700 : 500,
-              backgroundColor: activeCaseId === 'case_002_wakashio' ? 'rgba(217, 119, 6, 0.16)' : 'var(--color-bg-surface-raised)',
-              border: `1px solid ${activeCaseId === 'case_002_wakashio' ? 'var(--color-accent-amber)' : 'var(--color-border-subtle)'}`,
+              backgroundColor: activeCaseId === 'case_002_wakashio' ? 'rgba(184, 111, 82, 0.16)' : 'transparent',
+              border: `1px solid ${activeCaseId === 'case_002_wakashio' ? 'var(--color-warning-rust)' : 'var(--color-border-subtle)'}`,
               borderRadius: 'var(--radius-xs)',
-              color: activeCaseId === 'case_002_wakashio' ? 'var(--color-accent-amber)' : 'var(--color-text-secondary)',
+              color: activeCaseId === 'case_002_wakashio' ? 'var(--color-warning-rust)' : 'var(--color-text-muted)',
               cursor: 'pointer',
-              transition: 'all 0.15s ease',
             }}
-            title="Case 002 Data-Limitation: Grounded hydrodynamic validation with AIS archive limitation"
+            title="Case 002 Data-Limitation"
           >
-            CASE 002 (LIMITATION)
+            CASE 002
           </button>
-        </div>
-
-        {/* Subordinate System & Project Attribution */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 0.75 }}>
-          <Anchor size={14} color="var(--color-text-muted)" />
-          <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-muted)', letterSpacing: '0.04em' }}>
-            SIH26143 · MARITIME FORENSIC ATTRIBUTION
-          </span>
         </div>
       </div>
 
-      {/* 2. Center: Investigation Workflow Stepper & Event T0 */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      {/* 2. CENTER: Segmented Investigation Stepper & State-Driven Evidence Status */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <InvestigationStepper />
+        <EvidenceStatusIndicator />
+      </div>
 
-        <div
+      {/* 3. RIGHT: Operational System State & Actions */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+        {/* Data Readiness Indicator */}
+        <button
+          onClick={() => setReadinessModalOpen(true)}
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '5px',
+            padding: '2px 7px',
+            height: '24px',
             backgroundColor: 'var(--color-bg-base)',
-            padding: '4px 10px',
-            borderRadius: 'var(--radius-sm)',
             border: '1px solid var(--color-border-subtle)',
+            borderRadius: 'var(--radius-xs)',
+            cursor: 'pointer',
+            fontSize: '11px',
+            color: 'var(--color-text-secondary)',
+            transition: 'border-color 0.12s ease',
           }}
-          title="Incident origin / discharge timestamp (T0)"
+          title="Open Data Readiness & Reproducible Provenance Audit"
         >
-          <Clock size={13} color="var(--color-accent-amber)" />
+          <Database size={12} color="var(--color-accent-teal)" />
+          <span style={{ fontSize: '10px', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+            DATA:
+          </span>
           <span
             style={{
-              fontSize: 'var(--text-2xs)',
-              color: 'var(--color-text-secondary)',
-              textTransform: 'uppercase',
-              fontWeight: 600,
+              fontFamily: 'var(--font-mono)',
+              fontSize: '10px',
+              fontWeight: 700,
+              color: readinessData?.overall_status === 'LIMITED' ? 'var(--color-accent-sand)' : 'var(--color-success)',
             }}
           >
-            T₀:
+            {readinessData?.overall_status || 'READY'}
           </span>
-          {isLoadingCaseDetail ? (
-            <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-accent-amber)', opacity: 0.8 }}>
-              SYNCING...
-            </span>
-          ) : (
-            <MonospaceValue value={eventTime} />
-          )}
-        </div>
-      </div>
+        </button>
 
-      {/* 3. Right: System Operational Readiness & Causal Physics Toggle */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-        {/* System Status */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          {caseDetailError ? (
-            <>
-              <AlertCircle size={14} color="var(--color-accent-crimson)" />
-              <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-accent-crimson)', fontWeight: 500 }}>
-                CASE ERROR:
-              </span>
-              <StatusBadge label="OFFLINE" tone="crimson" size="sm" />
-            </>
-          ) : isLoadingCaseDetail ? (
-            <>
-              <RefreshCw size={13} className="animate-spin" color="var(--color-accent-amber)" />
-              <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-secondary)', fontWeight: 500 }}>
-                STATUS:
-              </span>
-              <StatusBadge label="SYNCING" tone="amber" size="sm" />
-            </>
-          ) : (
-            <>
-              <CheckCircle2 size={14} color="var(--color-accent-emerald)" />
-              <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-secondary)', fontWeight: 500 }}>
-                ENGINE:
-              </span>
-              <StatusBadge label="READY" tone="emerald" size="sm" />
-            </>
-          )}
-        </div>
+        {/* Operational SAR Pipeline Indicator */}
+        <button
+          onClick={() => setActiveWorkspace('sar')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '5px',
+            padding: '2px 7px',
+            height: '24px',
+            backgroundColor: activeWorkspace === 'sar' ? 'rgba(95, 145, 138, 0.15)' : 'var(--color-bg-base)',
+            border: `1px solid ${activeWorkspace === 'sar' ? 'rgba(95, 145, 138, 0.4)' : 'var(--color-border-subtle)'}`,
+            borderRadius: 'var(--radius-xs)',
+            cursor: 'pointer',
+            fontSize: '11px',
+            color: 'var(--color-text-secondary)',
+            transition: 'all 0.12s ease',
+          }}
+          title="Open Operational SAR Observation Processing Pipeline Workspace"
+        >
+          <Radio size={12} color="var(--color-accent-teal)" />
+          <span style={{ fontSize: '10px', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+            SAR:
+          </span>
+          <span
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '10px',
+              fontWeight: 700,
+              color: 'var(--color-success)',
+            }}
+          >
+            COMPLETE
+          </span>
+        </button>
 
-        {/* Causal Consistency Toggle */}
+        {/* Historical Event Replay Mode Toggle */}
+        <button
+          onClick={() => setReplayMode(!isReplayMode)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '5px',
+            padding: '2px 7px',
+            height: '24px',
+            backgroundColor: isReplayMode ? 'rgba(95, 145, 138, 0.15)' : 'var(--color-bg-base)',
+            border: `1px solid ${isReplayMode ? 'rgba(95, 145, 138, 0.4)' : 'var(--color-border-subtle)'}`,
+            borderRadius: 'var(--radius-xs)',
+            cursor: 'pointer',
+            color: isReplayMode ? 'var(--color-accent-seafoam)' : 'var(--color-text-muted)',
+            fontSize: '11px',
+            fontWeight: 600,
+            transition: 'all 0.12s ease',
+          }}
+          title="Toggle 4D Historical Event Replay Controls"
+        >
+          <Film size={12} color={isReplayMode ? 'var(--color-accent-seafoam)' : 'var(--color-text-muted)'} />
+          <span style={{ fontSize: '10px', letterSpacing: '0.04em' }}>REPLAY</span>
+        </button>
+
+        {/* Causal Consistency Pruning Toggle */}
         <DomainTooltip term="Causal consistency" inline>
           <button
             onClick={() => setCausalConsistencyEnabled(!causalConsistencyEnabled)}
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
-              padding: '4px 10px',
-              backgroundColor: causalConsistencyEnabled ? 'rgba(46, 160, 67, 0.12)' : 'var(--color-bg-surface-raised)',
-              border: `1px solid ${causalConsistencyEnabled ? 'var(--color-accent-emerald)' : 'var(--color-border-subtle)'}`,
-              borderRadius: 'var(--radius-sm)',
+              gap: '4px',
+              padding: '2px 7px',
+              height: '24px',
+              backgroundColor: causalConsistencyEnabled ? 'rgba(125, 156, 121, 0.12)' : 'var(--color-bg-base)',
+              border: `1px solid ${causalConsistencyEnabled ? 'rgba(125, 156, 121, 0.35)' : 'var(--color-border-subtle)'}`,
+              borderRadius: 'var(--radius-xs)',
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              color: causalConsistencyEnabled ? 'var(--color-success)' : 'var(--color-text-muted)',
+              fontSize: '11px',
+              fontWeight: 600,
+              transition: 'all 0.12s ease',
             }}
             title="Toggle generic 4D causal consistency temporal pruning"
           >
-            <ShieldCheck
-              size={14}
-              color={causalConsistencyEnabled ? 'var(--color-accent-emerald)' : 'var(--color-text-muted)'}
-            />
-            <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>
-              CAUSAL LAYER:
-            </span>
-            <span
-              style={{
-                fontSize: 'var(--text-2xs)',
-                fontWeight: 700,
-                color: causalConsistencyEnabled ? 'var(--color-accent-emerald)' : 'var(--color-text-muted)',
-              }}
-            >
-              {causalConsistencyEnabled ? 'ENABLED' : 'DISABLED'}
-            </span>
+            <ShieldCheck size={12} color={causalConsistencyEnabled ? 'var(--color-success)' : 'var(--color-text-muted)'} />
+            <span style={{ fontSize: '10px', letterSpacing: '0.04em' }}>CAUSAL</span>
           </button>
         </DomainTooltip>
 
-        {/* Phase 24 Authority Alert / Notification Button */}
+        {/* Alerts Button */}
         <button
           onClick={() => setActiveWorkspace('alerts')}
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '6px',
-            padding: '4px 10px',
-            backgroundColor: activeWorkspace === 'alerts' ? 'rgba(217, 119, 6, 0.18)' : 'var(--color-bg-surface-raised)',
-            border: `1px solid ${activeWorkspace === 'alerts' ? 'var(--color-accent-amber)' : 'var(--color-border-subtle)'}`,
-            borderRadius: 'var(--radius-sm)',
+            gap: '4px',
+            padding: '3px 8px',
+            height: '26px',
+            backgroundColor: activeWorkspace === 'alerts' ? 'rgba(209, 178, 124, 0.16)' : 'var(--color-bg-base)',
+            border: `1px solid ${activeWorkspace === 'alerts' ? 'var(--color-accent-sand)' : 'var(--color-border-subtle)'}`,
+            borderRadius: 'var(--radius-xs)',
             cursor: 'pointer',
-            color: activeWorkspace === 'alerts' ? 'var(--color-accent-amber)' : 'var(--color-text-secondary)',
-            transition: 'all 0.2s ease',
+            color: activeWorkspace === 'alerts' ? 'var(--color-accent-sand)' : 'var(--color-text-secondary)',
+            fontSize: 'var(--text-2xs)',
+            fontWeight: 600,
           }}
-          title="View Authority Notification & Dispatch Feed"
+          title="Authority Notifications & Alert Dispatch Feed"
         >
-          <Bell size={14} color={activeWorkspace === 'alerts' ? 'var(--color-accent-amber)' : 'var(--color-text-secondary)'} />
-          <span style={{ fontSize: 'var(--text-2xs)', fontWeight: 600, textTransform: 'uppercase' }}>
-            ALERTS
-          </span>
+          <Bell size={13} />
           {alertCount > 0 && (
             <span
               style={{
-                backgroundColor: 'var(--color-accent-amber)',
-                color: '#0a0d13',
+                backgroundColor: 'var(--color-accent-sand)',
+                color: '#0B181A',
                 fontSize: '9px',
                 fontWeight: 800,
-                padding: '1px 5px',
-                borderRadius: '10px',
+                padding: '0 4px',
+                borderRadius: '8px',
+                lineHeight: '14px',
               }}
             >
               {alertCount}
@@ -330,45 +330,30 @@ export const TopHeader: React.FC = () => {
           )}
         </button>
 
-        {/* Phase 25 Data Readiness & Provenance Button */}
+        {/* Inspector Drawer Toggle Button */}
         <button
-          onClick={() => setReadinessModalOpen(true)}
+          onClick={toggleInspector}
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '6px',
-            padding: '4px 10px',
-            backgroundColor: readinessData?.overall_status === 'READY'
-              ? 'rgba(46, 160, 67, 0.12)'
-              : readinessData?.overall_status === 'LIMITED'
-              ? 'rgba(210, 153, 34, 0.12)'
-              : 'var(--color-bg-surface-raised)',
-            border: `1px solid ${
-              readinessData?.overall_status === 'READY'
-                ? 'var(--color-accent-emerald)'
-                : readinessData?.overall_status === 'LIMITED'
-                ? 'var(--color-accent-amber)'
-                : 'var(--color-border-subtle)'
-            }`,
-            borderRadius: 'var(--radius-sm)',
+            justifyContent: 'center',
+            width: '28px',
+            height: '26px',
+            backgroundColor: inspectorOpen ? 'var(--color-bg-surface-active)' : 'var(--color-bg-base)',
+            border: `1px solid ${inspectorOpen ? 'var(--color-accent-teal)' : 'var(--color-border-subtle)'}`,
+            borderRadius: 'var(--radius-xs)',
+            color: inspectorOpen ? 'var(--color-accent-teal)' : 'var(--color-text-muted)',
             cursor: 'pointer',
-            transition: 'all 0.2s ease',
+            marginLeft: '4px',
           }}
-          title="Open Data Readiness & Reproducible Provenance Audit"
+          title={inspectorOpen ? 'Collapse Forensic Inspector' : 'Expand Forensic Inspector'}
+          aria-label="Toggle Forensic Inspector"
         >
-          <Database size={14} color="var(--color-accent-cyan)" />
-          <span style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>
-            DATA:
-          </span>
-          <StatusBadge
-            label={readinessData?.overall_status || 'CHECKING'}
-            tone={readinessData?.overall_status === 'READY' ? 'emerald' : readinessData?.overall_status === 'LIMITED' ? 'amber' : 'neutral'}
-            size="sm"
-          />
+          {inspectorOpen ? <PanelRightClose size={15} /> : <PanelRightOpen size={15} />}
         </button>
       </div>
 
-      {/* Phase 25 Data Readiness & Provenance Modal */}
+      {/* Data Readiness & Provenance Modal */}
       <DataReadinessModal
         isOpen={readinessModalOpen}
         onClose={() => setReadinessModalOpen(false)}

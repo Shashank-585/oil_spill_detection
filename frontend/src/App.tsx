@@ -12,15 +12,12 @@ import { AisView } from './components/observation/AisView';
 import { DriftView } from './components/observation/DriftView';
 import { InvestigationReportView } from './components/report/InvestigationReportView';
 import { AuthorityNotificationView } from './components/notifications/AuthorityNotificationView';
-import { HistoricalReplayBar } from './components/timeline/HistoricalReplayBar';
 import { useInvestigationStore, type WorkspaceView } from './store/investigationStore';
 import './styles/globals.css';
 
 export const App: React.FC = () => {
   const activeCaseId = useInvestigationStore((s) => s.activeCaseId);
-  const activeStage = useInvestigationStore((s) => s.activeStage);
   const activeWorkspace = useInvestigationStore((s) => s.activeWorkspace);
-  const isReplayMode = useInvestigationStore((s) => s.isReplayMode);
   const setActiveCaseId = useInvestigationStore((s) => s.setActiveCaseId);
   const setActiveWorkspace = useInvestigationStore((s) => s.setActiveWorkspace);
 
@@ -122,33 +119,7 @@ export const App: React.FC = () => {
 
         {/* Center Investigation Workspace (Map + Overlays + Timeline) */}
         <div style={{ display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', overflow: 'hidden' }}>
-          {/* Active Workflow Stage & Workspace Badge */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '16px',
-              right: '56px',
-              zIndex: 10,
-              backgroundColor: 'rgba(17, 22, 32, 0.88)',
-              border: '1px solid var(--color-border-subtle)',
-              borderRadius: 'var(--radius-xs)',
-              padding: '4px 10px',
-              fontSize: 'var(--text-2xs)',
-              fontWeight: 700,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              boxShadow: 'var(--shadow-sm)',
-            }}
-          >
-            <span style={{ color: 'var(--color-accent-blue)' }}>STAGE: {activeStage}</span>
-            <span style={{ color: 'var(--color-text-muted)' }}>·</span>
-            <span style={{ color: 'var(--color-text-secondary)' }}>VIEW: {activeWorkspace}</span>
-          </div>
-
-          {/* Geospatial Viewport (Dominates 80%+ of view) */}
+          {/* Geospatial Viewport (Dominates main workspace) */}
           <main style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
             <GeospatialViewport />
 
@@ -179,12 +150,10 @@ export const App: React.FC = () => {
             )}
           </main>
 
-          {/* Historical Event Replay Floating HUD (Phase 22) */}
-          {isReplayMode && <HistoricalReplayBar />}
-
-          {/* Master Timeline Scrubber */}
+          {/* Master Timeline Scrubber (Unified single-deck 44px) */}
           <MasterTimelineScrubber />
         </div>
+
 
         {/* Right Forensic Inspector Drawer */}
         <InspectorDrawer />

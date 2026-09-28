@@ -7,7 +7,9 @@ export type DomainTerm =
   | '4D hypothesis'
   | 'IoU'
   | 'Causal consistency'
-  | 'Uncertainty';
+  | 'Uncertainty'
+  | 'T₀'
+  | 'Tobs';
 
 export const DOMAIN_GLOSSARY: Record<
   DomainTerm,
@@ -60,6 +62,22 @@ export const DOMAIN_GLOSSARY: Record<
       'Perturbs wind leeway coefficients and current velocity vectors across repeated Monte Carlo runs to test whether the top-ranked vessel remains #1 under metocean forecast noise.',
     practicalContext:
       'Provides decision-makers with a calibrated stability percentage rather than an overconfident single-point estimate.',
+  },
+  'T₀': {
+    title: 'Estimated Incident / Spill Start Time (T₀)',
+    abbreviation: 'Incident Timestamp',
+    definition:
+      'The estimated origin time of the discharge event based on initial authority reporting or backward trajectory convergence.',
+    practicalContext:
+      'Establishes the chronological zero-point for tracking candidate vessel positions.',
+  },
+  Tobs: {
+    title: 'Sensor Observation Time (T_obs)',
+    abbreviation: 'Satellite Overpass Timestamp',
+    definition:
+      'The exact UTC moment when the Sentinel-1 SAR synthetic aperture radar acquired the sea surface scene containing the segmented oil slicks.',
+    practicalContext:
+      'Serves as the boundary condition for backward Lagrangian drift simulation.',
   },
 };
 

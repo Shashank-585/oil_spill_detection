@@ -43,6 +43,7 @@ interface InvestigationState {
 
   // Layout & Visibility
   inspectorOpen: boolean;
+  focusSelectedHypothesis: boolean;
   mapLayers: MapLayerVisibility;
 
   // Actions
@@ -58,6 +59,7 @@ interface InvestigationState {
   togglePlayPause: () => void;
   setPlaybackSpeed: (speed: number) => void;
   toggleInspector: () => void;
+  setFocusSelectedHypothesis: (focus: boolean) => void;
   setMapLayerVisibility: (layer: keyof MapLayerVisibility, visible: boolean) => void;
   nextStage: () => void;
   prevStage: () => void;
@@ -79,6 +81,7 @@ export const useInvestigationStore = create<InvestigationState>((set, get) => ({
   playbackSpeed: 1.0,
 
   inspectorOpen: true,
+  focusSelectedHypothesis: true,
   mapLayers: {
     sarRaster: true,
     slickPolygons: true,
@@ -180,6 +183,7 @@ export const useInvestigationStore = create<InvestigationState>((set, get) => ({
   togglePlayPause: () => set((state) => ({ isPlaying: !state.isPlaying })),
   setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
   toggleInspector: () => set((state) => ({ inspectorOpen: !state.inspectorOpen })),
+  setFocusSelectedHypothesis: (focus) => set({ focusSelectedHypothesis: focus }),
   setMapLayerVisibility: (layer, visible) =>
     set((state) => ({
       mapLayers: { ...state.mapLayers, [layer]: visible },

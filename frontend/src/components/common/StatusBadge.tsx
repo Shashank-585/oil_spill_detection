@@ -10,24 +10,24 @@ interface StatusBadgeProps {
 
 const TONE_STYLES: Record<StatusTone, { bg: string; border: string; text: string }> = {
   emerald: {
-    bg: 'rgba(46, 160, 67, 0.15)',
-    border: 'rgba(46, 160, 67, 0.4)',
-    text: 'var(--color-accent-emerald)',
+    bg: 'rgba(125, 156, 121, 0.15)',
+    border: 'rgba(125, 156, 121, 0.4)',
+    text: 'var(--color-success)',
   },
   amber: {
-    bg: 'rgba(210, 153, 34, 0.15)',
-    border: 'rgba(210, 153, 34, 0.4)',
-    text: 'var(--color-accent-amber)',
+    bg: 'rgba(209, 178, 124, 0.15)',
+    border: 'rgba(209, 178, 124, 0.4)',
+    text: 'var(--color-accent-sand)',
   },
   crimson: {
-    bg: 'rgba(248, 81, 73, 0.15)',
-    border: 'rgba(248, 81, 73, 0.4)',
-    text: 'var(--color-accent-crimson)',
+    bg: 'rgba(184, 111, 82, 0.15)',
+    border: 'rgba(184, 111, 82, 0.4)',
+    text: 'var(--color-warning-rust)',
   },
   blue: {
-    bg: 'rgba(56, 139, 253, 0.15)',
-    border: 'rgba(56, 139, 253, 0.4)',
-    text: 'var(--color-accent-blue)',
+    bg: 'rgba(95, 145, 138, 0.15)',
+    border: 'rgba(95, 145, 138, 0.4)',
+    text: 'var(--color-accent-teal)',
   },
   neutral: {
     bg: 'var(--tag-neutral-bg)',

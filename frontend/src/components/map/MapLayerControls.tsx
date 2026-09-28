@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useInvestigationStore } from '../../store/investigationStore';
-import { Layers, Eye, EyeOff } from 'lucide-react';
+import { Layers, ChevronDown, ChevronUp, CheckSquare, Square } from 'lucide-react';
 
 export const MapLayerControls: React.FC = () => {
   const mapLayers = useInvestigationStore((s) => s.mapLayers);
   const setMapLayerVisibility = useInvestigationStore((s) => s.setMapLayerVisibility);
+  const [isOpen, setIsOpen] = useState(false);
 
   const layers = [
-    { key: 'sarRaster' as const, label: 'SAR Imagery (S-1 σ°)' },
-    { key: 'slickPolygons' as const, label: 'Segmented Slicks' },
+    { key: 'sarRaster' as const, label: 'SAR Imagery' },
+    { key: 'slickPolygons' as const, label: 'Detected Slicks' },
     { key: 'aisTracks' as const, label: 'AIS Vessel Tracks' },
     { key: 'driftParticles' as const, label: 'Lagrangian Particles' },
     { key: 'candidateMarkers' as const, label: 'Hypothesis Locations' },
@@ -18,65 +19,93 @@ export const MapLayerControls: React.FC = () => {
     <div
       style={{
         position: 'absolute',
-        top: '16px',
-        left: '16px',
+        top: '12px',
+        left: '12px',
         zIndex: 10,
-        backgroundColor: 'rgba(17, 22, 32, 0.90)',
-        backdropFilter: 'blur(4px)',
+        backgroundColor: 'rgba(10, 13, 19, 0.92)',
         border: '1px solid var(--color-border-subtle)',
-        borderRadius: 'var(--radius-sm)',
-        padding: '8px 12px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '6px',
+        borderRadius: 'var(--radius-xs)',
         boxShadow: 'var(--shadow-md)',
+        userSelect: 'none',
+        backdropFilter: 'blur(6px)',
       }}
     >
-      <div
+      <button
+        onClick={() => setIsOpen(!isOpen)}
         style={{
           display: 'flex',
           alignItems: 'center',
           gap: '6px',
-          fontSize: 'var(--text-2xs)',
+          padding: '4px 8px',
+          fontSize: '11px',
           fontWeight: 700,
-          color: 'var(--color-text-secondary)',
+          color: isOpen ? 'var(--color-accent-blue)' : 'var(--color-text-secondary)',
           textTransform: 'uppercase',
           letterSpacing: '0.04em',
-          borderBottom: '1px solid var(--color-border-subtle)',
-          paddingBottom: '4px',
+          cursor: 'pointer',
+          background: 'none',
+          border: 'none',
+          borderRadius: 'var(--radius-xs)',
         }}
+        title="Toggle Map Layers Panel"
       >
-        <Layers size={12} color="var(--color-accent-blue)" />
-        Map Layers
-      </div>
+        <Layers size={13} color="var(--color-accent-blue)" />
+        <span>LAYERS</span>
+        {isOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+      </button>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-        {layers.map(({ key, label }) => {
-          const visible = mapLayers[key];
-          return (
-            <button
-              key={key}
-              role="switch"
-              aria-checked={visible}
-              aria-label={`Toggle ${label}`}
-              onClick={() => setMapLayerVisibility(key, !visible)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '12px',
-                fontSize: 'var(--text-xs)',
-                color: visible ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
-                padding: '2px 0',
-                cursor: 'pointer',
-              }}
-            >
-              <span>{label}</span>
-              {visible ? <Eye size={12} color="var(--color-accent-blue)" /> : <EyeOff size={12} color="var(--color-text-muted)" />}
-            </button>
-          );
-        })}
-      </div>
+      {isOpen && (
+        <div
+          style={{
+            padding: '4px 6px 6px 6px',
+            borderTop: '1px solid var(--color-border-subtle)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '2px',
+            minWidth: '176px',
+          }}
+        >
+          {layers.map(({ key, label }) => {
+            const visible = mapLayers[key];
+            return (
+              <button
+                key={key}
+                role="switch"
+                aria-checked={visible}
+                aria-label={`Toggle ${label}`}
+                onClick={() => setMapLayerVisibility(key, !visible)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '11px',
+                  color: visible ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
+                  padding: '3px 6px',
+                  cursor: 'pointer',
+                  background: 'none',
+                  border: 'none',
+                  borderRadius: '2px',
+                  textAlign: 'left',
+                  transition: 'background-color 0.12s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                {visible ? (
+                  <CheckSquare size={13} color="var(--color-accent-blue)" style={{ flexShrink: 0 }} />
+                ) : (
+                  <Square size={13} color="var(--color-text-muted)" style={{ flexShrink: 0 }} />
+                )}
+                <span style={{ fontWeight: visible ? 500 : 400 }}>{label}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

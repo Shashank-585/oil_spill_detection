@@ -22,21 +22,21 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  // 1. OBSERVE
-  { id: 'overview', label: 'Overview', category: 'OBSERVE', icon: Compass },
-  { id: 'sar', label: 'SAR Imagery', category: 'OBSERVE', icon: Radio, domainTerm: 'SAR' },
-  { id: 'ais', label: 'AIS Traffic', category: 'OBSERVE', icon: Ship, domainTerm: 'AIS' },
+  // 1. OBSERVATION TOOLS
+  { id: 'overview', label: 'Overview & Basemap', category: 'OBSERVE', icon: Compass },
+  { id: 'sar', label: 'SAR Radar Imagery', category: 'OBSERVE', icon: Radio, domainTerm: 'SAR' },
+  { id: 'ais', label: 'AIS Traffic Corridors', category: 'OBSERVE', icon: Ship, domainTerm: 'AIS' },
 
-  // 2. INVESTIGATE
-  { id: 'drift', label: 'Lagrangian Drift', category: 'INVESTIGATE', icon: Wind },
+  // 2. HYDRODYNAMIC DRIFT
+  { id: 'drift', label: 'Lagrangian Drift Trajectories', category: 'INVESTIGATE', icon: Wind },
 
-  // 3. ATTRIBUTE
-  { id: 'candidates', label: 'Candidates', category: 'ATTRIBUTE', icon: Users },
-  { id: 'evidence', label: 'Evidence Matrix', category: 'ATTRIBUTE', icon: BarChart3 },
-  { id: 'uncertainty', label: 'Uncertainty', category: 'ATTRIBUTE', icon: HelpCircle, domainTerm: 'Uncertainty' },
+  // 3. FORENSIC ATTRIBUTION
+  { id: 'candidates', label: 'Candidate Vessels', category: 'ATTRIBUTE', icon: Users },
+  { id: 'evidence', label: 'Counterfactual & Evidence Matrix', category: 'ATTRIBUTE', icon: BarChart3 },
+  { id: 'uncertainty', label: 'Uncertainty & Sensitivity', category: 'ATTRIBUTE', icon: HelpCircle, domainTerm: 'Uncertainty' },
 
-  // 4. REPORT & NOTIFY
-  { id: 'audit', label: 'Investigation Report & Audit', category: 'REPORT', icon: FileText },
+  // 4. REPORTS & DISPATCH
+  { id: 'audit', label: 'Investigation Dossier & Audit', category: 'REPORT', icon: FileText },
   { id: 'alerts', label: 'Authority Notifications & Alerts', category: 'REPORT', icon: Bell },
 ];
 
@@ -46,7 +46,7 @@ export const NavigationRail: React.FC = () => {
 
   return (
     <nav
-      aria-label="Investigation Workspaces"
+      aria-label="Investigation Tools"
       style={{
         width: 'var(--nav-rail-width)',
         height: '100%',
@@ -55,12 +55,13 @@ export const NavigationRail: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '12px 0',
+        padding: '8px 0',
         zIndex: 20,
         flexShrink: 0,
+        userSelect: 'none',
       }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', width: '100%', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', width: '100%', alignItems: 'center' }}>
         {NAV_ITEMS.map((item, index) => {
           const isActive = activeWorkspace === item.id;
           const Icon = item.icon;
@@ -74,20 +75,40 @@ export const NavigationRail: React.FC = () => {
               aria-label={item.label}
               aria-current={isActive ? 'page' : undefined}
               style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: 'var(--radius-sm)',
+                width: '32px',
+                height: '32px',
+                borderRadius: 'var(--radius-xs)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: isActive ? 'var(--color-bg-surface-active)' : 'transparent',
-                color: isActive ? 'var(--color-accent-blue)' : 'var(--color-text-secondary)',
-                borderLeft: isActive ? '3px solid var(--color-accent-blue)' : '3px solid transparent',
-                transition: 'all 0.15s ease',
+                backgroundColor: isActive ? 'rgba(95, 145, 138, 0.16)' : 'transparent',
+                color: isActive ? 'var(--color-accent-seafoam)' : 'var(--color-text-secondary)',
+                border: isActive ? '1px solid rgba(95, 145, 138, 0.4)' : '1px solid transparent',
+                transition: 'all 0.12s ease',
                 cursor: 'pointer',
+                position: 'relative',
+              }}
+              onMouseEnter={(e) => {
+                if (!isActive) e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive) e.currentTarget.style.backgroundColor = 'transparent';
               }}
             >
-              <Icon size={20} />
+              <Icon size={15} />
+              {isActive && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: '-8px',
+                    top: '7px',
+                    bottom: '7px',
+                    width: '3px',
+                    backgroundColor: 'var(--color-accent-seafoam)',
+                    borderRadius: '0 2px 2px 0',
+                  }}
+                />
+              )}
             </button>
           );
 
@@ -97,10 +118,10 @@ export const NavigationRail: React.FC = () => {
                 <div
                   role="separator"
                   style={{
-                    width: '28px',
+                    width: '20px',
                     height: '1px',
                     backgroundColor: 'var(--color-border-subtle)',
-                    margin: '4px 0',
+                    margin: '3px 0',
                   }}
                 />
               )}

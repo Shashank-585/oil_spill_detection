@@ -326,6 +326,10 @@ class Section15Conclusion(BaseModel):
     best_supported_hypothesis: str
     synthesis_statement: str
     decision_support_role: str
+    observed: Optional[str] = None
+    reconstructed: Optional[str] = None
+    attribution: Optional[str] = None
+    reference_context: Optional[str] = None
 
 
 class Section16Provenance(BaseModel):
@@ -497,6 +501,7 @@ class SatelliteObservationPackage(BaseModel):
     sentinel2: Optional[Sentinel2Metadata] = None
     timeline: ObservationTimeline
     revisit_context: RevisitContext
+    observations: List[Dict[str, Any]] = Field(default_factory=list)
 
 
 

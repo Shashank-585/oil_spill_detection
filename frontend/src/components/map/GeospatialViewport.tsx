@@ -124,8 +124,14 @@ export const GeospatialViewport: React.FC = () => {
   const toggleInspector = useInvestigationStore((s) => s.toggleInspector);
   const currentTimeUtc = useInvestigationStore((s) => s.currentTimeUtc);
   const activeWorkspace = useInvestigationStore((s) => s.activeWorkspace);
+  const focusSelectedHypothesis = useInvestigationStore((s) => s.focusSelectedHypothesis);
+  const setFocusSelectedHypothesis = useInvestigationStore((s) => s.setFocusSelectedHypothesis);
 
-  const { activeCaseId, activeCase } = useActiveCase();
+  const { activeCaseId, activeCase, topCandidate } = useActiveCase();
+
+  // Active target candidate (explicitly selected or default top-ranked candidate)
+  const activeTargetMmsi = selectedMmsi ?? topCandidate?.mmsi;
+  const activeTargetHypothesisId = selectedHypothesisId ?? topCandidate?.best_hypothesis_id;
 
   // Queries for real scientific geospatial artifacts
   const { data: sarRasterData } = useSarRasterQuery(activeCaseId);
@@ -574,17 +580,17 @@ export const GeospatialViewport: React.FC = () => {
         getFillColor: (f: any) => {
           const props = f?.properties || {};
           const isCompared = activeComparison && (props.slick_id === activeComparison.observed_slick_id || props.id === activeComparison.observed_slick_id);
-          return isCompared ? [250, 190, 50, 185] : [210, 153, 34, 150];
+          return isCompared ? [224, 201, 148, 190] : [209, 178, 124, 155];
         },
         getLineColor: (f: any) => {
           const props = f?.properties || {};
           const isCompared = activeComparison && (props.slick_id === activeComparison.observed_slick_id || props.id === activeComparison.observed_slick_id);
-          return isCompared ? [255, 255, 255, 255] : [250, 190, 50, 255];
+          return isCompared ? [232, 227, 213, 255] : [209, 178, 124, 240];
         },
         getLineWidth: (f: any) => {
           const props = f?.properties || {};
           const isCompared = activeComparison && (props.slick_id === activeComparison.observed_slick_id || props.id === activeComparison.observed_slick_id);
-          return isCompared ? 3.5 : 2;
+          return isCompared ? 3.0 : 2;
         },
         lineWidthMinPixels: 1.5,
         updateTriggers: {
@@ -604,7 +610,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4B. Backward Drift Trajectories
+      // 4B. Backward Drift Trajectories (Muted Teal)
       new GeoJsonLayer({
         id: 'drift-trajectories-layer',
         data: (driftData as any) || [],
@@ -613,7 +619,7 @@ export const GeospatialViewport: React.FC = () => {
         stroked: true,
         filled: false,
         lineWidthUnits: 'pixels',
-        getLineColor: [168, 85, 247, 180],
+        getLineColor: [95, 145, 138, 160],
         getLineWidth: 1.5,
         lineWidthMinPixels: 1,
         onClick: (info) => {
@@ -628,7 +634,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4C. AIS Vessel Trajectories
+      // 4C. AIS Vessel Trajectories (Desaturated Teal / Warm Sand Highlight)
       new GeoJsonLayer({
         id: 'ais-tracks-layer',
         data: (aisTracksData as any) || [],
@@ -639,17 +645,24 @@ export const GeospatialViewport: React.FC = () => {
         lineWidthUnits: 'pixels',
         getLineColor: (f: unknown) => {
           const feat = f as any;
-          const isSelected = feat?.properties?.mmsi === selectedMmsi;
-          return isSelected ? [56, 189, 248, 255] : [56, 139, 253, 200];
+          const isSelected = feat?.properties?.mmsi === activeTargetMmsi;
+          if (focusSelectedHypothesis) {
+            return isSelected ? [209, 178, 124, 255] : [78, 107, 105, 50];
+          }
+          return isSelected ? [209, 178, 124, 255] : [78, 107, 105, 140];
         },
         getLineWidth: (f: unknown) => {
           const feat = f as any;
-          return feat?.properties?.mmsi === selectedMmsi ? 4.5 : 2;
+          const isSelected = feat?.properties?.mmsi === activeTargetMmsi;
+          if (focusSelectedHypothesis) {
+            return isSelected ? 3.5 : 1.0;
+          }
+          return isSelected ? 3.5 : 1.5;
         },
-        lineWidthMinPixels: 1.5,
+        lineWidthMinPixels: 1,
         updateTriggers: {
-          getLineColor: [selectedMmsi],
-          getLineWidth: [selectedMmsi],
+          getLineColor: [selectedMmsi, activeTargetMmsi, focusSelectedHypothesis],
+          getLineWidth: [selectedMmsi, activeTargetMmsi, focusSelectedHypothesis],
         },
         onClick: (info) => {
           if (info.object) {
@@ -667,7 +680,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4D. Real-Time Drift Particles at currentTimeUtc
+      // 4D. Real-Time Drift Particles at currentTimeUtc (Muted Seafoam)
       new GeoJsonLayer({
         id: 'current-drift-particles-layer',
         data: (currentDriftGeoJson as any) || [],
@@ -678,8 +691,8 @@ export const GeospatialViewport: React.FC = () => {
         getPointRadius: 4,
         pointRadiusMinPixels: 2.5,
         pointRadiusMaxPixels: 8,
-        getFillColor: [217, 70, 239, 230],
-        getLineColor: [255, 255, 255, 220],
+        getFillColor: [120, 175, 165, 220],
+        getLineColor: [232, 227, 213, 200],
         getLineWidth: 1,
         lineWidthUnits: 'pixels',
         onClick: (info) => {
@@ -694,7 +707,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4E. Real-Time Vessel Locations at currentTimeUtc
+      // 4E. Real-Time Vessel Locations at currentTimeUtc (Warm Sand Selected)
       new GeoJsonLayer({
         id: 'current-vessels-layer',
         data: (currentVesselsGeoJson as any) || [],
@@ -704,21 +717,30 @@ export const GeospatialViewport: React.FC = () => {
         pointRadiusUnits: 'pixels',
         getPointRadius: (f: unknown) => {
           const feat = f as any;
-          return feat?.properties?.mmsi === selectedMmsi ? 9 : 6;
+          const isSelected = feat?.properties?.mmsi === activeTargetMmsi;
+          return isSelected ? 8 : 4.5;
         },
-        pointRadiusMinPixels: 4,
-        pointRadiusMaxPixels: 16,
+        pointRadiusMinPixels: 3,
+        pointRadiusMaxPixels: 14,
         getFillColor: (f: unknown) => {
           const feat = f as any;
-          const isSelected = feat?.properties?.mmsi === selectedMmsi;
-          return isSelected ? [56, 189, 248, 255] : [56, 139, 253, 235];
+          const isSelected = feat?.properties?.mmsi === activeTargetMmsi;
+          if (focusSelectedHypothesis) {
+            return isSelected ? [209, 178, 124, 255] : [78, 107, 105, 80];
+          }
+          return isSelected ? [209, 178, 124, 255] : [78, 107, 105, 200];
         },
-        getLineColor: [255, 255, 255, 255],
-        getLineWidth: 2,
+        getLineColor: [232, 227, 213, 230],
+        getLineWidth: (f: unknown) => {
+          const feat = f as any;
+          const isSelected = feat?.properties?.mmsi === activeTargetMmsi;
+          return isSelected ? 2 : 1;
+        },
         lineWidthUnits: 'pixels',
         updateTriggers: {
-          getPointRadius: [selectedMmsi],
-          getFillColor: [selectedMmsi],
+          getPointRadius: [selectedMmsi, activeTargetMmsi, focusSelectedHypothesis],
+          getFillColor: [selectedMmsi, activeTargetMmsi, focusSelectedHypothesis],
+          getLineWidth: [selectedMmsi, activeTargetMmsi, focusSelectedHypothesis],
         },
         onClick: (info) => {
           if (info.object) {
@@ -736,7 +758,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4F. 4D Source Hypothesis Locations
+      // 4F. 4D Source Hypothesis Locations & Vectors (Warm Sand / Rust Origin)
       new GeoJsonLayer({
         id: 'hypotheses-layer',
         data: (preprocessedHypotheses as any),
@@ -746,30 +768,56 @@ export const GeospatialViewport: React.FC = () => {
         pointRadiusUnits: 'pixels',
         getPointRadius: (f: unknown) => {
           const feat = f as any;
-          const isSelected = feat?.properties?.hypothesis_id === selectedHypothesisId;
+          const isSelected = feat?.properties?.hypothesis_id === activeTargetHypothesisId || (feat?.properties?.mmsi && feat?.properties?.mmsi === activeTargetMmsi);
+          if (focusSelectedHypothesis) {
+            return isSelected ? 8 : 3.0;
+          }
           const releaseEpoch = feat?.properties?._releaseEpoch;
           const isProximate = releaseEpoch && Math.abs(releaseEpoch - currentEpoch) < 30 * 60 * 1000;
-          return isSelected ? 9 : isProximate ? 7 : 4.5;
+          return isSelected ? 8 : isProximate ? 6 : 4.0;
         },
-        pointRadiusMinPixels: 3.5,
-        pointRadiusMaxPixels: 16,
+        pointRadiusMinPixels: 2.5,
+        pointRadiusMaxPixels: 14,
         getFillColor: (f: unknown) => {
           const feat = f as any;
-          const isSelected = feat?.properties?.hypothesis_id === selectedHypothesisId;
+          const isSelected = feat?.properties?.hypothesis_id === activeTargetHypothesisId || (feat?.properties?.mmsi && feat?.properties?.mmsi === activeTargetMmsi);
+          if (focusSelectedHypothesis) {
+            return isSelected
+              ? [209, 178, 124, 255] // Warm Sand selected
+              : [130, 150, 146, 30]; // Restrained background
+          }
           const releaseEpoch = feat?.properties?._releaseEpoch;
           const isProximate = releaseEpoch && Math.abs(releaseEpoch - currentEpoch) < 30 * 60 * 1000;
           return isSelected
-            ? [248, 81, 73, 255]
+            ? [209, 178, 124, 255]
             : isProximate
-            ? [251, 146, 60, 240]
-            : [248, 81, 73, 175];
+            ? [224, 201, 148, 230]
+            : [184, 111, 82, 180]; // Rust origin
         },
-        getLineColor: [255, 255, 255, 230],
-        getLineWidth: 1.2,
+        getLineColor: (f: unknown) => {
+          const feat = f as any;
+          const isSelected = feat?.properties?.hypothesis_id === activeTargetHypothesisId || (feat?.properties?.mmsi && feat?.properties?.mmsi === activeTargetMmsi);
+          if (focusSelectedHypothesis) {
+            return isSelected
+              ? [209, 178, 124, 255]
+              : [78, 107, 105, 25];
+          }
+          return isSelected ? [209, 178, 124, 255] : [130, 150, 146, 100];
+        },
+        getLineWidth: (f: unknown) => {
+          const feat = f as any;
+          const isSelected = feat?.properties?.hypothesis_id === activeTargetHypothesisId || (feat?.properties?.mmsi && feat?.properties?.mmsi === activeTargetMmsi);
+          if (focusSelectedHypothesis) {
+            return isSelected ? 2.5 : 0.8;
+          }
+          return isSelected ? 2.5 : 1.0;
+        },
         lineWidthUnits: 'pixels',
         updateTriggers: {
-          getPointRadius: [selectedHypothesisId, currentEpoch],
-          getFillColor: [selectedHypothesisId, currentEpoch],
+          getPointRadius: [selectedHypothesisId, activeTargetHypothesisId, activeTargetMmsi, focusSelectedHypothesis, currentEpoch],
+          getFillColor: [selectedHypothesisId, activeTargetHypothesisId, activeTargetMmsi, focusSelectedHypothesis, currentEpoch],
+          getLineColor: [selectedHypothesisId, activeTargetHypothesisId, activeTargetMmsi, focusSelectedHypothesis],
+          getLineWidth: [selectedHypothesisId, activeTargetHypothesisId, activeTargetMmsi, focusSelectedHypothesis],
         },
         onClick: (info) => {
           if (info.object) {
@@ -790,7 +838,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4G. Counterfactual Forward Simulation Particle Plume
+      // 4G. Counterfactual Forward Simulation Particle Plume (Muted Seafoam)
       new ScatterplotLayer({
         id: 'counterfactual-particles-layer',
         data: simulationDetail?.particles || [],
@@ -801,8 +849,8 @@ export const GeospatialViewport: React.FC = () => {
         getRadius: 5,
         radiusMinPixels: 3.5,
         radiusMaxPixels: 12,
-        getFillColor: [56, 189, 248, 225], // Vibrant Cyan / Electric Blue
-        getLineColor: [255, 255, 255, 220],
+        getFillColor: [120, 175, 165, 215], // Muted Seafoam
+        getLineColor: [232, 227, 213, 200],
         getLineWidth: 1,
         lineWidthUnits: 'pixels',
         updateTriggers: {
@@ -819,7 +867,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4H. Counterfactual Trajectories
+      // 4H. Counterfactual Trajectories (Muted Teal)
       new GeoJsonLayer({
         id: 'counterfactual-trajectories-layer',
         data: simulationTrajectoriesGeoJson as any,
@@ -828,7 +876,7 @@ export const GeospatialViewport: React.FC = () => {
         stroked: true,
         filled: false,
         lineWidthUnits: 'pixels',
-        getLineColor: [56, 189, 248, 130],
+        getLineColor: [95, 145, 138, 140],
         getLineWidth: 1.5,
         lineWidthMinPixels: 1,
         updateTriggers: {
@@ -836,7 +884,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4I. Counterfactual Release Source Point
+      // 4I. Counterfactual Release Source Point (Rust Origin)
       new GeoJsonLayer({
         id: 'counterfactual-source-layer',
         data: counterfactualSourceGeoJson as any,
@@ -844,12 +892,12 @@ export const GeospatialViewport: React.FC = () => {
         pickable: true,
         pointType: 'circle',
         pointRadiusUnits: 'pixels',
-        getPointRadius: 8,
-        pointRadiusMinPixels: 6,
-        pointRadiusMaxPixels: 16,
-        getFillColor: [251, 146, 60, 255], // Orange / Coral release point
-        getLineColor: [255, 255, 255, 255],
-        getLineWidth: 2.5,
+        getPointRadius: 7,
+        pointRadiusMinPixels: 5,
+        pointRadiusMaxPixels: 14,
+        getFillColor: [184, 111, 82, 255], // Rust release point
+        getLineColor: [232, 227, 213, 255],
+        getLineWidth: 2,
         lineWidthUnits: 'pixels',
         updateTriggers: {
           data: [activeComparison?.hypothesis_id],
@@ -866,7 +914,7 @@ export const GeospatialViewport: React.FC = () => {
         },
       }),
 
-      // 4J. Simulated vs Observed Centroid Offset Vector
+      // 4J. Simulated vs Observed Centroid Offset Vector (Rust Vector / Warm Sand Point)
       new GeoJsonLayer({
         id: 'counterfactual-centroid-offset-layer',
         data: centroidOffsetVectorGeoJson as any,
@@ -875,14 +923,14 @@ export const GeospatialViewport: React.FC = () => {
         stroked: true,
         filled: true,
         lineWidthUnits: 'pixels',
-        getLineColor: [248, 81, 73, 230], // Red/Coral offset line
-        getLineWidth: 2.5,
+        getLineColor: [184, 111, 82, 230], // Rust offset line
+        getLineWidth: 2,
         lineWidthMinPixels: 1.5,
         pointType: 'circle',
         pointRadiusUnits: 'pixels',
-        getPointRadius: 5.5,
-        getFillColor: [56, 189, 248, 255], // Cyan predicted centroid point
-        getLineColor2: [255, 255, 255, 255],
+        getPointRadius: 5.0,
+        getFillColor: [209, 178, 124, 255], // Warm Sand predicted centroid point
+        getLineColor2: [232, 227, 213, 255],
         updateTriggers: {
           data: [activeComparison?.hypothesis_id],
         },
@@ -942,7 +990,7 @@ export const GeospatialViewport: React.FC = () => {
         position: 'relative',
         width: '100%',
         height: '100%',
-        backgroundColor: '#070b12',
+        backgroundColor: 'var(--color-bg-deep)',
         overflow: 'hidden',
       }}
     >
@@ -952,6 +1000,61 @@ export const GeospatialViewport: React.FC = () => {
       {/* Layer Visibility Toggles */}
       <MapLayerControls />
 
+      {/* Hypothesis Focus / Exploration Segmented Toggle (Phase 3 Core Control) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '12px',
+          left: '108px',
+          zIndex: 10,
+          display: 'flex',
+          alignItems: 'center',
+          backgroundColor: 'var(--color-bg-surface)',
+          border: '1px solid var(--color-border-subtle)',
+          borderRadius: 'var(--radius-xs)',
+          padding: '2px',
+          boxShadow: 'var(--shadow-md)',
+          userSelect: 'none',
+        }}
+      >
+        <button
+          onClick={() => setFocusSelectedHypothesis(true)}
+          style={{
+            padding: '4px 8px',
+            fontSize: '10px',
+            fontWeight: 700,
+            letterSpacing: '0.04em',
+            borderRadius: '2px',
+            border: 'none',
+            backgroundColor: focusSelectedHypothesis ? 'rgba(95, 145, 138, 0.22)' : 'transparent',
+            color: focusSelectedHypothesis ? 'var(--color-accent-seafoam)' : 'var(--color-text-muted)',
+            cursor: 'pointer',
+            transition: 'all 0.15s ease',
+          }}
+          title="Focus Selected: Highlight selected candidate trajectory and release point; dim all background hypothesis lines"
+        >
+          FOCUS SELECTED
+        </button>
+        <button
+          onClick={() => setFocusSelectedHypothesis(false)}
+          style={{
+            padding: '4px 8px',
+            fontSize: '10px',
+            fontWeight: 700,
+            letterSpacing: '0.04em',
+            borderRadius: '2px',
+            border: 'none',
+            backgroundColor: !focusSelectedHypothesis ? 'rgba(95, 145, 138, 0.22)' : 'transparent',
+            color: !focusSelectedHypothesis ? 'var(--color-accent-seafoam)' : 'var(--color-text-muted)',
+            cursor: 'pointer',
+            transition: 'all 0.15s ease',
+          }}
+          title="Show All Hypotheses: Display complete spider-web spatiotemporal candidate vector network"
+        >
+          SHOW ALL HYPOTHESES
+        </button>
+      </div>
+
       {/* Map Legend */}
       <MapLegend />
 
@@ -960,23 +1063,23 @@ export const GeospatialViewport: React.FC = () => {
         <div
           style={{
             position: 'absolute',
-            top: '16px',
-            left: '200px',
+            top: '12px',
+            left: '385px',
             zIndex: 10,
-            backgroundColor: 'rgba(10, 13, 19, 0.90)',
-            border: '1px solid rgba(56, 139, 253, 0.4)',
+            backgroundColor: 'var(--color-bg-surface)',
+            border: '1px solid var(--color-border)',
             borderRadius: 'var(--radius-xs)',
             padding: '4px 8px',
             fontSize: '9px',
             fontFamily: 'var(--font-mono)',
-            color: 'var(--color-accent-blue)',
+            color: 'var(--color-accent-teal)',
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
             boxShadow: 'var(--shadow-md)',
           }}
         >
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#388bfd' }} />
+          <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-accent-teal)' }} />
           <span>VISUALIZATION DERIVATIVE · SAR S-1 σ° GEOREFERENCED</span>
         </div>
       )}
@@ -990,12 +1093,13 @@ export const GeospatialViewport: React.FC = () => {
           zIndex: 10,
           display: 'flex',
           flexDirection: 'column',
-          gap: '4px',
-          backgroundColor: 'rgba(17, 22, 32, 0.92)',
+          gap: '2px',
+          backgroundColor: 'var(--color-bg-surface)',
           border: '1px solid var(--color-border-subtle)',
-          borderRadius: 'var(--radius-sm)',
-          padding: '4px',
+          borderRadius: 'var(--radius-xs)',
+          padding: '2px',
           boxShadow: 'var(--shadow-md)',
+          backdropFilter: 'blur(6px)',
         }}
       >
         <button
@@ -1006,7 +1110,7 @@ export const GeospatialViewport: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'var(--color-accent-blue)',
+            color: 'var(--color-accent-teal)',
             cursor: 'pointer',
           }}
           title="Reset True North (000°)"
@@ -1054,16 +1158,16 @@ export const GeospatialViewport: React.FC = () => {
             bottom: '48px',
             left: '16px',
             zIndex: 15,
-            backgroundColor: 'rgba(10, 13, 19, 0.94)',
+            backgroundColor: 'rgba(16, 35, 38, 0.94)',
             border: '1px solid var(--color-border-subtle)',
-            borderRadius: 'var(--radius-sm)',
+            borderRadius: 'var(--radius-xs)',
             padding: '10px 14px',
-            boxShadow: 'var(--shadow-lg)',
+            boxShadow: 'var(--shadow-md)',
             display: 'flex',
             flexDirection: 'column',
             gap: '6px',
             minWidth: '240px',
-            backdropFilter: 'blur(8px)',
+            backdropFilter: 'blur(6px)',
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2px' }}>
@@ -1071,7 +1175,7 @@ export const GeospatialViewport: React.FC = () => {
               style={{
                 fontSize: 'var(--text-2xs)',
                 fontWeight: 700,
-                color: 'var(--color-accent-cyan)',
+                color: 'var(--color-accent-seafoam)',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
               }}
@@ -1089,7 +1193,7 @@ export const GeospatialViewport: React.FC = () => {
                 }}
                 style={{
                   fontSize: '9px',
-                  color: 'var(--color-accent-cyan)',
+                  color: 'var(--color-accent-teal)',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
@@ -1105,24 +1209,24 @@ export const GeospatialViewport: React.FC = () => {
             )}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
-            <div style={{ width: '12px', height: '12px', backgroundColor: 'rgba(250, 190, 50, 0.5)', border: '2px solid #ffffff', borderRadius: '2px' }} />
+            <div style={{ width: '12px', height: '12px', backgroundColor: 'rgba(209, 178, 124, 0.6)', border: '1.5px solid var(--color-text-primary)', borderRadius: '2px' }} />
             <span>Observed SAR Slick ({activeComparison?.observed_slick_id || 'CS_0035'})</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
-            <div style={{ width: '8px', height: '8px', backgroundColor: '#38bdf8', borderRadius: '50%', boxShadow: '0 0 6px #38bdf8' }} />
+            <div style={{ width: '8px', height: '8px', backgroundColor: '#78AFA5', borderRadius: '50%' }} />
             <span>Simulated Particle Plume ({simulationDetail?.particles?.length ?? 500} pts)</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
-            <div style={{ width: '10px', height: '10px', backgroundColor: '#fb923c', border: '1.5px solid #ffffff', borderRadius: '2px', transform: 'rotate(45deg)' }} />
+            <div style={{ width: '10px', height: '10px', backgroundColor: '#B86F52', border: '1.5px solid #ffffff', borderRadius: '2px', transform: 'rotate(45deg)' }} />
             <span>Hypothesis Release Point (T₀)</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
-            <div style={{ width: '16px', height: '2px', backgroundColor: '#38bdf8' }} />
+            <div style={{ width: '16px', height: '2px', backgroundColor: '#5F918A' }} />
             <span>Forward Drift Trajectory</span>
           </div>
           {activeComparison?.centroid_error_m != null && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 'var(--text-2xs)', color: 'var(--color-text-secondary)' }}>
-              <div style={{ width: '16px', height: '2px', backgroundColor: '#f85149' }} />
+              <div style={{ width: '16px', height: '2px', backgroundColor: '#B86F52' }} />
               <span>Centroid Error: <strong className="font-mono" style={{ color: 'var(--color-text-primary)' }}>{activeComparison.centroid_error_m.toFixed(1)} m</strong></span>
             </div>
           )}

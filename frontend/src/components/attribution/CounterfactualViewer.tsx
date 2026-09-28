@@ -203,15 +203,15 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
     <div
       style={{
         position: 'absolute',
-        top: '14px',
-        right: '16px',
-        bottom: '16px',
-        width: '530px',
-        maxWidth: 'calc(100% - 70px)',
-        backgroundColor: 'rgba(10, 13, 19, 0.96)',
-        backdropFilter: 'blur(12px)',
-        border: '1px solid var(--color-border-subtle)',
-        borderRadius: 'var(--radius-md)',
+        top: '10px',
+        right: '12px',
+        bottom: '10px',
+        width: '440px',
+        maxWidth: 'calc(100% - 60px)',
+        backgroundColor: 'rgba(11, 24, 26, 0.97)',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-sm)',
         boxShadow: 'var(--shadow-xl)',
         zIndex: 25,
         display: 'flex',
@@ -222,27 +222,29 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
       {/* 1. Header Bar */}
       <div
         style={{
-          padding: '12px 18px',
+          padding: '8px 14px',
           borderBottom: '1px solid var(--color-border-subtle)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           backgroundColor: 'var(--color-bg-base)',
+          flexShrink: 0,
         }}
       >
+
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div
             style={{
               width: '28px',
               height: '28px',
               borderRadius: 'var(--radius-xs)',
-              backgroundColor: 'rgba(56, 189, 248, 0.15)',
+              backgroundColor: 'rgba(95, 145, 138, 0.18)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <GitCompare size={16} color="var(--color-accent-cyan)" />
+            <GitCompare size={16} color="var(--color-accent-teal)" />
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -263,8 +265,8 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                   fontWeight: 700,
                   padding: '1px 6px',
                   borderRadius: '3px',
-                  backgroundColor: 'rgba(56, 189, 248, 0.2)',
-                  color: 'var(--color-accent-cyan)',
+                  backgroundColor: 'rgba(95, 145, 138, 0.2)',
+                  color: 'var(--color-accent-seafoam)',
                   letterSpacing: '0.04em',
                 }}
               >
@@ -323,14 +325,14 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
       <div
         style={{
           padding: '10px 18px',
-          backgroundColor: 'rgba(15, 23, 42, 0.8)',
+          backgroundColor: 'rgba(16, 35, 38, 0.8)',
           borderBottom: '1px solid var(--color-border-subtle)',
           display: 'flex',
           alignItems: 'flex-start',
           gap: '10px',
         }}
       >
-        <Info size={15} color="var(--color-accent-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
+        <Info size={15} color="var(--color-accent-teal)" style={{ flexShrink: 0, marginTop: '2px' }} />
         <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
           <strong style={{ color: 'var(--color-text-primary)' }}>Counterfactual Question:</strong> If this hypothesis were true, how closely would the simulated spill match the observed satellite slick?
         </div>
@@ -374,7 +376,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                 <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   1. Candidate Vessel Switcher ({candidateVesselGroups.length})
                 </span>
-                <span style={{ fontSize: '10px', color: 'var(--color-accent-cyan)' }}>
+                <span style={{ fontSize: '10px', color: 'var(--color-accent-sand)' }}>
                   Active: {activeVesselDisplayName}
                 </span>
               </div>
@@ -389,10 +391,10 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                         padding: '6px 10px',
                         borderRadius: 'var(--radius-xs)',
                         border: isSelected
-                          ? '1px solid var(--color-accent-cyan)'
+                          ? '1px solid var(--color-accent-teal)'
                           : '1px solid var(--color-border-subtle)',
-                        backgroundColor: isSelected ? 'rgba(56, 189, 248, 0.15)' : 'rgba(17, 24, 39, 0.7)',
-                        color: isSelected ? 'var(--color-accent-cyan)' : 'var(--color-text-secondary)',
+                        backgroundColor: isSelected ? 'rgba(95, 145, 138, 0.18)' : 'rgba(24, 50, 54, 0.7)',
+                        color: isSelected ? 'var(--color-accent-seafoam)' : 'var(--color-text-secondary)',
                         cursor: 'pointer',
                         display: 'flex',
                         flexDirection: 'column',
@@ -406,7 +408,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                         <span style={{ fontWeight: 700, fontSize: '11px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                           {grp.vesselName}
                         </span>
-                        {isSelected && <Check size={12} color="var(--color-accent-cyan)" />}
+                        {isSelected && <Check size={12} color="var(--color-accent-seafoam)" />}
                       </div>
                       <div style={{ display: 'flex', gap: '6px', fontSize: '9px', color: 'var(--color-text-muted)', marginTop: '2px', fontFamily: 'var(--font-mono)' }}>
                         <span>MMSI {grp.mmsi}</span>
@@ -444,10 +446,10 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                           padding: '4px 8px',
                           borderRadius: 'var(--radius-xs)',
                           border: isSelected
-                            ? '1px solid var(--color-accent-blue)'
+                            ? '1px solid var(--color-accent-teal)'
                             : '1px solid var(--color-border-subtle)',
-                          backgroundColor: isSelected ? 'rgba(59, 130, 246, 0.2)' : 'var(--color-bg-base)',
-                          color: isSelected ? 'var(--color-accent-blue)' : 'var(--color-text-muted)',
+                          backgroundColor: isSelected ? 'rgba(95, 145, 138, 0.2)' : 'var(--color-bg-base)',
+                          color: isSelected ? 'var(--color-accent-teal)' : 'var(--color-text-muted)',
                           fontSize: '10px',
                           cursor: 'pointer',
                           display: 'flex',
@@ -472,7 +474,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
             {activeComp && (
               <div
                 style={{
-                  backgroundColor: 'rgba(15, 23, 42, 0.75)',
+                  backgroundColor: 'rgba(24, 50, 54, 0.75)',
                   border: '1px solid var(--color-border-strong)',
                   borderRadius: 'var(--radius-sm)',
                   padding: '12px 14px',
@@ -484,7 +486,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontSize: 'var(--text-sm)', fontWeight: 800, color: 'var(--color-accent-cyan)', fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ fontSize: 'var(--text-sm)', fontWeight: 800, color: 'var(--color-accent-sand)', fontFamily: 'var(--font-mono)' }}>
                         {activeComp.hypothesis_id}
                       </span>
                       <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--color-text-primary)' }}>
@@ -513,7 +515,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: '8px',
-                    backgroundColor: 'rgba(10, 13, 19, 0.7)',
+                    backgroundColor: 'rgba(11, 24, 26, 0.7)',
                     padding: '8px 10px',
                     borderRadius: 'var(--radius-xs)',
                     border: '1px solid var(--color-border-subtle)',
@@ -542,7 +544,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                       {activeComp.simulation_duration_hours ?? 2.0}h forward hydrodynamic run
                     </div>
                     <div style={{ fontSize: '9px', color: 'var(--color-text-muted)', marginTop: '2px' }}>
-                      Particles: <strong style={{ color: 'var(--color-accent-cyan)' }}>{simulationDetail?.particles?.length ?? 500}</strong> (100% active)
+                      Particles: <strong style={{ color: 'var(--color-accent-seafoam)' }}>{simulationDetail?.particles?.length ?? 500}</strong> (100% active)
                     </div>
                   </div>
                 </div>
@@ -606,7 +608,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                         style={{
                           fontSize: '15px',
                           fontWeight: 800,
-                          color: activeComp.iou > 0.1 ? 'var(--color-accent-emerald)' : 'var(--color-accent-blue)',
+                          color: activeComp.iou > 0.1 ? 'var(--color-accent-emerald)' : 'var(--color-accent-teal)',
                           marginTop: '2px',
                         }}
                       >
@@ -636,7 +638,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                       <div style={{ fontSize: '9px', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
                         Simulated Area
                       </div>
-                      <div className="font-mono" style={{ fontSize: '12px', color: 'var(--color-accent-cyan)', marginTop: '2px' }}>
+                      <div className="font-mono" style={{ fontSize: '12px', color: 'var(--color-accent-seafoam)', marginTop: '2px' }}>
                         {activeComp.predicted_area_m2 ? `${(activeComp.predicted_area_m2 / 1000).toFixed(1)}k m²` : 'N/A'}
                       </div>
                       <div style={{ fontSize: '9px', color: 'var(--color-text-muted)', marginTop: '2px' }}>
@@ -664,16 +666,16 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                     style={{
                       backgroundColor:
                         interpretation.tone === 'emerald'
-                          ? 'rgba(16, 185, 129, 0.08)'
+                          ? 'rgba(125, 156, 121, 0.1)'
                           : interpretation.tone === 'amber'
-                          ? 'rgba(245, 158, 11, 0.08)'
-                          : 'rgba(148, 163, 184, 0.08)',
+                          ? 'rgba(209, 178, 124, 0.1)'
+                          : 'rgba(130, 150, 146, 0.1)',
                       border: `1px solid ${
                         interpretation.tone === 'emerald'
-                          ? 'rgba(16, 185, 129, 0.3)'
+                          ? 'rgba(125, 156, 121, 0.35)'
                           : interpretation.tone === 'amber'
-                          ? 'rgba(245, 158, 11, 0.3)'
-                          : 'rgba(148, 163, 184, 0.2)'
+                          ? 'rgba(209, 178, 124, 0.35)'
+                          : 'rgba(130, 150, 146, 0.2)'
                       }`,
                       borderRadius: 'var(--radius-xs)',
                       padding: '10px 12px',
@@ -749,8 +751,8 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                           key={grp.mmsi}
                           onClick={() => handleSelectVessel(grp)}
                           style={{
-                            borderBottom: '1px solid rgba(36, 48, 66, 0.4)',
-                            backgroundColor: isSelected ? 'rgba(56, 189, 248, 0.12)' : 'transparent',
+                            borderBottom: '1px solid var(--color-border-subtle)',
+                            backgroundColor: isSelected ? 'rgba(95, 145, 138, 0.15)' : 'transparent',
                             cursor: 'pointer',
                           }}
                           onMouseEnter={(e) => {
@@ -761,14 +763,14 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                           }}
                         >
                           <td style={{ padding: '6px 8px' }}>
-                            <div style={{ fontWeight: 700, color: isSelected ? 'var(--color-accent-cyan)' : 'var(--color-text-primary)' }}>
+                            <div style={{ fontWeight: 700, color: isSelected ? 'var(--color-accent-sand)' : 'var(--color-text-primary)' }}>
                               {grp.vesselName}
                             </div>
                             <div style={{ fontSize: '9px', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}>
                               MMSI {grp.mmsi}
                             </div>
                           </td>
-                          <td style={{ padding: '6px 8px', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-accent-blue)' }}>
+                          <td style={{ padding: '6px 8px', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-accent-teal)' }}>
                             {grp.bestHypothesisId}
                           </td>
                           <td
@@ -797,7 +799,7 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
                             100%
                           </td>
                           <td style={{ padding: '6px 8px', textAlign: 'center' }}>
-                            {isSelected ? <Check size={12} color="var(--color-accent-cyan)" /> : <ChevronRight size={12} color="var(--color-text-muted)" />}
+                            {isSelected ? <Check size={12} color="var(--color-accent-sand)" /> : <ChevronRight size={12} color="var(--color-text-muted)" />}
                           </td>
                         </tr>
                       );
@@ -824,13 +826,13 @@ export const CounterfactualViewer: React.FC<{ onClose?: () => void }> = ({ onClo
         }}
       >
         <span>
-          <strong style={{ color: 'var(--color-accent-cyan)' }}>PHYSICAL FIDELITY:</strong> 500-particle forward dispersion from T₀
+          <strong style={{ color: 'var(--color-accent-seafoam)' }}>PHYSICAL FIDELITY:</strong> 500-particle forward dispersion from T₀
         </span>
         <button
           onClick={() => setActiveWorkspace('candidates')}
           style={{
             fontSize: '10px',
-            color: 'var(--color-accent-blue)',
+            color: 'var(--color-accent-teal)',
             background: 'none',
             border: 'none',
             cursor: 'pointer',

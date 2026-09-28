@@ -1252,10 +1252,92 @@ def get_case_satellite_observations(case_id: str):
     """
     Expose detailed satellite observation package distinguishing operational Sentinel-1
     SAR (channel actually used by detector) from supporting Sentinel-2 optical imagery,
-    along with observation timeline and revisit context.
+    along with observation timeline, revisit context, and structured observation records.
     """
     _safe_resolve_case_id(case_id)
     return build_satellite_observation_package(case_id)
+
+
+# ============================================================================
+# Phase 5: Operational SAR Observation Processing Pipeline
+# ============================================================================
+
+from pydantic import BaseModel
+
+from backend.sar_pipeline.engine import (
+    execute_sar_processing_job,
+    get_sar_job,
+    get_sar_job_results,
+    get_sar_observation_detail,
+    get_sar_observations_for_case,
+)
+from backend.sar_pipeline.schemas import (
+    SARJobResult,
+    SARObservationRecord,
+    SARProcessingJob,
+    SARValidationResult,
+)
+from backend.sar_pipeline.validator import validate_sar_artifact
+
+
+@app.get("/api/cases/{case_id}/satellite/observations/{observation_id}", response_model=SARObservationRecord)
+def get_case_satellite_observation_detail(case_id: str, observation_id: str):
+    """
+    Retrieve single SAR or optical observation record by ID with validation status.
+    """
+    _safe_resolve_case_id(case_id)
+    obs = get_sar_observation_detail(case_id, observation_id)
+    if not obs:
+        raise HTTPException(status_code=404, detail=f"Observation '{observation_id}' not found for case '{case_id}'")
+    return obs
+
+
+@app.get("/api/cases/{case_id}/satellite/validation", response_model=SARValidationResult)
+def get_case_satellite_validation(case_id: str, observation_id: Optional[str] = None):
+    """
+    Validate SAR observation raster and metadata across 8 physical/raster checks.
+    """
+    _safe_resolve_case_id(case_id)
+    return validate_sar_artifact(case_id, observation_id)
+
+
+class SARProcessRequest(BaseModel):
+    observation_id: Optional[str] = None
+    reprocess: bool = False
+
+
+@app.post("/api/cases/{case_id}/satellite/process", response_model=SARProcessingJob)
+def process_case_satellite_sar(case_id: str, body: Optional[SARProcessRequest] = None):
+    """
+    Execute or verify SAR observation processing pipeline:
+    Input Validation -> Radiometric Calibration -> Speckle Filter -> Dark-Spot Detection -> Vectorization -> Geospatial Overlay.
+    """
+    _safe_resolve_case_id(case_id)
+    obs_id = body.observation_id if body else None
+    reprocess = body.reprocess if body else False
+    return execute_sar_processing_job(case_id, obs_id, reprocess)
+
+
+@app.get("/api/satellite/jobs/{job_id}", response_model=SARProcessingJob)
+def get_satellite_processing_job(job_id: str):
+    """
+    Retrieve SAR observation processing job status and progress stages.
+    """
+    job = get_sar_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail=f"SAR processing job '{job_id}' not found")
+    return job
+
+
+@app.get("/api/satellite/jobs/{job_id}/results", response_model=SARJobResult)
+def get_satellite_processing_job_results(job_id: str):
+    """
+    Retrieve comprehensive SAR observation processing results and 6-stage provenance chain.
+    """
+    res = get_sar_job_results(job_id)
+    if not res:
+        raise HTTPException(status_code=404, detail=f"Results for SAR processing job '{job_id}' not found")
+    return res
 
 
 
